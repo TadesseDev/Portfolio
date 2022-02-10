@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e5e5e5;
+}
+
+#main-mobile {
+  background: #fff;
+  position: relative;
+  width: 100vw;
+  max-width: 375px;
+  margin: auto;
+  overflow: hidden;
+}
+
+#tool-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.heading {
+  background-image: url("./images/pictures/header-illsutration-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 726px;
+}
+
+.logo {
+  height: 28px;
+  width: 90px;
+  left: 2%;
+  top: 2%;
+  text-decoration: none;
+  font-family: Inter, serif;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem;
+  text-align: center;
+  color: #28352f;
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu .menu-icon {
+  height: 2%;
+  width: auto;
+  left: 5%;
+  top: 8px;
+}
+
+.primary {
+  width: 100vw;
+  max-width: 327px;
+  margin-top: 8vw;
+  flex: 1;
+  font-family: Inter, serif;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0;
+  color: #172b4d;
+}
+
+.i-am {
+  color: #36b37e;
+  display: block;
+}
+
+.social-media-icons {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  list-style: none;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 0;
+  width: 170px;
+  max-width: 90vw;
+}
+
+.supporting-text {
+  width: 100vw;
+  max-width: 327px;
+  flex: 1;
+  font-family: Inter, serif;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #172b4d;
+}
+
+.icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.social-media-icons .icon {
+  height: 5%;
+  width: auto;
+}
+
+#action {
+  display: flex;
+  height: 5%;
+  width: 100vw;
+  max-width: 327px;
+  justify-content: center;
+  flex: 1;
+}
+
+#action .icon {
+  height: 6vw;
+  width: 6vw;
+  border-radius: 50%;
+  padding: 2%;
+  border: 1px solid #dfe1e6;
+  background-image: url("./images/icons/Disabled.svg");
+}
