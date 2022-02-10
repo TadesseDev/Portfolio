@@ -34,6 +34,7 @@ body {
   width: 90px;
   left: 12px;
   top: 10px;
+  text-decoration: none;
   font-family: Inter, serif;
   font-size: 20px;
   font-style: normal;
@@ -78,6 +79,7 @@ body {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  list-style: none;
   height: 20.000062942504883px;
   width: 170.1666717529297px;
   left: 102.41666412353516px;
