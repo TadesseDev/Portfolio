@@ -8,8 +8,10 @@ body {
   left: -17px;
   background: #fff;
   position: relative;
-  width: 375px;
+  width: 100vw;
+  max-width: 375px;
   margin: auto;
+  overflow: hidden;
 }
 
 #tool-bar {
@@ -58,7 +60,8 @@ body {
 
 .primary {
   height: 192px;
-  width: 327px;
+  width: 100vw;
+  max-width: 327px;
   left: 24px;
   top: 64px;
   font-family: Inter, serif;
@@ -89,7 +92,8 @@ body {
 
 .supporting-text {
   height: 164px;
-  width: 327px;
+  width: 100vw;
+  max-width: 327px;
   left: 24px;
   top: 314px;
   font-family: Inter, serif;
