@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap");
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: #e5e5e5;
 }
 
 #main-mobile {
-  left: -17px;
   background: #fff;
   position: relative;
   width: 100vw;
@@ -18,31 +23,32 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 24px;
-  margin-right: 24px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .heading {
   background-image: url("./images/pictures/header-illsutration-mobile.svg");
   background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 726px;
+  min-height: 726px;
 }
 
 .logo {
   height: 28px;
   width: 90px;
-  left: 12px;
-  top: 10px;
+  left: 2%;
+  top: 2%;
   text-decoration: none;
   font-family: Inter, serif;
-  font-size: 20px;
+  font-size: 1.3rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 28px;
+  line-height: 2rem;
   text-align: center;
   color: #28352f;
 }
@@ -52,23 +58,21 @@ body {
 }
 
 .menu .menu-icon {
-  height: 24px;
-  width: 24px;
-  left: 8px;
+  height: 2%;
+  width: auto;
+  left: 5%;
   top: 8px;
 }
 
 .primary {
-  height: 192px;
   width: 100vw;
   max-width: 327px;
-  left: 24px;
-  top: 64px;
+  margin-top: 8vw;
+  flex: 1;
   font-family: Inter, serif;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 52px;
   text-align: center;
   margin-bottom: 0;
   color: #172b4d;
@@ -84,23 +88,22 @@ body {
   align-items: baseline;
   justify-content: space-between;
   list-style: none;
-  height: 20.000062942504883px;
-  width: 170.1666717529297px;
-  left: 102.41666412353516px;
-  top: 536px;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 0;
+  width: 170px;
+  max-width: 90vw;
 }
 
 .supporting-text {
-  height: 164px;
   width: 100vw;
   max-width: 327px;
-  left: 24px;
-  top: 314px;
+  flex: 1;
   font-family: Inter, serif;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 1.5;
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
@@ -114,28 +117,24 @@ body {
 }
 
 .social-media-icons .icon {
-  height: 19.962478637695312px;
-  width: 19.985925674438477px;
-  left: 102.41666412353516px;
-  top: 536px;
+  height: 5%;
+  width: auto;
 }
 
 #action {
   display: flex;
-  height: 48px;
-  width: 327px;
-  left: 24px;
-  top: 614px;
+  height: 5%;
+  width: 100vw;
+  max-width: 327px;
   justify-content: center;
+  flex: 1;
 }
 
 #action .icon {
-  height: 40px;
-  width: 40px;
-  left: 144px;
-  top: 4px;
-  border-radius: 32px;
-  padding: 8px;
+  height: 6vw;
+  width: 6vw;
+  border-radius: 50%;
+  padding: 2%;
   border: 1px solid #dfe1e6;
   background-image: url("./images/icons/Disabled.svg");
 }
