@@ -2,9 +2,9 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Hello world
+# Portfolio
 
-> this project is the very first project for the full stack web development class by microverse.
+> this project is the second project for the full stack web development class by microverse.
 
 ## Built With
 
