@@ -223,3 +223,27 @@ hr {
   color: #fff;
   font-family: Inter, serif;
 }
+
+.about-me .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-me .text .supporting-text {
+  color: #42526e;
+  word-spacing: 1.5;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.about-me .text .action1 {
+  background-color: #36b37f;
+  border: none;
+  outline: none;
+  padding: 4% 6%;
+  position: relative;
+  top: 15px;
+  border-radius: 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-family: Inter, serif;
+}
