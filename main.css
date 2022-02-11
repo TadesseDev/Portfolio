@@ -15,7 +15,8 @@ body {
   position: relative;
   width: 100vw;
   max-width: 375px;
-  margin: auto;
+  margin: 5vh auto;
+  padding-bottom: 20px;
   overflow: hidden;
 }
 
@@ -78,6 +79,10 @@ body {
   color: #172b4d;
 }
 
+h2.primary {
+  margin-top: 0;
+}
+
 .i-am {
   color: #36b37e;
   display: block;
@@ -133,6 +138,8 @@ body {
 #action .icon {
   height: 6vw;
   width: 6vw;
+  max-width: 50px;
+  max-height: 50px;
   border-radius: 50%;
   padding: 2%;
   border: 1px solid #dfe1e6;
@@ -176,30 +183,53 @@ hr {
   border-radius: 10px;
   margin: 5%;
 }
+
+.about-me .card-flow .card {
+  position: relative;
+  grid-template-rows: 180px 180px;
+}
+
+.about-me .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  background-image: url("./images/pictures/about-me-bottom.svg");
+  background-size: cover;
+}
+
 .card-flow .card .text {
   grid-area: text;
   background-color: #fff;
   margin: 2px;
   border-radius: 10px;
 }
-.project-title {
+
+.project-title,
+.title {
   font-family: Inter, serif;
   font-weight: 600;
   font-size: 1.8rem;
   text-align: center;
   color: #3a4a42;
 }
+
 .tags ul {
+  padding: 0;
   list-style: none;
-  padding: 1%;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
+
 .tags ul li {
   float: left;
   padding: 2% 3%;
+  border-radius: 5px;
   background-color: #ebf0ee;
+  margin-bottom: 10px;
 }
+
 .tags ul a {
   text-decoration: none;
   color: #3a4a42;
@@ -207,6 +237,7 @@ hr {
   font-size: 0.8rem;
   font-weight: 600;
 }
+
 .text .action {
   float: left;
   clear: left;
@@ -224,17 +255,12 @@ hr {
   font-family: Inter, serif;
 }
 
-.about-me .text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .about-me .text .supporting-text {
   color: #42526e;
-  word-spacing: 1.5;
   font-size: 1.5rem;
   font-weight: 400;
 }
+
 .about-me .text .action1 {
   background-color: #36b37f;
   border: none;
@@ -246,4 +272,60 @@ hr {
   border-radius: 5px;
   color: #fff;
   font-family: Inter, serif;
+}
+
+.about-me .icon .centerIcon {
+  width: 15vw;
+  height: 15vw;
+  max-width: 80px;
+  max-height: 80px;
+  background-color: white;
+  display: block;
+  background-image: url("./images/icons/IconLangguage.svg");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+#frameworks {
+  background-image: url("./images/icons/IconName.svg");
+}
+
+#skills {
+  background-image: url("./images/icons/IconName-1.svg");
+}
+
+.about-me ul li a {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  color: #36b37e;
+  box-shadow: 0 0 5px rgba(20, 20, 20, 0.137);
+}
+
+.about-me ul {
+  justify-content: center;
+}
+
+.about-me ul li {
+  padding: 0;
+  margin-left: 7px;
+  margin-bottom: 24px;
+}
+
+.top-background {
+  align-self: flex-end;
+  width: 150px;
+  height: 150px;
+  margin-bottom: -90px;
+  display: block;
+  background-image: url("./images/pictures/about-me-top.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
 }
