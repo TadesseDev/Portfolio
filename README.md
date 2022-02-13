@@ -1,9 +1,5 @@
 # Portfolio
 
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
-# Portfolio
-
 > this project is the second project for the full stack web development class by microverse.
 
 ## Built With
@@ -11,9 +7,10 @@
 - HTML
 - CSS
 
-## Live Demo (if available)
+## Live Demo
 
 https://tadesse-alemayehu.github.io/Portfolio/
+
 
 ## Getting Started
 
