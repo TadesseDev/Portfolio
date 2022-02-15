@@ -370,3 +370,13 @@ hr {
 #form .form .button {
   align-self: center;
 }
+#form .form .button button {
+  border-radius: 4px;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 12px;
+  border: none;
+  background: #36b37f;
+  font-weight: 500;
+  color: #fff;
+}
