@@ -331,8 +331,8 @@ hr {
 
 #form {
   padding: 10px 5%;
-  font-family: Inter;
-  letter-spacing: 0em;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0;
   background-image: url("./images/pictures/contact-form-image.svg");
   background-repeat: no-repeat;
   background-position: bottom right;
@@ -343,6 +343,13 @@ hr {
   padding: 0;
   border: none;
   display: grid;
+}
+
+#form ul {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  justify-content: center;
 }
 
 #form .form ul {
@@ -376,10 +383,12 @@ hr {
   border: 1px solid #60c095;
   border-radius: 4px;
 }
+
 #form .form textarea:hover,
 #form .form input:hover {
   border: 2px solid #238ef3;
 }
+
 #form .form ul li:last-child {
   align-self: center;
 }
@@ -396,22 +405,22 @@ hr {
 }
 
 #form .form .button button:hover {
-  border-radius: 0px;
+  border-radius: 0;
   padding: 14px;
 }
 
-#form ul {
-  width: 100%;
-  display: flex;
-  padding: 0px;
-  justify-content: center;
-}
 #form ul .icon {
   margin-left: 20px;
 }
+
 #form .my-email {
   text-align: center;
   color: #42526e;
   font-weight: 400;
   font-size: 1.2rem;
+}
+
+.form .primary {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
