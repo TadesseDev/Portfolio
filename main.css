@@ -16,7 +16,7 @@ body {
   width: 100vw;
   max-width: 375px;
   margin: 5vh auto;
-  padding-bottom: 20px;
+  padding-bottom: 100px;
   overflow: hidden;
 }
 
@@ -333,6 +333,9 @@ hr {
   padding: 10px 5%;
   font-family: Inter;
   letter-spacing: 0em;
+  background-image: url("./images/pictures/contact-form-image.svg");
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 
 #form .form {
@@ -373,7 +376,10 @@ hr {
   border: 1px solid #60c095;
   border-radius: 4px;
 }
-
+#form .form textarea:hover,
+#form .form input:hover {
+  border: 2px solid #238ef3;
+}
 #form .form .button {
   align-self: center;
 }
@@ -387,4 +393,25 @@ hr {
   background: #36b37f;
   font-weight: 500;
   color: #fff;
+}
+
+#form .form .button button:hover {
+  border-radius: 0px;
+  padding: 14px;
+}
+
+#form ul {
+  width: 100%;
+  display: flex;
+  padding: 0px;
+  justify-content: center;
+}
+#form ul .icon {
+  margin-left: 20px;
+}
+#form .my-email {
+  text-align: center;
+  color: #42526e;
+  font-weight: 400;
+  font-size: 1.2rem;
 }
