@@ -16,7 +16,7 @@ body {
   width: 100vw;
   max-width: 375px;
   margin: 5vh auto;
-  padding-bottom: 20px;
+  padding-bottom: 100px;
   overflow: hidden;
 }
 
@@ -217,14 +217,12 @@ hr {
 .tags ul {
   padding: 0;
   list-style: none;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
 }
 
 .tags ul li {
   float: left;
   padding: 2% 3%;
+  margin: 0 5px;
   border-radius: 5px;
   background-color: #ebf0ee;
   margin-bottom: 10px;
@@ -329,4 +327,100 @@ hr {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
+}
+
+#form {
+  padding: 10px 5%;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0;
+  background-image: url("./images/pictures/contact-form-image.svg");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+#form .form {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: grid;
+}
+
+#form ul {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+}
+
+#form .form ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+#form .form ul li {
+  margin: 10px 0;
+}
+
+#form .form input {
+  width: 95%;
+  padding: 2% 0 2% 5%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2rem;
+  border-radius: 4px;
+  border: 1px solid #d0d9d4;
+}
+
+#form .form textarea {
+  width: 95%;
+  padding: 2% 0 2% 5%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2rem;
+  border: 1px solid #60c095;
+  border-radius: 4px;
+}
+
+#form .form textarea:hover,
+#form .form input:hover {
+  border: 2px solid #238ef3;
+}
+
+#form .form ul li:last-child {
+  align-self: center;
+}
+
+#form .form button {
+  border-radius: 4px;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 12px;
+  border: none;
+  background: #36b37f;
+  font-weight: 500;
+  color: #fff;
+}
+
+#form .form .button button:hover {
+  border-radius: 0;
+  padding: 14px;
+}
+
+#form ul .icon {
+  margin-left: 20px;
+}
+
+#form .my-email {
+  text-align: center;
+  color: #42526e;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.form .primary {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
