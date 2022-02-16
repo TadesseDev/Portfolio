@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap");
-
+@import url("./desktop.css");
 html,
 body {
   margin: 0;
