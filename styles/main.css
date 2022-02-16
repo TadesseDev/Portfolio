@@ -444,7 +444,11 @@ hr {
   margin-bottom: 40px;
 }
 
-/*and (max-width: 1100px)*/
+#footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media all and (min-width: 992px) {
   #main-mobile {
     max-width: 1100px;
@@ -495,11 +499,33 @@ hr {
   .about-me .text .action1 {
     padding: 15px 20px;
   }
+
+  #form {
+    background-image: url("../images/pictures/contact-form-image-desktop.svg");
+    background-size: 150px;
+  }
+  .form-image1,
+  .form-image2 {
+    width: 200px;
+    height: 200px;
+    display: block;
+    background-image: url("../images/pictures/contact-form-image-img1.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .form-image2 {
+    background-image: url("../images/pictures/contact-form-image-desktop-2.svg");
+    margin-top: -150px;
+    margin-left: 300px;
+    width: 100px;
+    height: 100px;
+  }
   #form .form {
     display: grid;
-    margin-top: 10%;
+    margin: 10% 0 0 0;
     grid-template-columns: 1fr 1fr;
-    gap: 0 25px;
+    gap: 25px;
     align-items: center;
   }
   #form .form legend {
@@ -510,8 +536,6 @@ hr {
     align-self: flex-start;
   }
   form .primary {
-    /* margin-top: 40px;
-    margin-bottom: 40px; */
     font-size: 1.8rem;
   }
   #form .form input {
@@ -520,8 +544,11 @@ hr {
   #form .form textarea {
     line-height: 1.5rem;
   }
-  .my-email {
+  #footer .my-email {
     display: none;
+  }
+  #footer {
+    border-top: 1px solid rgb(255, 251, 251);
   }
   #app-bar-mobile {
     display: none;
