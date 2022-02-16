@@ -97,6 +97,9 @@ a {
   color: #172b4d;
 }
 
+.recent-work .primary {
+  grid-area: primary;
+}
 h2.primary {
   margin-top: 20px;
 }
@@ -234,6 +237,8 @@ hr {
 
 .tags ul {
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tags ul li {
@@ -463,6 +468,39 @@ hr {
   .supporting-text {
     letter-spacing: 0.5px;
     font-size: 1rem;
+  }
+  .recent-work {
+    grid-template-areas: "primary primary primary";
+  }
+  .card-flow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  hr {
+    display: none;
+  }
+  .about-me .text {
+    background-image: url("../images/pictures/about-me-bottom-desktop.svg");
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    padding: 0 15px;
+  }
+  .about-me .text .supporting-text {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  .about-me .text > * {
+    margin-bottom: 15px;
+  }
+  .about-me .text .action1 {
+    padding: 15px 20px;
+    top: 15px;
+    border-radius: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: Inter, serif;
+    margin-bottom: 20px;
   }
   #app-bar-mobile {
     display: none;
