@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap");
-@import url("./desktop.css");
+
 html,
 body {
   margin: 0;
@@ -8,12 +8,20 @@ body {
 
 body {
   background: #e5e5e5;
+  font-family: Inter, serif;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
 #main-mobile {
   background: #fff;
   position: relative;
-  width: 100vw;
+  width: 100%;
   max-width: 375px;
   margin: 5vh auto;
   padding-bottom: 100px;
@@ -27,9 +35,22 @@ body {
   margin-left: 5%;
   margin-right: 5%;
 }
-
+#app-bar-desktop {
+  display: none;
+}
+#app-bar-desktop ul {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0 30px;
+}
+#app-bar-desktop ul a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #344563;
+  font-weight: bold;
+}
 .heading {
-  background-image: url("./images/pictures/header-illsutration-mobile.svg");
+  background-image: url("../images/pictures/header-illsutration-mobile.svg");
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -44,8 +65,7 @@ body {
   width: 90px;
   left: 2%;
   top: 2%;
-  text-decoration: none;
-  font-family: Inter, serif;
+  /* font-family: Inter, serif; */
   font-size: 1.3rem;
   font-style: normal;
   font-weight: 600;
@@ -66,11 +86,9 @@ body {
 }
 
 .primary {
-  width: 100vw;
-  max-width: 327px;
+  width: 100%;
   margin-top: 8vw;
   flex: 1;
-  font-family: Inter, serif;
   font-size: 2.5rem;
   font-style: normal;
   font-weight: 700;
@@ -97,12 +115,13 @@ h2.primary {
   flex: 1;
   padding: 0;
   width: 170px;
-  max-width: 90vw;
 }
-
+.recent-work .card ul {
+  display: flex;
+  justify-content: space-evenly;
+}
 .supporting-text {
-  width: 100vw;
-  max-width: 327px;
+  width: 84%;
   flex: 1;
   font-family: Inter, serif;
   font-size: 1.2rem;
@@ -129,8 +148,7 @@ h2.primary {
 #action {
   display: flex;
   height: 5%;
-  width: 100vw;
-  max-width: 327px;
+  width: 100%;
   justify-content: center;
   flex: 1;
 }
@@ -138,12 +156,12 @@ h2.primary {
 #action .icon {
   height: 6vw;
   width: 6vw;
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 10px;
+  max-height: 10px;
   border-radius: 50%;
   padding: 2%;
   border: 1px solid #dfe1e6;
-  background-image: url("./images/icons/Disabled.svg");
+  background-image: url("../images/icons/Disabled.svg");
 }
 
 .recent-work {
@@ -194,7 +212,7 @@ hr {
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
-  background-image: url("./images/pictures/about-me-bottom.svg");
+  background-image: url("../images/pictures/about-me-bottom.svg");
   background-size: cover;
 }
 
@@ -216,7 +234,6 @@ hr {
 
 .tags ul {
   padding: 0;
-  list-style: none;
 }
 
 .tags ul li {
@@ -229,7 +246,6 @@ hr {
 }
 
 .tags ul a {
-  text-decoration: none;
   color: #3a4a42;
   font-family: Inter, serif;
   font-size: 0.8rem;
@@ -280,7 +296,7 @@ hr {
   max-height: 80px;
   background-color: white;
   display: block;
-  background-image: url("./images/icons/IconLangguage.svg");
+  background-image: url("../images/icons/IconLangguage.svg");
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
@@ -292,11 +308,11 @@ hr {
 }
 
 #frameworks {
-  background-image: url("./images/icons/IconName.svg");
+  background-image: url("../images/icons/IconName.svg");
 }
 
 #skills {
-  background-image: url("./images/icons/IconName-1.svg");
+  background-image: url("../images/icons/IconName-1.svg");
 }
 
 .about-me ul li a {
@@ -323,7 +339,7 @@ hr {
   height: 150px;
   margin-bottom: -60px;
   display: block;
-  background-image: url("./images/pictures/about-me-top.svg");
+  background-image: url("../images/pictures/about-me-top.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
@@ -333,7 +349,7 @@ hr {
   padding: 10px 5%;
   font-family: Inter, sans-serif;
   letter-spacing: 0;
-  background-image: url("./images/pictures/contact-form-image.svg");
+  background-image: url("../images/pictures/contact-form-image.svg");
   background-repeat: no-repeat;
   background-position: bottom right;
 }
@@ -355,9 +371,7 @@ hr {
 #form .form ul {
   display: flex;
   flex-direction: column;
-  padding: 0;
   margin: 0;
-  list-style-type: none;
 }
 
 #form .form ul li {
@@ -423,4 +437,37 @@ hr {
 .form .primary {
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+/*and (max-width: 1100px)*/
+@media all and (min-width: 992px) {
+  #main-mobile {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .heading {
+    background-image: url("../images/pictures/Desktop-heading-Background.svg");
+    background-size: cover;
+    padding: 10px 14%;
+  }
+  .heading > * {
+    flex: 0;
+    margin-bottom: 15px;
+  }
+  .primary {
+    margin-top: 5vw;
+  }
+  .social-media-icons {
+    margin-bottom: 7%;
+  }
+  .supporting-text {
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+  }
+  #app-bar-mobile {
+    display: none;
+  }
+  #app-bar-desktop {
+    display: block;
+  }
 }
