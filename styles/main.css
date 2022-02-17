@@ -81,9 +81,9 @@ a {
 .about-me ul li a {
   background-color: #fff;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   color: #36b37e;
-  box-shadow: 0 0 5px rgba(20, 20, 20, 0.137);
+  box-shadow: 0 0 5px rgba(58, 57, 57, 0.137);
 }
 
 #app-bar-desktop ul a {
@@ -341,7 +341,7 @@ hr {
 
 .about-me ul li {
   padding: 0;
-  margin-left: 7px;
+  margin-left: 4px;
   margin-bottom: 24px;
 }
 
@@ -563,7 +563,7 @@ hr {
   }
 
   .tags ul a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   #form .form {
