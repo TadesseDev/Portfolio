@@ -8,16 +8,34 @@ body {
 
 body {
   background: #e5e5e5;
+  font-family: Inter, serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 #main-mobile {
   background: #fff;
   position: relative;
-  width: 100vw;
+  width: 100%;
   max-width: 375px;
   margin: 5vh auto;
   padding-bottom: 100px;
   overflow: hidden;
+}
+
+#tool-bar-m {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 #tool-bar {
@@ -28,8 +46,54 @@ body {
   margin-right: 5%;
 }
 
+#app-bar-desktop {
+  display: none;
+}
+
+.tags ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-me ul {
+  justify-content: center;
+}
+
+.recent-work .card ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#app-bar-desktop ul {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0 30px;
+}
+
+.tags ul a {
+  color: #3a4a42;
+  font-family: Inter, serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.about-me ul li a {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  color: #36b37e;
+  box-shadow: 0 0 5px rgba(58, 57, 57, 0.137);
+}
+
+#app-bar-desktop ul a {
+  font-size: 1rem;
+  color: #344563;
+  font-weight: bold;
+}
+
 .heading {
-  background-image: url("./images/pictures/header-illsutration-mobile.svg");
+  background-image: url("../images/pictures/header-illsutration-mobile.svg");
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -44,8 +108,6 @@ body {
   width: 90px;
   left: 2%;
   top: 2%;
-  text-decoration: none;
-  font-family: Inter, serif;
   font-size: 1.3rem;
   font-style: normal;
   font-weight: 600;
@@ -66,17 +128,19 @@ body {
 }
 
 .primary {
-  width: 100vw;
-  max-width: 327px;
+  width: 100%;
   margin-top: 8vw;
   flex: 1;
-  font-family: Inter, serif;
   font-size: 2.5rem;
   font-style: normal;
   font-weight: 700;
   text-align: center;
   margin-bottom: 0;
   color: #172b4d;
+}
+
+.recent-work .primary {
+  font-size: 3rem;
 }
 
 h2.primary {
@@ -91,18 +155,17 @@ h2.primary {
 .social-media-icons {
   display: flex;
   align-items: baseline;
+  min-width: max-content;
   justify-content: space-between;
   list-style: none;
   flex-wrap: wrap;
   flex: 1;
   padding: 0;
   width: 170px;
-  max-width: 90vw;
 }
 
 .supporting-text {
-  width: 100vw;
-  max-width: 327px;
+  width: 84%;
   flex: 1;
   font-family: Inter, serif;
   font-size: 1.2rem;
@@ -129,8 +192,7 @@ h2.primary {
 #action {
   display: flex;
   height: 5%;
-  width: 100vw;
-  max-width: 327px;
+  width: 100%;
   justify-content: center;
   flex: 1;
 }
@@ -138,23 +200,17 @@ h2.primary {
 #action .icon {
   height: 6vw;
   width: 6vw;
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 10px;
+  max-height: 10px;
   border-radius: 50%;
   padding: 2%;
   border: 1px solid #dfe1e6;
-  background-image: url("./images/icons/Disabled.svg");
+  background-image: url("../images/icons/Disabled.svg");
 }
 
 .recent-work {
   display: grid;
   gap: 5px 0;
-  justify-items: center;
-}
-
-.recent-work .primary {
-  margin-top: 0;
-  font-size: 3rem;
 }
 
 hr {
@@ -177,8 +233,7 @@ hr {
   background-color: #ebf0ee;
   display: grid;
   gap: 0;
-  justify-content: center;
-  grid-template-rows: 250px 250px;
+  grid-template-rows: 250px minmax(250px, max-content);
   grid-template-areas: "." "text";
   border-radius: 10px;
   margin: 5%;
@@ -186,7 +241,7 @@ hr {
 
 .about-me .card-flow .card {
   position: relative;
-  grid-template-rows: 180px 180px;
+  grid-template-rows: minmax(180px, max-content) minmax(180px, max-content);
 }
 
 .about-me .text {
@@ -194,8 +249,6 @@ hr {
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
-  background-image: url("./images/pictures/about-me-bottom.svg");
-  background-size: cover;
 }
 
 .card-flow .card .text {
@@ -214,11 +267,6 @@ hr {
   color: #3a4a42;
 }
 
-.tags ul {
-  padding: 0;
-  list-style: none;
-}
-
 .tags ul li {
   float: left;
   padding: 2% 3%;
@@ -226,14 +274,6 @@ hr {
   border-radius: 5px;
   background-color: #ebf0ee;
   margin-bottom: 10px;
-}
-
-.tags ul a {
-  text-decoration: none;
-  color: #3a4a42;
-  font-family: Inter, serif;
-  font-size: 0.8rem;
-  font-weight: 600;
 }
 
 .text .action {
@@ -245,8 +285,8 @@ hr {
   border: none;
   outline: none;
   padding: 4% 6%;
-  position: relative;
-  top: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   border-radius: 10px;
   border-radius: 5px;
   color: #fff;
@@ -280,7 +320,7 @@ hr {
   max-height: 80px;
   background-color: white;
   display: block;
-  background-image: url("./images/icons/IconLangguage.svg");
+  background-image: url("../images/icons/IconLangguage.svg");
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
@@ -292,28 +332,16 @@ hr {
 }
 
 #frameworks {
-  background-image: url("./images/icons/IconName.svg");
+  background-image: url("../images/icons/IconName.svg");
 }
 
 #skills {
-  background-image: url("./images/icons/IconName-1.svg");
-}
-
-.about-me ul li a {
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  color: #36b37e;
-  box-shadow: 0 0 5px rgba(20, 20, 20, 0.137);
-}
-
-.about-me ul {
-  justify-content: center;
+  background-image: url("../images/icons/IconName-1.svg");
 }
 
 .about-me ul li {
   padding: 0;
-  margin-left: 7px;
+  margin-left: 4px;
   margin-bottom: 24px;
 }
 
@@ -323,7 +351,19 @@ hr {
   height: 150px;
   margin-bottom: -60px;
   display: block;
-  background-image: url("./images/pictures/about-me-top.svg");
+  background-image: url("../images/pictures/about-me-top.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.bottom-background {
+  align-self: flex-start;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-top: -50px;
+  background-image: url("../images/pictures/about-me-bottom.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
@@ -333,7 +373,7 @@ hr {
   padding: 10px 5%;
   font-family: Inter, sans-serif;
   letter-spacing: 0;
-  background-image: url("./images/pictures/contact-form-image.svg");
+  background-image: url("../images/pictures/contact-form-image.svg");
   background-repeat: no-repeat;
   background-position: bottom right;
 }
@@ -355,9 +395,7 @@ hr {
 #form .form ul {
   display: flex;
   flex-direction: column;
-  padding: 0;
   margin: 0;
-  list-style-type: none;
 }
 
 #form .form ul li {
@@ -423,4 +461,171 @@ hr {
 .form .primary {
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media all and (min-width: 992px) {
+  #main-mobile {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 0;
+  }
+
+  .heading {
+    background-image: url("../images/pictures/Desktop-heading-Background.svg");
+    background-size: auto 100%;
+    padding: 10px;
+  }
+
+  .heading > * {
+    flex: 0;
+    margin-bottom: 3%;
+  }
+
+  .primary {
+    margin-top: 5vw;
+  }
+
+  .supporting-text {
+    letter-spacing: 0.5px;
+    font-size: 1.4rem;
+    max-width: 800px;
+  }
+
+  .recent-work {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .about-me {
+    padding: 5%;
+  }
+
+  .card-flow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  hr {
+    display: none;
+  }
+
+  .about-me .text {
+    padding: 0 15px;
+  }
+
+  .about-me .text .supporting-text {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .about-me .text .action1 {
+    padding: 15px 20px;
+  }
+
+  .card-flow .card {
+    margin: 2%;
+  }
+
+  #form {
+    background-image: url("../images/pictures/contact-form-image-desktop.svg");
+    background-size: 150px;
+    padding: 0 5% 16% 5%;
+  }
+
+  .form-image1,
+  .form-image2 {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 70px;
+    margin-top: -200px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .form-image1 {
+    background-image: url("../images/pictures/contact-form-image-img1.svg");
+  }
+
+  .form-image2 {
+    background-image: url("../images/pictures/contact-form-image-desktop-2.svg");
+    margin-top: -180px;
+    margin-left: 250px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .tags ul a {
+    font-size: 1.1rem;
+  }
+
+  #form .form {
+    display: grid;
+    margin: 10% 0 0 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: center;
+  }
+
+  #form .form legend {
+    display: contents;
+  }
+
+  #form .form ul li:last-child {
+    align-self: flex-start;
+  }
+
+  form .primary {
+    font-size: 1.8rem;
+  }
+
+  .top-background {
+    margin-bottom: -5%;
+    margin-right: -7%;
+    background-image: url("../images/pictures/about-me-top-desktop.svg");
+  }
+
+  .bottom-background {
+    background-image: url("../images/pictures/about-me-bottom-desktop.svg");
+    width: 200px;
+    height: 200px;
+    margin-top: -10%;
+    margin-left: -7%;
+  }
+
+  .social-media-icons .icon {
+    margin-left: 20px;
+    min-width: max-content;
+  }
+
+  #form .form input {
+    padding: 1% 0 1% 5%;
+  }
+
+  #form .form textarea {
+    line-height: 1.5rem;
+  }
+
+  #footer .my-email {
+    display: none;
+  }
+
+  #footer {
+    border-top: 1px solid rgba(104, 129, 143, 0.699);
+  }
+
+  #app-bar-mobile {
+    display: none;
+  }
+
+  #app-bar-desktop {
+    display: block;
+  }
 }
