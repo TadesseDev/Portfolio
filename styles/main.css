@@ -30,6 +30,14 @@ a {
   overflow: hidden;
 }
 
+#tool-bar-m {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 #tool-bar {
   display: flex;
   justify-content: space-between;
