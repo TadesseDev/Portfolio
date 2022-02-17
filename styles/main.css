@@ -112,6 +112,7 @@ h2.primary {
 .social-media-icons {
   display: flex;
   align-items: baseline;
+  min-width: max-content;
   justify-content: space-between;
   list-style: none;
   flex-wrap: wrap;
