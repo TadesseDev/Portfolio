@@ -87,7 +87,7 @@ a {
 }
 
 #app-bar-desktop ul a {
-  font-size: 15px;
+  font-size: 1rem;
   color: #344563;
   font-weight: bold;
 }
@@ -140,8 +140,6 @@ a {
 }
 
 .recent-work .primary {
-  grid-area: primary;
-  margin-top: 0;
   font-size: 3rem;
 }
 
@@ -213,7 +211,6 @@ h2.primary {
 .recent-work {
   display: grid;
   gap: 5px 0;
-  justify-items: center;
 }
 
 hr {
@@ -236,7 +233,6 @@ hr {
   background-color: #ebf0ee;
   display: grid;
   gap: 0;
-  justify-content: center;
   grid-template-rows: 250px minmax(250px, max-content);
   grid-template-areas: "." "text";
   border-radius: 10px;
@@ -245,7 +241,7 @@ hr {
 
 .about-me .card-flow .card {
   position: relative;
-  grid-template-rows: 180px 180px;
+  grid-template-rows: minmax(180px, max-content) minmax(180px, max-content);
 }
 
 .about-me .text {
@@ -475,20 +471,20 @@ hr {
 
 @media all and (min-width: 992px) {
   #main-mobile {
-    max-width: 1100px;
+    max-width: 100%;
     margin: 0 auto;
     padding-bottom: 0;
   }
 
   .heading {
     background-image: url("../images/pictures/Desktop-heading-Background.svg");
-    background-size: cover;
-    padding: 10px 14%;
+    background-size: auto 100%;
+    padding: 10px;
   }
 
   .heading > * {
     flex: 0;
-    margin-bottom: 15px;
+    margin-bottom: 3%;
   }
 
   .primary {
@@ -497,11 +493,11 @@ hr {
 
   .supporting-text {
     letter-spacing: 0.5px;
-    font-size: 1rem;
+    font-size: 1.4rem;
+    max-width: 800px;
   }
 
   .recent-work {
-    grid-template-areas: "primary primary primary";
     padding-left: 5%;
     padding-right: 5%;
   }
@@ -564,6 +560,10 @@ hr {
     margin-left: 250px;
     width: 100px;
     height: 100px;
+  }
+
+  .tags ul a {
+    font-size: 1.2rem;
   }
 
   #form .form {
