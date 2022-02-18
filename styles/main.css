@@ -299,9 +299,11 @@ hr {
   transition-property: padding;
   transition-duration: 0.5s;
 }
+
 .text .action:hover {
   padding: 4% 8%;
 }
+
 .about-me .text .supporting-text {
   color: #42526e;
   font-size: 1.5rem;
