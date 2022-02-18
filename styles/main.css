@@ -380,6 +380,24 @@ hr {
   background-position: right;
 }
 
+.rotate {
+  animation-name: rotate-in-a-while;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate-in-a-while {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 #form {
   padding: 10px 5%;
   font-family: Inter, sans-serif;
