@@ -182,6 +182,11 @@ h2.primary {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: transform 1s ease;
+}
+
+.icon:hover {
+  transform: scale(1.5);
 }
 
 .social-media-icons .icon {
