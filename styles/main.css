@@ -296,8 +296,12 @@ hr {
   border-radius: 5px;
   color: #fff;
   font-family: Inter, serif;
+  transition-property: padding;
+  transition-duration: 0.5s;
 }
-
+.text .action:hover {
+  padding: 4% 8%;
+}
 .about-me .text .supporting-text {
   color: #42526e;
   font-size: 1.5rem;
