@@ -24,9 +24,7 @@ a {
   background: #fff;
   position: relative;
   width: 100%;
-  max-width: 375px;
   margin: 5vh auto;
-  padding-bottom: 100px;
   overflow: hidden;
 }
 
