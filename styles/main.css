@@ -380,7 +380,7 @@ hr {
 
 .rotate {
   animation-name: rotate-in-a-while;
-  animation-duration: 15s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
 }
 
