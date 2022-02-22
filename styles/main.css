@@ -80,7 +80,7 @@ a {
   background-color: #fff;
   padding: 10px;
   border-radius: 10px;
-  color: #36b37e;
+  color: #126442;
   box-shadow: 0 0 5px rgba(58, 57, 57, 0.137);
 }
 
@@ -284,7 +284,7 @@ hr {
   clear: left;
   margin-left: 50%;
   transform: translate(-50%, 0);
-  background-color: #36b37f;
+  background-color: #126442;
   border: none;
   outline: none;
   padding: 4% 6%;
@@ -309,7 +309,7 @@ hr {
 }
 
 .about-me .text .action1 {
-  background-color: #36b37f;
+  background-color: #126442;
   border: none;
   outline: none;
   padding: 4% 6%;
@@ -466,7 +466,7 @@ hr {
   font-size: 1rem;
   padding: 12px;
   border: none;
-  background: #36b37f;
+  background: #126442;
   font-weight: 500;
   color: #fff;
 }
