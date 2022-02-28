@@ -62,15 +62,62 @@ a {
   border-bottom-right-radius: 25px;
 }
 
+.tags ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#about-me ul {
+  justify-content: center;
+}
+
+#contact-form ul {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+}
+
 #app-bar-menus.show ul {
   min-width: 100%;
   min-height: 100%;
-  margin: 0px;
+  margin: 0;
+}
+
+.tags ul li {
+  float: left;
+  padding: 2% 3%;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: #ebf0ee;
+  margin-bottom: 10px;
+}
+
+#about-me ul li {
+  padding: 0;
+  margin-left: 4px;
+  margin-bottom: 24px;
 }
 
 #app-bar-menus.show li {
   display: block;
   margin: 3vh 2vw;
+}
+
+.tags ul a {
+  color: #3a4a42;
+  font-family: Inter, serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+#about-me ul li a {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  color: #126442;
+  box-shadow: 0 0 5px rgba(58, 57, 57, 0.137);
 }
 
 #app-bar-menus.show li a {
@@ -87,34 +134,9 @@ a {
   background-position: center;
 }
 
-.tags ul {
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#about-me ul {
-  justify-content: center;
-}
-
 #recent-work .card ul {
   display: flex;
   justify-content: space-evenly;
-}
-
-.tags ul a {
-  color: #3a4a42;
-  font-family: Inter, serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-#about-me ul li a {
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  color: #126442;
-  box-shadow: 0 0 5px rgba(58, 57, 57, 0.137);
 }
 
 .heading {
@@ -162,6 +184,11 @@ a {
   text-align: center;
   margin-bottom: 0;
   color: #172b4d;
+}
+
+.form .primary {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 #recent-work .primary {
@@ -274,18 +301,18 @@ hr {
   grid-template-rows: minmax(180px, max-content) minmax(180px, max-content);
 }
 
-#about-me .text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
 .card-flow .card .text {
   grid-area: text;
   background-color: #fff;
   margin: 2px;
   border-radius: 10px;
+}
+
+#about-me .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
 .project-title,
@@ -295,15 +322,6 @@ hr {
   font-size: 1.8rem;
   text-align: center;
   color: #3a4a42;
-}
-
-.tags ul li {
-  float: left;
-  padding: 2% 3%;
-  margin: 0 5px;
-  border-radius: 5px;
-  background-color: #ebf0ee;
-  margin-bottom: 10px;
 }
 
 .text .action {
@@ -375,12 +393,6 @@ hr {
   background-image: url("../images/icons/IconName-1.svg");
 }
 
-#about-me ul li {
-  padding: 0;
-  margin-left: 4px;
-  margin-bottom: 24px;
-}
-
 .top-background {
   align-self: flex-end;
   width: 150px;
@@ -439,13 +451,6 @@ hr {
   padding: 0;
   border: none;
   display: grid;
-}
-
-#contact-form ul {
-  width: 100%;
-  display: flex;
-  padding: 0;
-  justify-content: center;
 }
 
 #contact-form .form ul {
@@ -514,11 +519,6 @@ hr {
   font-size: 1.2rem;
 }
 
-.form .primary {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
 #footer {
   display: flex;
   flex-direction: column;
@@ -536,6 +536,10 @@ hr {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 0 30px;
+  }
+
+  .tags ul a {
+    font-size: 1.1rem;
   }
 
   #app-bar-menus ul a {
@@ -628,10 +632,6 @@ hr {
     margin-left: 250px;
     width: 100px;
     height: 100px;
-  }
-
-  .tags ul a {
-    font-size: 1.1rem;
   }
 
   #contact-form .form {
