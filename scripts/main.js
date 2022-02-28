@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cancel.classList.add('menu-icon');
     const img = document.createElement('img');
     img.setAttribute('src', './images/icons/Cancel.svg');
-    img.setAttribute('alt', 'lose');
+    img.setAttribute('alt', 'close');
     cancel.appendChild(img);
     humBurger.classList.add('display-none');
     menu.appendChild(cancel);
