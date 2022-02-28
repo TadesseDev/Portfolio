@@ -24,7 +24,6 @@ a {
   background: #fff;
   position: relative;
   width: 100%;
-  margin: 5vh auto;
   overflow: hidden;
 }
 
@@ -44,8 +43,23 @@ a {
   margin-right: 5%;
 }
 
-#app-bar-desktop {
+.display-none {
   display: none;
+}
+
+#app-bar-menus.show {
+  min-width: 100%;
+  position: relative;
+  background-color: #e1e4fcba;
+}
+
+#app-bar-menus.show #tool-bar {
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #fff;
+  flex-direction: column;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .tags ul {
@@ -54,19 +68,41 @@ a {
   flex-wrap: wrap;
 }
 
-.about-me ul {
+#about-me ul {
   justify-content: center;
 }
 
-.recent-work .card ul {
+#contact-form ul {
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  padding: 0;
+  justify-content: center;
 }
 
-#app-bar-desktop ul {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 0 30px;
+#app-bar-menus.show ul {
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+.tags ul li {
+  float: left;
+  padding: 2% 3%;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: #ebf0ee;
+  margin-bottom: 10px;
+}
+
+#about-me ul li {
+  padding: 0;
+  margin-left: 4px;
+  margin-bottom: 24px;
+}
+
+#app-bar-menus.show li {
+  display: block;
+  margin: 3vh 2vw;
 }
 
 .tags ul a {
@@ -76,7 +112,7 @@ a {
   font-weight: 600;
 }
 
-.about-me ul li a {
+#about-me ul li a {
   background-color: #fff;
   padding: 10px;
   border-radius: 10px;
@@ -84,10 +120,23 @@ a {
   box-shadow: 0 0 5px rgba(58, 57, 57, 0.137);
 }
 
-#app-bar-desktop ul a {
-  font-size: 1rem;
-  color: #344563;
-  font-weight: bold;
+#app-bar-menus.show li a {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #3a4a42;
+}
+
+#app-bar-menus.show #closeMenu {
+  width: 100%;
+  height: 40px;
+  background-image: url("../images/icons/Home-Indicator.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#recent-work .card ul {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .heading {
@@ -137,7 +186,12 @@ a {
   color: #172b4d;
 }
 
-.recent-work .primary {
+.form .primary {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#recent-work .primary {
   font-size: 3rem;
 }
 
@@ -211,7 +265,7 @@ h2.primary {
   background-image: url("../images/icons/Disabled.svg");
 }
 
-.recent-work {
+#recent-work {
   display: grid;
   gap: 5px 0;
 }
@@ -242,16 +296,9 @@ hr {
   margin: 5%;
 }
 
-.about-me .card-flow .card {
+#about-me .card-flow .card {
   position: relative;
   grid-template-rows: minmax(180px, max-content) minmax(180px, max-content);
-}
-
-.about-me .text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
 }
 
 .card-flow .card .text {
@@ -261,6 +308,13 @@ hr {
   border-radius: 10px;
 }
 
+#about-me .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
 .project-title,
 .title {
   font-family: Inter, serif;
@@ -268,15 +322,6 @@ hr {
   font-size: 1.8rem;
   text-align: center;
   color: #3a4a42;
-}
-
-.tags ul li {
-  float: left;
-  padding: 2% 3%;
-  margin: 0 5px;
-  border-radius: 5px;
-  background-color: #ebf0ee;
-  margin-bottom: 10px;
 }
 
 .text .action {
@@ -302,13 +347,13 @@ hr {
   padding: 4% 8%;
 }
 
-.about-me .text .supporting-text {
+#about-me .text .supporting-text {
   color: #42526e;
   font-size: 1.5rem;
   font-weight: 400;
 }
 
-.about-me .text .action1 {
+#about-me .text .action1 {
   background-color: #126442;
   border: none;
   outline: none;
@@ -322,7 +367,7 @@ hr {
   margin-bottom: 20px;
 }
 
-.about-me .icon .centerIcon {
+#about-me .icon .centerIcon {
   width: 15vw;
   height: 15vw;
   max-width: 80px;
@@ -346,12 +391,6 @@ hr {
 
 #skills {
   background-image: url("../images/icons/IconName-1.svg");
-}
-
-.about-me ul li {
-  padding: 0;
-  margin-left: 4px;
-  margin-bottom: 24px;
 }
 
 .top-background {
@@ -398,7 +437,7 @@ hr {
   }
 }
 
-#form {
+#contact-form {
   padding: 10px 5%;
   font-family: Inter, sans-serif;
   letter-spacing: 0;
@@ -407,31 +446,24 @@ hr {
   background-position: bottom right;
 }
 
-#form .form {
+#contact-form .form {
   margin: 0;
   padding: 0;
   border: none;
   display: grid;
 }
 
-#form ul {
-  width: 100%;
-  display: flex;
-  padding: 0;
-  justify-content: center;
-}
-
-#form .form ul {
+#contact-form .form ul {
   display: flex;
   flex-direction: column;
   margin: 0;
 }
 
-#form .form ul li {
+#contact-form .form ul li {
   margin: 10px 0;
 }
 
-#form .form input {
+#contact-form .form input {
   width: 95%;
   padding: 2% 0 2% 5%;
   font-size: 1rem;
@@ -441,7 +473,7 @@ hr {
   border: 1px solid #d0d9d4;
 }
 
-#form .form textarea {
+#contact-form .form textarea {
   width: 95%;
   padding: 2% 0 2% 5%;
   font-size: 1rem;
@@ -451,16 +483,16 @@ hr {
   border-radius: 4px;
 }
 
-#form .form textarea:hover,
-#form .form input:hover {
+#contact-form .form textarea:hover,
+#contact-form .form input:hover {
   border: 2px solid #238ef3;
 }
 
-#form .form ul li:last-child {
+#contact-form .form ul li:last-child {
   align-self: center;
 }
 
-#form .form button {
+#contact-form .form button {
   border-radius: 4px;
   letter-spacing: 0.1rem;
   font-size: 1rem;
@@ -471,25 +503,20 @@ hr {
   color: #fff;
 }
 
-#form .form .button button:hover {
+#contact-form .form .button button:hover {
   border-radius: 0;
   padding: 14px;
 }
 
-#form ul .icon {
+#contact-form ul .icon {
   margin-left: 20px;
 }
 
-#form .my-email {
+#contact-form .my-email {
   text-align: center;
   color: #42526e;
   font-weight: 400;
   font-size: 1.2rem;
-}
-
-.form .primary {
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 
 #footer {
@@ -503,6 +530,22 @@ hr {
     max-width: 100%;
     margin: 0 auto;
     padding-bottom: 0;
+  }
+
+  #app-bar-menus ul {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 0 30px;
+  }
+
+  .tags ul a {
+    font-size: 1.1rem;
+  }
+
+  #app-bar-menus ul a {
+    font-size: 1rem;
+    color: #344563;
+    font-weight: bold;
   }
 
   .heading {
@@ -526,12 +569,12 @@ hr {
     max-width: 800px;
   }
 
-  .recent-work {
+  #recent-work {
     padding-left: 5%;
     padding-right: 5%;
   }
 
-  .about-me {
+  #about-me {
     padding: 5%;
   }
 
@@ -544,16 +587,16 @@ hr {
     display: none;
   }
 
-  .about-me .text {
+  #about-me .text {
     padding: 0 15px;
   }
 
-  .about-me .text .supporting-text {
+  #about-me .text .supporting-text {
     font-size: 1.2rem;
     letter-spacing: 1px;
   }
 
-  .about-me .text .action1 {
+  #about-me .text .action1 {
     padding: 15px 20px;
   }
 
@@ -561,7 +604,7 @@ hr {
     margin: 2%;
   }
 
-  #form {
+  #contact-form {
     background-image: url("../images/pictures/contact-form-image-desktop.svg");
     background-size: 150px;
     padding: 0 5% 16% 5%;
@@ -591,11 +634,7 @@ hr {
     height: 100px;
   }
 
-  .tags ul a {
-    font-size: 1.1rem;
-  }
-
-  #form .form {
+  #contact-form .form {
     display: grid;
     margin: 10% 0 0 0;
     grid-template-columns: 1fr 1fr;
@@ -603,11 +642,11 @@ hr {
     align-items: center;
   }
 
-  #form .form legend {
+  #contact-form .form legend {
     display: contents;
   }
 
-  #form .form ul li:last-child {
+  #contact-form .form ul li:last-child {
     align-self: flex-start;
   }
 
@@ -634,11 +673,11 @@ hr {
     min-width: max-content;
   }
 
-  #form .form input {
+  #contact-form .form input {
     padding: 1% 0 1% 5%;
   }
 
-  #form .form textarea {
+  #contact-form .form textarea {
     line-height: 1.5rem;
   }
 
@@ -654,7 +693,7 @@ hr {
     display: none;
   }
 
-  #app-bar-desktop {
+  #app-bar-menus {
     display: block;
   }
 }

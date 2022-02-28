@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Tadesse Alemayehu portfolio home page" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
@@ -15,8 +17,6 @@
 
       gtag("config", "UA-221054800-1");
     </script>
-    <meta name="description" content="Tadesse Alemayehu portfolio home page" />
-    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/main.css" />
@@ -35,20 +35,21 @@
         </nav>
       </header>
       <section class="heading">
-        <header id="app-bar-desktop">
+        <header id="app-bar-menus" class="display-none">
           <nav id="tool-bar">
             <ul class="menu">
               <li>
-                <a href="#">Portfolio</a>
+                <a href="#main-mobile">Portfolio</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="#about-me">About</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <a href="#contact-form">Contact</a>
               </li>
             </ul>
           </nav>
+          <div id="closeMenu"></div>
         </header>
         <h1 class="primary">
           Hey there. I’m Tadesse
@@ -100,7 +101,7 @@
           <span class="icon"></span>
         </div>
       </section>
-      <section class="recent-work">
+      <section id="recent-work">
         <h1 class="primary">My Recent Works</h1>
         <hr />
         <div class="card-flow">
@@ -190,7 +191,7 @@
           </div>
         </div>
       </section>
-      <section class="about-me">
+      <section id="about-me">
         <div class="text">
           <span class="top-background rotate"></span>
           <h2 class="primary">About me</h2>
@@ -284,7 +285,7 @@
           </div>
         </div>
       </section>
-      <section id="form">
+      <section id="contact-form">
         <form action="https://formspree.io/f/mwkyoldg" method="POST">
           <fieldset class="form">
             <legend class="text">
@@ -373,5 +374,6 @@
         <div class="my-email">tadalem26@gmail.com</div>
       </footer>
     </div>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
