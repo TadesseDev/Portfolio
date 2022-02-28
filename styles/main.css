@@ -44,7 +44,7 @@ a {
   margin-right: 5%;
 }
 
-#app-bar-desktop {
+.display-none {
   display: none;
 }
 
@@ -63,12 +63,6 @@ a {
   justify-content: space-evenly;
 }
 
-#app-bar-desktop ul {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 0 30px;
-}
-
 .tags ul a {
   color: #3a4a42;
   font-family: Inter, serif;
@@ -82,12 +76,6 @@ a {
   border-radius: 10px;
   color: #126442;
   box-shadow: 0 0 5px rgba(58, 57, 57, 0.137);
-}
-
-#app-bar-desktop ul a {
-  font-size: 1rem;
-  color: #344563;
-  font-weight: bold;
 }
 
 .heading {
@@ -505,6 +493,18 @@ hr {
     padding-bottom: 0;
   }
 
+  #app-bar-menus ul {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 0 30px;
+  }
+
+  #app-bar-menus ul a {
+    font-size: 1rem;
+    color: #344563;
+    font-weight: bold;
+  }
+
   .heading {
     background-image: url("../images/pictures/Desktop-heading-Background.svg");
     background-size: auto 100%;
@@ -654,7 +654,7 @@ hr {
     display: none;
   }
 
-  #app-bar-desktop {
+  #app-bar-menus {
     display: block;
   }
 }
