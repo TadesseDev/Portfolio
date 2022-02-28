@@ -24,7 +24,6 @@ a {
   background: #fff;
   position: relative;
   width: 100%;
-  margin: 5vh auto;
   overflow: hidden;
 }
 
@@ -49,14 +48,28 @@ a {
 }
 
 #app-bar-menus.show {
-  background-color: #fff;
   min-width: 100%;
-  min-height: 50vh;
-  max-height: 50vh;
   position: relative;
+  background-color: #e1e4fcba;
+}
+
+#app-bar-menus.show #tool-bar {
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #fff;
+  flex-direction: column;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+#app-bar-menus.show ul {
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0px;
 }
 
 #app-bar-menus.show li {
+  display: block;
   margin: 2vh 2vw;
 }
 
@@ -68,7 +81,10 @@ a {
 
 #app-bar-menus.show #closeMenu {
   width: 100%;
-  height: 20px;
+  height: 40px;
+  background-image: url("../images/icons/Home-Indicator.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .tags ul {
