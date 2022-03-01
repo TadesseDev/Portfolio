@@ -35,4 +35,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   returnHome.addEventListener('click', disposeMobileMenu);
+
+
+  /* Portfolio: details popup window */
+
+  // create Array having list of projects 
+  const recentWork = document.querySelector('#recent-work');
+  const ProjectObjects = recentWork.querySelectorAll('.card');
+  const arrayOfProjects = [];
+  ProjectObjects.forEach(project => {
+    const projectObject = {
+      name: project.getAttribute('data-name'),
+      description: project.querySelector('.project-title').textContent,
+      featuredImage: project.getAttribute('data-image'),
+      technologies: Array.from(project.querySelectorAll('li')),
+      liveVersion: project.getAttribute('data-live'),
+      source: project.getAttribute('data-source'),
+    }
+    arrayOfProjects.push(projectObject);
+  });
+
+  // create modal
+
 });
+
+//document.querySelectorAll(`[data-name]`);
+//document.querySelectorAll(`[data-name='project-1']`);
