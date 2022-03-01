@@ -533,16 +533,17 @@ hr {
   bottom: 0;
   width: 96%;
   min-height: 100vh;
-  background-color: #c1c7d0;
+  background-color: #a3b6d3c4;
   color: #3a4a42;
   padding: 2%;
 }
+
 #recent-work-modal .container {
   background-color: #fff;
   width: 85%;
   min-height: 95%;
   margin: auto;
-  padding: 5% 5% 5% 5%;
+  padding: 5%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -616,6 +617,45 @@ hr {
   margin-right: 3%;
 }
 @media all and (min-width: 992px) {
+  #recent-work-modal {
+    width: 70%;
+    height: fit-content;
+    padding: 3% 15%;
+  }
+
+  #recent-work-modal .container {
+    width: 85%;
+    min-height: 95%;
+    padding: 2%;
+  }
+
+  #recent-work-modal #technology {
+    order: 2;
+    margin-top: -50px;
+  }
+
+  #recent-work-modal .description {
+    order: 3;
+  }
+
+  #recent-work-modal #title {
+    width: 60%;
+  }
+
+  #recent-work-modal .links {
+    width: 30%;
+    margin-left: 100%;
+    transform: translate(-100%, -200%);
+  }
+
+  #recent-work-modal .links a {
+    font-size: 0.8rem;
+  }
+
+  #recent-work-modal #feature {
+    max-height: 80vh;
+  }
+
   #main-mobile {
     max-width: 100%;
     margin: 0 auto;

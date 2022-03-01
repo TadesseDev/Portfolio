@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const recentWork = document.querySelector('#recent-work');
   const ProjectObjects = recentWork.querySelectorAll('.card');
   const Projects = [];
+  const featureImageType = window.innerWidth < 922 ? "-mobile.svg" : ".svg";
   ProjectObjects.forEach(project => {
     const projectObject = {
       name: project.getAttribute('data-name'),
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       sapien eu velit porttitor semper. Aliquam sed elementum enim.
       Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
       et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: project.getAttribute('data-image'),
+      featuredImage: project.getAttribute('data-image') + featureImageType,
       featuredImageAlt: project.getAttribute('data-name') + ' Image',
       technologies: Array.from(project.querySelectorAll('li')),
       liveVersion: project.getAttribute('data-live'),
@@ -69,9 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // create modal
-  const hide_modal = () => { recentWorkModal.classList.add('display-none');
+  const hide_modal = () => {
+    recentWorkModal.classList.add('display-none');
     recentWorkModal.innerHTML = `<div class="container"> <div id="feature"> <span id="close-modal"></span> </div> </div>`;
-    fullPage.setAttribute('style', 'height: auto')}
+    fullPage.setAttribute('style', 'height: auto')
+  }
 
   const show_modal = (project) => {
     const featureImage = document.createElement('img');
@@ -107,11 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
     recentWorkModal.querySelector('.container').appendChild(description);
     recentWorkModal.querySelector('.container').appendChild(links);
     recentWorkModal.classList.remove('display-none');
-    fullPage.setAttribute('style', 'height: 0px')
+    fullPage.setAttribute('style', `height: ${recentWorkModal.scrollHeight}px`);
     dispose.addEventListener('click', () => hide_modal())
   }
 
+  document.querySelectorAll(`[data-name]`)[0].querySelector('.action').click();
 });
 
 //document.querySelectorAll(`[data-name]`);
-//document.querySelectorAll(`[data-name='project-1']`);
