@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
   ProjectObjects.forEach(project => {
     const projectObject = {
       name: project.getAttribute('data-name'),
-      description: project.querySelector('.project-title').textContent,
+      title: project.querySelector('.project-title').textContent,
+      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and`,
       featuredImage: project.getAttribute('data-image'),
       technologies: Array.from(project.querySelectorAll('li')),
       liveVersion: project.getAttribute('data-live'),
