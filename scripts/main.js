@@ -69,6 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // create modal
+  const hide_modal = () => { recentWorkModal.classList.add('display-none');
+    recentWorkModal.innerHTML = `<div class="container"> <div id="feature"> <span id="close-modal"></span> </div> </div>`;
+    fullPage.setAttribute('style', 'height: auto')}
 
   const show_modal = (project) => {
     const featureImage = document.createElement('img');
