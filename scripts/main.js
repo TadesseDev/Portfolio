@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // create Array having list of projects 
   const recentWork = document.querySelector('#recent-work');
   const ProjectObjects = recentWork.querySelectorAll('.card');
-  const arrayOfProjects = [];
+  const Projects = [];
   ProjectObjects.forEach(project => {
     const projectObject = {
       name: project.getAttribute('data-name'),
@@ -52,9 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
       liveVersion: project.getAttribute('data-live'),
       source: project.getAttribute('data-source'),
     }
-    arrayOfProjects.push(projectObject);
+    Projects.push(projectObject);
   });
-
+  // Projects.forEach(project => console.log(project.name));
   // create modal
 
 });

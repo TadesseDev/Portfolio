@@ -525,6 +525,15 @@ hr {
   align-items: center;
 }
 
+#recent-work-modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+
 @media all and (min-width: 992px) {
   #main-mobile {
     max-width: 100%;
