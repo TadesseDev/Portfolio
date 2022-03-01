@@ -626,7 +626,8 @@ hr {
   #recent-work-modal .container {
     width: 85%;
     min-height: 95%;
-    padding: 2%;
+    padding: 4% 2%;
+    overflow: visible;
   }
 
   #recent-work-modal #technology {
@@ -654,6 +655,17 @@ hr {
 
   #recent-work-modal #feature {
     max-height: 80vh;
+    overflow: visible;
+  }
+
+  #recent-work-modal #close-modal {
+    top: -27px;
+    right: 0px;
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/icons/close-modal.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
   #main-mobile {
