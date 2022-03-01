@@ -47,17 +47,57 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectObject = {
       name: project.getAttribute('data-name'),
       title: project.querySelector('.project-title').textContent,
-      description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and`,
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
+      turpis id metus vehicula, a faucibus neque vehicula. Etiam
+      tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
+      eget lacinia sed, molestie at nisi. Nulla iaculis mi finibus augue
+      pharetra, quis pellentesque metus hendrerit. Vestibulum tristique
+      sapien eu velit porttitor semper. Aliquam sed elementum enim.
+      Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
+      et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
       featuredImage: project.getAttribute('data-image'),
+      featuredImageAlt: project.getAttribute('data-name') + ' Image',
       technologies: Array.from(project.querySelectorAll('li')),
       liveVersion: project.getAttribute('data-live'),
       source: project.getAttribute('data-source'),
     }
     Projects.push(projectObject);
   });
-  // Projects.forEach(project => console.log(project.name));
-  // create modal
+  // Projects.forEach(project => console.log(project.featuredImage));
 
+  // create modal
+  const recentWorkModal = document.querySelector('#recent-work-modal');
+  const featureImage = document.createElement('img');
+  const title = document.createElement('h2');
+  const technology = document.createElement('div');
+  const technoList = document.createElement('ul');
+  const description = document.createElement('p');
+  const links = document.createElement('div');
+  links.innerHTML = `
+  <button type="submit">
+    <span>See Live </span
+    ><img src="./images/icons/go-live.svg" alt="see live" />
+  </button>
+  <button type="submit">
+    <span>See Source </span>
+    <img src="./images/icons/GitHub-white.svg" alt="see source" />
+  </button>`
+  Projects[0].technologies.forEach(list => technoList.appendChild(list));
+  // console.log(technoList);
+  title.setAttribute('id', 'title');
+  title.textContent = Projects[0].title;
+  featureImage.setAttribute('src', Projects[0].featuredImage);
+  featureImage.setAttribute('alt', Projects[0].featuredImageAlt);
+  technology.setAttribute('id', 'technology');
+  technology.appendChild(technoList);
+  description.classList.add('description');
+  links.classList.add('links');
+  description.textContent = Projects[0].description;
+  recentWorkModal.querySelector('#feature').appendChild(featureImage);
+  recentWorkModal.querySelector('.container').appendChild(title);
+  recentWorkModal.querySelector('.container').appendChild(technology);
+  recentWorkModal.querySelector('.container').appendChild(description);
+  recentWorkModal.querySelector('.container').appendChild(links);
 });
 
 //document.querySelectorAll(`[data-name]`);
