@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const toolBar = ListOfMenus.querySelector('#tool-bar');
   const humBurger = mobileMenuBar.querySelectorAll('.menu-icon')[0];
   const returnHome = document.querySelector('#closeMenu');
+  const recentWorkModal = document.querySelector('#recent-work-modal');
   const mobileMenuBarHeight = mobileMenuBar.scrollHeight;
   const windowHeight = window.innerHeight;
   function disposeMobileMenu() {
@@ -68,27 +69,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // create modal
+
   const show_modal = (project) => {
-    const recentWorkModal = document.querySelector('#recent-work-modal');
     const featureImage = document.createElement('img');
     const title = document.createElement('h2');
     const technology = document.createElement('div');
     const technoList = document.createElement('ul');
     const description = document.createElement('p');
     const links = document.createElement('div');
+    const dispose = recentWorkModal.querySelector('#close-modal');
     links.innerHTML = `
-  <a href="#">
+  <a href="${project.liveVersion || '#'}" target="blank">
     <span>See Live </span
     ><img src="./images/icons/go-live.svg" alt="see live" />
   </a>
-  <a href="#">
+  <a href="${project.source || '#'}" target="blank">
     <span>See Source </span>
     <img src="./images/icons/GitHub-white.svg" alt="see source" />
   </a>`
     project.technologies.forEach(list => technoList.appendChild(list));
     // console.log(technoList);
     title.setAttribute('id', 'title');
-    title.textContent = project.title;
+    title.textContent = project.title + " --- " + project.name;
     featureImage.setAttribute('src', project.featuredImage);
     featureImage.setAttribute('alt', project.featuredImageAlt);
     technology.setAttribute('id', 'technology');
@@ -103,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     recentWorkModal.querySelector('.container').appendChild(links);
     recentWorkModal.classList.remove('display-none');
     fullPage.setAttribute('style', 'height: 0px')
+    dispose.addEventListener('click', () => hide_modal())
   }
 
 });
