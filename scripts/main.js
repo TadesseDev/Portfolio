@@ -61,11 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
       liveVersion: project.getAttribute('data-live'),
       source: project.getAttribute('data-source'),
     }
+    project.querySelector('.action').addEventListener('click', () => show_modal(projectObject));
     Projects.push(projectObject);
   });
-  // Projects.forEach(project => console.log(project.featuredImage));
+
 
   // create modal
+
+
   const recentWorkModal = document.querySelector('#recent-work-modal');
   const featureImage = document.createElement('img');
   const title = document.createElement('h2');

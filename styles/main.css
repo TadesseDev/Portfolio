@@ -528,6 +528,7 @@ hr {
 /* styling modal for mobile first design*/
 
 #recent-work-modal {
+  display: none;
   position: absolute;
   top: 0;
   bottom: 0;
