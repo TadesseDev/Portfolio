@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuBarHeight = mobileMenuBar.scrollHeight;
   const windowHeight = window.innerHeight;
 
-
   // dispose mobile menu
   function disposeMobileMenu() {
     ListOfMenus.classList.toggle('display-none');
@@ -42,47 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   returnHome.addEventListener('click', disposeMobileMenu);
 
-
   /* Portfolio: details popup window */
 
-  // create Array having list of projects 
-  const recentWork = document.querySelector('#recent-work');
-  const ProjectObjects = recentWork.querySelectorAll('.card');
-  const Projects = [];
-  const featureImageType = window.innerWidth < 922 ? "-mobile.svg" : ".svg";
-  ProjectObjects.forEach(project => {
-    const projectObject = {
-      name: project.getAttribute('data-name'),
-      title: project.querySelector('.project-title').textContent,
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
-      turpis id metus vehicula, a faucibus neque vehicula. Etiam
-      tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
-      eget lacinia sed, molestie at nisi. Nulla iaculis mi finibus augue
-      pharetra, quis pellentesque metus hendrerit. Vestibulum tristique
-      sapien eu velit porttitor semper. Aliquam sed elementum enim.
-      Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
-      et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: project.getAttribute('data-image') + featureImageType,
-      featuredImageAlt: project.getAttribute('data-name') + ' Image',
-      technologies: Array.from(project.querySelectorAll('li')),
-      liveVersion: project.getAttribute('data-live'),
-      source: project.getAttribute('data-source'),
-    }
-    project.querySelector('.action').addEventListener('click', () => show_modal(projectObject));
-    Projects.push(projectObject);
-  });
-
-
-
-  const hide_modal = () => {
+  const hideModal = () => {
     recentWorkModal.classList.add('display-none');
-    recentWorkModal.innerHTML = `<div class="container"> <div id="feature"> <span id="close-modal"></span> </div> </div>`;
-    fullPage.setAttribute('style', 'height: auto')
-  }
-
+    recentWorkModal.innerHTML = `<div class="container"> 
+    <span id="close-modal-desktop"></span> 
+    <div id="feature"> <span id="close-modal">
+    </span> </div> </div>`;
+    fullPage.setAttribute('style', 'height: auto');
+  };
 
   // this method will create and display modal from previously defined objects(project)
-  const show_modal = (project) => {
+  const showModal = (project) => {
     const featureImage = document.createElement('img');
     const title = document.createElement('h2');
     const technology = document.createElement('div');
@@ -90,21 +61,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const description = document.createElement('p');
     const links = document.createElement('div');
     const dispose = recentWorkModal.querySelector('#close-modal');
+    const disposeDesktop = recentWorkModal.querySelector('#close-modal-desktop');
     links.innerHTML = `
-  <a href="${project.liveVersion || '#'}" target="blank">
-    <span>See Live </span
-    ><img src="./images/icons/go-live.svg" alt="see live" />
-  </a>
-  <a href="${project.source || '#'}" target="blank">
-    <span>See Source </span>
-    <img src="./images/icons/GitHub-white.svg" alt="see source" />
-  </a>`
-    project.technologies.forEach(list => {
+<a href="${project.liveVersion || '#'}" target="blank">
+  <span>See Live </span
+  ><img src="./images/icons/go-live.svg" alt="see live" />
+</a>
+<a href="${project.source || '#'}" target="blank">
+  <span>See Source </span>
+  <img src="./images/icons/GitHub-white.svg" alt="see source" />
+</a>`;
+    project.technologies.forEach((list) => {
       const newLi = list.cloneNode(true);
-      technoList.appendChild(newLi)
+      technoList.appendChild(newLi);
     });
     title.setAttribute('id', 'title');
-    title.textContent = project.title + " --- " + project.name;
+    title.textContent = `${project.title} --- ${project.name}`;
     featureImage.setAttribute('src', project.featuredImage);
     featureImage.setAttribute('alt', project.featuredImageAlt);
     technology.setAttribute('id', 'technology');
@@ -119,8 +91,34 @@ document.addEventListener('DOMContentLoaded', () => {
     recentWorkModal.querySelector('.container').appendChild(links);
     recentWorkModal.classList.remove('display-none');
     fullPage.setAttribute('style', `height: ${recentWorkModal.scrollHeight}px`);
-    dispose.addEventListener('click', () => hide_modal())
-  }
+    dispose.addEventListener('click', () => hideModal());
+    disposeDesktop.addEventListener('click', () => hideModal());
+  };
 
+  // create Array having list of projects
+  const recentWork = document.querySelector('#recent-work');
+  const ProjectObjects = recentWork.querySelectorAll('.card');
+  const Projects = [];
+  const featureImageType = window.innerWidth < 922 ? '-mobile.svg' : '.svg';
+  ProjectObjects.forEach((project) => {
+    const projectObject = {
+      name: project.getAttribute('data-name'),
+      title: project.querySelector('.project-title').textContent,
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
+      turpis id metus vehicula, a faucibus neque vehicula. Etiam
+      tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
+      eget lacinia sed, molestie at nisi. Nulla iaculis mi finibus augue
+      pharetra, quis pellentesque metus hendrerit. Vestibulum tristique
+      sapien eu velit porttitor semper. Aliquam sed elementum enim.
+      Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
+      et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
+      featuredImage: project.getAttribute('data-image') + featureImageType,
+      featuredImageAlt: `${project.getAttribute('data-name')} Image`,
+      technologies: Array.from(project.querySelectorAll('li')),
+      liveVersion: project.getAttribute('data-live'),
+      source: project.getAttribute('data-source'),
+    };
+    project.querySelector('.action').addEventListener('click', () => showModal(projectObject));
+    Projects.push(projectObject);
+  });
 });
-
