@@ -28,6 +28,13 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@twitterhandle](https://twitter.com/TadesseWebDev)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/tadesse-alemayehu-60141a221/)
 
+## Show your support
+
+Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse for amusing support and guidance.
+
+## 📝 License
+
+Coming soon.
