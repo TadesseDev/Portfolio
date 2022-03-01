@@ -562,6 +562,17 @@ hr {
   display: block;
   margin: auto;
 }
+
+#recent-work-modal #close-modal {
+  position: absolute;
+  top: 10%;
+  right: 3%;
+  z-index: 2;
+  display: block;
+  width: 15%;
+  height: 20%;
+}
+
 #recent-work-modal #title {
   margin: 10px 0;
   width: 100%;
