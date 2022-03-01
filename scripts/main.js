@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const recentWorkModal = document.querySelector('#recent-work-modal');
   const mobileMenuBarHeight = mobileMenuBar.scrollHeight;
   const windowHeight = window.innerHeight;
+
+
+  // dispose mobile menu
   function disposeMobileMenu() {
     ListOfMenus.classList.toggle('display-none');
     ListOfMenus.classList.toggle('show');
@@ -17,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     humBurger.classList.remove('display-none');
     menu.lastChild.remove();
   }
+
   humBurger.addEventListener('click', () => {
     ListOfMenus.classList.toggle('display-none');
     ListOfMenus.classList.toggle('show');
@@ -69,13 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // create modal
+
   const hide_modal = () => {
     recentWorkModal.classList.add('display-none');
     recentWorkModal.innerHTML = `<div class="container"> <div id="feature"> <span id="close-modal"></span> </div> </div>`;
     fullPage.setAttribute('style', 'height: auto')
   }
 
+
+  // this method will create and display modal from previously defined objects(project)
   const show_modal = (project) => {
     const featureImage = document.createElement('img');
     const title = document.createElement('h2');
@@ -93,8 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
     <span>See Source </span>
     <img src="./images/icons/GitHub-white.svg" alt="see source" />
   </a>`
-    project.technologies.forEach(list => technoList.appendChild(list));
-    // console.log(technoList);
+    project.technologies.forEach(list => {
+      const newLi = list.cloneNode(true);
+      technoList.appendChild(newLi)
+    });
     title.setAttribute('id', 'title');
     title.textContent = project.title + " --- " + project.name;
     featureImage.setAttribute('src', project.featuredImage);
@@ -114,7 +122,5 @@ document.addEventListener('DOMContentLoaded', () => {
     dispose.addEventListener('click', () => hide_modal())
   }
 
-  document.querySelectorAll(`[data-name]`)[0].querySelector('.action').click();
 });
 
-//document.querySelectorAll(`[data-name]`);
