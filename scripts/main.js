@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const fullPage = document.querySelector('#main-mobile');
   const mobileMenuBar = document.querySelector('#app-bar-mobile');
   const menu = mobileMenuBar.querySelector('.menu');
   const logo = document.querySelector('.logo');
@@ -67,40 +68,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // create modal
-
-
-  const recentWorkModal = document.querySelector('#recent-work-modal');
-  const featureImage = document.createElement('img');
-  const title = document.createElement('h2');
-  const technology = document.createElement('div');
-  const technoList = document.createElement('ul');
-  const description = document.createElement('p');
-  const links = document.createElement('div');
-  links.innerHTML = `
-  <button type="submit">
+  const show_modal = (project) => {
+    const recentWorkModal = document.querySelector('#recent-work-modal');
+    const featureImage = document.createElement('img');
+    const title = document.createElement('h2');
+    const technology = document.createElement('div');
+    const technoList = document.createElement('ul');
+    const description = document.createElement('p');
+    const links = document.createElement('div');
+    links.innerHTML = `
+  <a href="#">
     <span>See Live </span
     ><img src="./images/icons/go-live.svg" alt="see live" />
-  </button>
-  <button type="submit">
+  </a>
+  <a href="#">
     <span>See Source </span>
     <img src="./images/icons/GitHub-white.svg" alt="see source" />
-  </button>`
-  Projects[0].technologies.forEach(list => technoList.appendChild(list));
-  // console.log(technoList);
-  title.setAttribute('id', 'title');
-  title.textContent = Projects[0].title;
-  featureImage.setAttribute('src', Projects[0].featuredImage);
-  featureImage.setAttribute('alt', Projects[0].featuredImageAlt);
-  technology.setAttribute('id', 'technology');
-  technology.appendChild(technoList);
-  description.classList.add('description');
-  links.classList.add('links');
-  description.textContent = Projects[0].description;
-  recentWorkModal.querySelector('#feature').appendChild(featureImage);
-  recentWorkModal.querySelector('.container').appendChild(title);
-  recentWorkModal.querySelector('.container').appendChild(technology);
-  recentWorkModal.querySelector('.container').appendChild(description);
-  recentWorkModal.querySelector('.container').appendChild(links);
+  </a>`
+    project.technologies.forEach(list => technoList.appendChild(list));
+    // console.log(technoList);
+    title.setAttribute('id', 'title');
+    title.textContent = project.title;
+    featureImage.setAttribute('src', project.featuredImage);
+    featureImage.setAttribute('alt', project.featuredImageAlt);
+    technology.setAttribute('id', 'technology');
+    technology.appendChild(technoList);
+    description.classList.add('description');
+    links.classList.add('links');
+    description.textContent = project.description;
+    recentWorkModal.querySelector('#feature').appendChild(featureImage);
+    recentWorkModal.querySelector('.container').appendChild(title);
+    recentWorkModal.querySelector('.container').appendChild(technology);
+    recentWorkModal.querySelector('.container').appendChild(description);
+    recentWorkModal.querySelector('.container').appendChild(links);
+    recentWorkModal.classList.remove('display-none');
+    fullPage.setAttribute('style', 'height: 0px')
+  }
+
 });
 
 //document.querySelectorAll(`[data-name]`);
