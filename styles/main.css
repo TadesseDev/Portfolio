@@ -660,7 +660,8 @@ hr {
 
   #recent-work-modal .links {
     margin-top: 10px;
-    width: max(223px, 30%);
+    width: 30%;
+    min-width: 223px;
     align-self: flex-end;
     height: 0;
   }
