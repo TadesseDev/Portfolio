@@ -1,6 +1,9 @@
 # Portfolio
 
 > This project is the second project for the full stack web development class by microverse. 
+# Screenshot's 
+![portfolio  mobile](https://user-images.githubusercontent.com/69077061/156462564-c8e97efd-eff7-4e1e-8f34-97965c4da8c6.PNG)![portfolio-about-me](https://user-images.githubusercontent.com/69077061/156462694-3af14ebc-4766-4449-ade9-d17ff465fea7.PNG)
+
 
 ## Built With
 
