@@ -79,6 +79,11 @@ a {
   justify-content: center;
 }
 
+#recent-work-modal ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #app-bar-menus.show ul {
   min-width: 100%;
   min-height: 100%;
@@ -100,6 +105,12 @@ a {
   margin-bottom: 24px;
 }
 
+#recent-work-modal ul li {
+  margin-left: 2%;
+  padding: 1% 2%;
+  background-color: #ebf0ee;
+}
+
 #app-bar-menus.show li {
   display: block;
   margin: 3vh 2vw;
@@ -108,8 +119,18 @@ a {
 .tags ul a {
   color: #3a4a42;
   font-family: Inter, serif;
-  font-size: 0.8rem;
   font-weight: 600;
+  font-size: 1.1rem;
+}
+
+#app-bar-menus ul a {
+  font-size: 1rem;
+  color: #344563;
+  font-weight: bold;
+}
+
+#recent-work-modal ul li a {
+  color: #3a4a42;
 }
 
 #about-me ul li a {
@@ -118,6 +139,21 @@ a {
   border-radius: 10px;
   color: #126442;
   box-shadow: 0 0 5px rgba(58, 57, 57, 0.137);
+}
+
+#recent-work-modal .links a {
+  background-color: #36b37e;
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  width: 45%;
+  margin: 0 2%;
 }
 
 #app-bar-menus.show li a {
@@ -459,6 +495,13 @@ hr {
   margin: 0;
 }
 
+#recent-work-modal #title {
+  margin: 10px 0;
+  width: 100%;
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
 #contact-form .form ul li {
   margin: 10px 0;
 }
@@ -525,7 +568,109 @@ hr {
   align-items: center;
 }
 
+/* styling modal for mobile first design */
+
+#recent-work-modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 96%;
+  min-height: 100vh;
+  background-color: #a3b6d3c4;
+  color: #3a4a42;
+  padding: 2%;
+}
+
+#recent-work-modal .container {
+  background-color: #fff;
+  width: 85%;
+  min-height: 90%;
+  margin: auto;
+  padding: 5%;
+  padding-top: 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#recent-work-modal #close-modal-desktop {
+  display: block;
+  margin-left: calc(100% - 30px);
+  width: 25px;
+  height: 25px;
+  background-image: url("../images/icons/close-modal.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#recent-work-modal #feature {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 30vh;
+  overflow: hidden;
+}
+
+#recent-work-modal #feature img {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+#recent-work-modal .description {
+  color: #6b707a;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+#recent-work-modal button span {
+  margin-right: 3%;
+}
+
 @media all and (min-width: 992px) {
+  #recent-work-modal {
+    width: 70%;
+    height: auto;
+    padding: 3% 15%;
+  }
+
+  #recent-work-modal .container {
+    width: 85%;
+    min-height: 95%;
+    padding: 2%;
+    overflow: visible;
+  }
+
+  #recent-work-modal #technology {
+    order: 2;
+  }
+
+  #recent-work-modal .description {
+    order: 3;
+  }
+
+  #recent-work-modal #title {
+    width: 60%;
+    order: 2;
+  }
+
+  #recent-work-modal .links {
+    margin-top: 10px;
+    width: 30%;
+    min-width: 223px;
+    align-self: flex-end;
+    height: 0;
+  }
+
+  #recent-work-modal .links a {
+    font-size: 0.8rem;
+  }
+
+  #recent-work-modal #feature {
+    max-height: 80vh;
+  }
+
   #main-mobile {
     max-width: 100%;
     margin: 0 auto;
@@ -536,16 +681,6 @@ hr {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 0 30px;
-  }
-
-  .tags ul a {
-    font-size: 1.1rem;
-  }
-
-  #app-bar-menus ul a {
-    font-size: 1rem;
-    color: #344563;
-    font-weight: bold;
   }
 
   .heading {
