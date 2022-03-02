@@ -666,7 +666,6 @@ hr {
 
   #recent-work-modal #feature {
     max-height: 80vh;
-    overflow: visible;
   }
 
   #recent-work-modal #close-modal-desktop {
