@@ -48,8 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     recentWorkModal.classList.add('display-none');
     recentWorkModal.innerHTML = `<div class="container"> 
     <span id="close-modal-desktop"></span> 
-    <div id="feature"> <span id="close-modal">
-    </span> </div> </div>`;
+    <div id="feature">  </div> </div>`;
     fullPage.setAttribute('style', 'height: auto');
   };
 
@@ -61,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const technoList = document.createElement('ul');
     const description = document.createElement('p');
     const links = document.createElement('div');
-    const dispose = recentWorkModal.querySelector('#close-modal');
     const disposeDesktop = recentWorkModal.querySelector('#close-modal-desktop');
     links.innerHTML = `
 <a href="${project.liveVersion || '#'}" target="blank">
@@ -96,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
     recentWorkModal.querySelector('.container').appendChild(links);
     recentWorkModal.classList.remove('display-none');
     fullPage.setAttribute('style', `height: ${recentWorkModal.scrollHeight}px`);
-    dispose.addEventListener('click', () => hideModal());
     disposeDesktop.addEventListener('click', () => hideModal());
   };
 

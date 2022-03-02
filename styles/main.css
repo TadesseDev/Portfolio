@@ -584,13 +584,24 @@ hr {
 #recent-work-modal .container {
   background-color: #fff;
   width: 85%;
-  min-height: 95%;
+  min-height: 90%;
   margin: auto;
   padding: 5%;
+  padding-top: 0;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+#recent-work-modal #close-modal-desktop {
+  display: block;
+  margin-left: calc(100% - 30px);
+  width: 25px;
+  height: 25px;
+  background-image: url("../images/icons/close-modal.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 #recent-work-modal #feature {
@@ -605,20 +616,6 @@ hr {
   width: 100%;
   display: block;
   margin: auto;
-}
-
-#recent-work-modal #close-modal {
-  position: absolute;
-  top: 10%;
-  right: 3%;
-  z-index: 2;
-  display: block;
-  width: 15%;
-  height: 20%;
-}
-
-#recent-work-modal #close-modal-desktop {
-  display: none;
 }
 
 #recent-work-modal .description {
@@ -672,16 +669,6 @@ hr {
 
   #recent-work-modal #feature {
     max-height: 80vh;
-  }
-
-  #recent-work-modal #close-modal-desktop {
-    display: block;
-    margin-left: calc(100% - 30px);
-    width: 25px;
-    height: 25px;
-    background-image: url("../images/icons/close-modal.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
   }
 
   #main-mobile {
