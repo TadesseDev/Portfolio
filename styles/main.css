@@ -617,6 +617,10 @@ hr {
   height: 20%;
 }
 
+#recent-work-modal #close-modal-desktop {
+  display: none;
+}
+
 #recent-work-modal .description {
   color: #6b707a;
   font-weight: 400;
@@ -658,7 +662,7 @@ hr {
     margin-top: 10px;
     width: 30%;
     align-self: flex-end;
-    height: 0px;
+    height: 0;
   }
 
   #recent-work-modal .links a {
@@ -670,6 +674,7 @@ hr {
   }
 
   #recent-work-modal #close-modal-desktop {
+    display: block;
     margin-left: calc(100% - 30px);
     width: 25px;
     height: 25px;

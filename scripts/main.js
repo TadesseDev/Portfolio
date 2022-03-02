@@ -101,13 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // create Array having list of projects
-  const recentWork = document.querySelector('#recent-work');
-  const ProjectObjects = recentWork.querySelectorAll('.card');
   const featureImageType = window.innerWidth < 922 ? '-mobile.svg' : '.svg';
   const Projects = [
     {
-      name: "Rock-Paper-Scissors",
-      title: "project one",
+      name: 'Rock-Paper-Scissors',
+      title: 'project one',
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
       turpis id metus vehicula, a faucibus neque vehicula. Etiam
       tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
@@ -116,15 +114,15 @@ document.addEventListener('DOMContentLoaded', () => {
       sapien eu velit porttitor semper. Aliquam sed elementum enim.
       Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
       et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
-      featuredImageAlt: "Rock-Paper-Scissors Image",
+      featuredImage: `./images/pictures/Snapshoot-Portfolio${featureImageType}`,
+      featuredImageAlt: 'Rock-Paper-Scissors Image',
       technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-      liveVersion: "https://winmac.ml/",
-      source: "https://github.com/Tadesse-Alemayehu/Rock-Paper-Scissors-Advance",
+      liveVersion: 'https://winmac.ml/',
+      source: 'https://github.com/Tadesse-Alemayehu/Rock-Paper-Scissors-Advance',
     },
     {
-      name: "Etch-A-Sketch",
-      title: "Project two(drawing board)",
+      name: 'Etch-A-Sketch',
+      title: 'Project two(drawing board)',
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
       turpis id metus vehicula, a faucibus neque vehicula. Etiam
       tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
@@ -133,15 +131,15 @@ document.addEventListener('DOMContentLoaded', () => {
       sapien eu velit porttitor semper. Aliquam sed elementum enim.
       Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
       et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
-      featuredImageAlt: "Etch-A-Sketch Image",
+      featuredImage: `./images/pictures/Snapshoot-Portfolio${featureImageType}`,
+      featuredImageAlt: 'Etch-A-Sketch Image',
       technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-      liveVersion: "https://tadesse-alemayehu.github.io/Etch-A-Sketch/",
-      source: "https://github.com/Tadesse-Alemayehu/Etch-A-Sketch",
+      liveVersion: 'https://tadesse-alemayehu.github.io/Etch-A-Sketch/',
+      source: 'https://github.com/Tadesse-Alemayehu/Etch-A-Sketch',
     },
     {
-      name: "Portfolio",
-      title: "Project three",
+      name: 'Portfolio',
+      title: 'Project three',
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
       turpis id metus vehicula, a faucibus neque vehicula. Etiam
       tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
@@ -150,15 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
       sapien eu velit porttitor semper. Aliquam sed elementum enim.
       Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
       et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
-      featuredImageAlt: "Portfolio Image",
+      featuredImage: `./images/pictures/Snapshoot-Portfolio${featureImageType}`,
+      featuredImageAlt: 'Portfolio Image',
       technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-      liveVersion: "https://tadesse-alemayehu.github.io/Portfolio/",
-      source: "https://github.com/Tadesse-Alemayehu/Portfolio",
+      liveVersion: 'https://tadesse-alemayehu.github.io/Portfolio/',
+      source: 'https://github.com/Tadesse-Alemayehu/Portfolio',
     },
     {
-      name: "faq-challenge",
-      title: "Project four. Designed for FAQ chalenges",
+      name: 'faq-challenge',
+      title: 'Project four. Designed for FAQ chalenges',
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
       turpis id metus vehicula, a faucibus neque vehicula. Etiam
       tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
@@ -167,15 +165,15 @@ document.addEventListener('DOMContentLoaded', () => {
       sapien eu velit porttitor semper. Aliquam sed elementum enim.
       Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
       et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
-      featuredImageAlt: "faq-challenge Image",
+      featuredImage: `./images/pictures/Snapshoot-Portfolio${featureImageType}`,
+      featuredImageAlt: 'faq-challenge Image',
       technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-      liveVersion: "https://tadesse-alemayehu.github.io/faq-challenge/",
-      source: "https://github.com/Tadesse-Alemayehu/faq-challenge/tree/tadesse-optional",
+      liveVersion: 'https://tadesse-alemayehu.github.io/faq-challenge/',
+      source: 'https://github.com/Tadesse-Alemayehu/faq-challenge/tree/tadesse-optional',
     },
     {
-      name: "YouTube-Clone",
-      title: "Project five. Microverse Bootcamp",
+      name: 'YouTube-Clone',
+      title: 'Project five. Microverse Bootcamp',
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
       turpis id metus vehicula, a faucibus neque vehicula. Etiam
       tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
@@ -184,15 +182,15 @@ document.addEventListener('DOMContentLoaded', () => {
       sapien eu velit porttitor semper. Aliquam sed elementum enim.
       Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
       et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
-      featuredImageAlt: "YouTube-Clone Image",
+      featuredImage: `./images/pictures/Snapshoot-Portfolio${featureImageType}`,
+      featuredImageAlt: 'YouTube-Clone Image',
       technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-      liveVersion: "https://tadesse-alemayehu.github.io/YouTube-Clone/",
-      source: "https://github.com/Tadesse-Alemayehu/YouTube-Clone",
+      liveVersion: 'https://tadesse-alemayehu.github.io/YouTube-Clone/',
+      source: 'https://github.com/Tadesse-Alemayehu/YouTube-Clone',
     },
     {
-      name: "project-6",
-      title: "My Recent Works",
+      name: 'project-6',
+      title: 'My Recent Works',
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
       turpis id metus vehicula, a faucibus neque vehicula. Etiam
       tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
@@ -201,15 +199,14 @@ document.addEventListener('DOMContentLoaded', () => {
       sapien eu velit porttitor semper. Aliquam sed elementum enim.
       Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
       et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
-      featuredImageAlt: "Rock-Paper-Scissors Image",
+      featuredImage: `./images/pictures/Snapshoot-Portfolio${featureImageType}`,
+      featuredImageAlt: 'Rock-Paper-Scissors Image',
       technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-      liveVersion: "https://tadesse-alemayehu.github.io/YouTube-Clone/",
-      source: "https://github.com/Tadesse-Alemayehu/YouTube-Clone",
-    }
+      liveVersion: 'https://tadesse-alemayehu.github.io/YouTube-Clone/',
+      source: 'https://github.com/Tadesse-Alemayehu/YouTube-Clone',
+    },
   ];
 
   const ActionButtons = recentWorkSection.querySelectorAll('.action');
   ActionButtons.forEach((actionButton, index) => actionButton.addEventListener('click', () => showModal(Projects[index])));
-  console.log(ActionButtons.length);
 });
