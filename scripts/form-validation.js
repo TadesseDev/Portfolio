@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const addErrorMessage = (element, message) => {
     element.querySelector('.validation-error').innerHTML = message;
 }
@@ -20,9 +20,9 @@ const validateFormElements = event => {
     const ERROR_MSG = "<b>submission fails</b><br/>Letters to email should be all lower case.<br /> Like: 'example@mail.com'<br/>";
     validateEmail(form.elements['email']) ? form.submit() : addErrorMessage(form, ERROR_MSG, false);
 }
-=======
-document.addEventListener('DOMContentLoaded', () => {
->>>>>>> 81702ae0278742b9ef812b012de6fcba32d9ac87
+
+
+
 
 // form validation will begin once DOM is ready
 document.addEventListener('DOMContentLoaded', () => {

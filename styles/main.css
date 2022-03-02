@@ -562,15 +562,6 @@ hr {
   font-size: 1.2rem;
 }
 
-.validation-error {
-  color: #ff6163;
-}
-
-.input-fail:focus-visible {
-  outline: none;
-  border: red 2px solid !important;
-}
-
 #footer {
   display: flex;
   flex-direction: column;
