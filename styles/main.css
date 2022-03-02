@@ -570,13 +570,13 @@ hr {
 
 .validation-error {
   color: #ff6163;
- }
- 
- .input-fail:focus-visible {
-  outline: none; 
+}
+
+.input-fail:focus-visible {
+  outline: none;
   border: red 2px solid !important;
- } 
- 
+}
+
 /* styling modal for mobile first design */
 
 #recent-work-modal {
