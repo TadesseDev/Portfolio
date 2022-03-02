@@ -5,7 +5,7 @@ const addErrorMessage = (element, message) => {
 
 // using a function we can implement sophisticate email validation rules in the feature
 const validateEmail = (email) => {
-    if (email.value !== email.value.toLowerCase()) {
+  if (email.value !== email.value.toLowerCase()) {
         email.parentNode.querySelector('small').innerHTML = `suggestion: ${email.value.toLowerCase()}`;
         return false;
     }
