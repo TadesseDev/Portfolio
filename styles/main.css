@@ -643,7 +643,6 @@ hr {
 
   #recent-work-modal #technology {
     order: 2;
-    margin-top: -50px;
   }
 
   #recent-work-modal .description {
@@ -652,12 +651,14 @@ hr {
 
   #recent-work-modal #title {
     width: 60%;
+    order: 2;
   }
 
   #recent-work-modal .links {
+    margin-top: 10px;
     width: 30%;
-    margin-left: 100%;
-    transform: translate(-100%, -200%);
+    align-self: flex-end;
+    height: 0px;
   }
 
   #recent-work-modal .links a {
