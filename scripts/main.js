@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const fullPage = document.querySelector('#main-mobile');
+  const recentWorkSection = document.querySelector('#recent-work');
   const mobileMenuBar = document.querySelector('#app-bar-mobile');
   const menu = mobileMenuBar.querySelector('.menu');
   const logo = document.querySelector('.logo');
@@ -71,9 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
   <span>See Source </span>
   <img src="./images/icons/GitHub-white.svg" alt="see source" />
 </a>`;
-    project.technologies.forEach((list) => {
-      const newLi = list.cloneNode(true);
-      technoList.appendChild(newLi);
+    project.technologies.forEach((technology) => {
+      const li = document.createElement('li');
+      const anchor = document.createElement('a');
+      anchor.setAttribute('href', '#');
+      anchor.textContent = technology;
+      li.appendChild(anchor);
+      technoList.appendChild(li);
     });
     title.setAttribute('id', 'title');
     title.textContent = `${project.title} --- ${project.name}`;
@@ -98,12 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // create Array having list of projects
   const recentWork = document.querySelector('#recent-work');
   const ProjectObjects = recentWork.querySelectorAll('.card');
-  const Projects = [];
   const featureImageType = window.innerWidth < 922 ? '-mobile.svg' : '.svg';
-  ProjectObjects.forEach((project) => {
-    const projectObject = {
-      name: project.getAttribute('data-name'),
-      title: project.querySelector('.project-title').textContent,
+  const Projects = [
+    {
+      name: "Rock-Paper-Scissors",
+      title: "project one",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
       turpis id metus vehicula, a faucibus neque vehicula. Etiam
       tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
@@ -112,13 +116,100 @@ document.addEventListener('DOMContentLoaded', () => {
       sapien eu velit porttitor semper. Aliquam sed elementum enim.
       Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
       et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: project.getAttribute('data-image') + featureImageType,
-      featuredImageAlt: `${project.getAttribute('data-name')} Image`,
-      technologies: Array.from(project.querySelectorAll('li')),
-      liveVersion: project.getAttribute('data-live'),
-      source: project.getAttribute('data-source'),
-    };
-    project.querySelector('.action').addEventListener('click', () => showModal(projectObject));
-    Projects.push(projectObject);
-  });
+      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
+      featuredImageAlt: "Rock-Paper-Scissors Image",
+      technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
+      liveVersion: "https://winmac.ml/",
+      source: "https://github.com/Tadesse-Alemayehu/Rock-Paper-Scissors-Advance",
+    },
+    {
+      name: "Etch-A-Sketch",
+      title: "Project two(drawing board)",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
+      turpis id metus vehicula, a faucibus neque vehicula. Etiam
+      tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
+      eget lacinia sed, molestie at nisi. Nulla iaculis mi finibus augue
+      pharetra, quis pellentesque metus hendrerit. Vestibulum tristique
+      sapien eu velit porttitor semper. Aliquam sed elementum enim.
+      Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
+      et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
+      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
+      featuredImageAlt: "Etch-A-Sketch Image",
+      technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
+      liveVersion: "https://tadesse-alemayehu.github.io/Etch-A-Sketch/",
+      source: "https://github.com/Tadesse-Alemayehu/Etch-A-Sketch",
+    },
+    {
+      name: "Portfolio",
+      title: "Project three",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
+      turpis id metus vehicula, a faucibus neque vehicula. Etiam
+      tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
+      eget lacinia sed, molestie at nisi. Nulla iaculis mi finibus augue
+      pharetra, quis pellentesque metus hendrerit. Vestibulum tristique
+      sapien eu velit porttitor semper. Aliquam sed elementum enim.
+      Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
+      et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
+      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
+      featuredImageAlt: "Portfolio Image",
+      technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
+      liveVersion: "https://tadesse-alemayehu.github.io/Portfolio/",
+      source: "https://github.com/Tadesse-Alemayehu/Portfolio",
+    },
+    {
+      name: "faq-challenge",
+      title: "Project four. Designed for FAQ chalenges",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
+      turpis id metus vehicula, a faucibus neque vehicula. Etiam
+      tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
+      eget lacinia sed, molestie at nisi. Nulla iaculis mi finibus augue
+      pharetra, quis pellentesque metus hendrerit. Vestibulum tristique
+      sapien eu velit porttitor semper. Aliquam sed elementum enim.
+      Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
+      et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
+      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
+      featuredImageAlt: "faq-challenge Image",
+      technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
+      liveVersion: "https://tadesse-alemayehu.github.io/faq-challenge/",
+      source: "https://github.com/Tadesse-Alemayehu/faq-challenge/tree/tadesse-optional",
+    },
+    {
+      name: "YouTube-Clone",
+      title: "Project five. Microverse Bootcamp",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
+      turpis id metus vehicula, a faucibus neque vehicula. Etiam
+      tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
+      eget lacinia sed, molestie at nisi. Nulla iaculis mi finibus augue
+      pharetra, quis pellentesque metus hendrerit. Vestibulum tristique
+      sapien eu velit porttitor semper. Aliquam sed elementum enim.
+      Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
+      et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
+      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
+      featuredImageAlt: "YouTube-Clone Image",
+      technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
+      liveVersion: "https://tadesse-alemayehu.github.io/YouTube-Clone/",
+      source: "https://github.com/Tadesse-Alemayehu/YouTube-Clone",
+    },
+    {
+      name: "project-6",
+      title: "My Recent Works",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
+      turpis id metus vehicula, a faucibus neque vehicula. Etiam
+      tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
+      eget lacinia sed, molestie at nisi. Nulla iaculis mi finibus augue
+      pharetra, quis pellentesque metus hendrerit. Vestibulum tristique
+      sapien eu velit porttitor semper. Aliquam sed elementum enim.
+      Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
+      et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
+      featuredImage: "./images/pictures/Snapshoot-Portfolio" + featureImageType,
+      featuredImageAlt: "Rock-Paper-Scissors Image",
+      technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
+      liveVersion: "https://tadesse-alemayehu.github.io/YouTube-Clone/",
+      source: "https://github.com/Tadesse-Alemayehu/YouTube-Clone",
+    }
+  ];
+
+  const ActionButtons = recentWorkSection.querySelectorAll('.action');
+  ActionButtons.forEach((actionButton, index) => actionButton.addEventListener('click', () => showModal(Projects[index])));
+  console.log(ActionButtons.length);
 });
