@@ -80,7 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('contactFormData', JSON.stringify(storage));
     } catch (ex) {
       // if fail to create local storage let the user know.
-      const error = small.cloneNode(); error.innerHTML = 'Error saving form data to your device'; form.appendChild(error);
+      const error = small.cloneNode();
+      error.innerHTML = 'Error saving form data to your device';
+      form.appendChild(error);
     }
   }
 });
