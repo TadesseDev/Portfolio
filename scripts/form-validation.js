@@ -55,9 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* 
-  - check if Local storage is created 
-    - If so populate object with stored data and update the form with the stored data 
+  /*
+  - check if Local storage is created
+    - If so populate object with stored data and update the form with the stored data
     - If not prepare object with key and empty value;
   */
   let storage = {};
@@ -79,6 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       localStorage.setItem('contactFormData', JSON.stringify(storage));
     } catch (ex) {
+      // if fail to create local storage let the user know.
+      const error = small.cloneNode(); error.innerHTML = 'Error saving form data to your device'; form.appendChild(error);
     }
   }
 });
