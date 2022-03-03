@@ -62,7 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
   */
   let storage = {};
   if (localStorage.getItem('contactFormData') !== null) {
-    storage = JSON.parse(localStorage.getItem('contactFormData')); updateFormElement(storage, formElements);
+    storage = JSON.parse(localStorage.getItem('contactFormData'));
+    updateFormElement(storage, formElements);
+    formElements.forEach((element) => {
+      if (element.hasAttribute('id')) {
+        element.addEventListener('input', () => storeFormData('contactFormData', element.getAttribute('id'), element.value));
+      }
+    });
   } else {
     try {
       formElements.forEach((element) => {
