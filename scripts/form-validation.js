@@ -2,6 +2,9 @@ const addErrorMessage = (element, message) => {
   element.querySelector('.validation-error').innerHTML = message;
 };
 
+const appendSibling = (element, newSibling) => {
+  element.parentNode.appendChild(newSibling);
+}
 // using a function we can implement sophisticate email validation rules in the feature
 const validateEmail = (email) => {
   if (email.value !== email.value.toLowerCase()) {
@@ -17,17 +20,18 @@ const validateFormElements = (event) => {
   event.preventDefault();
   const form = event.target;
   const ERROR_MSG = "<b>Submission FAILS!!</b><br/>Letters to email should be all lower case.<br /> Like: 'example@mail.com'<br/>";
-  if (validateEmail(form.elements.email)) {
+  if (validateEmail(form.elements.email, small.cloneNode())) {
     form.submit();
   } else addErrorMessage(form, ERROR_MSG);
 };
+
 
 // form validation will begin once DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   const formSection = document.getElementById('contact-form');
   const form = formSection.querySelector('form');
   const small = document.createElement('small');
-  form.elements.email.parentNode.appendChild(small);
+  appendSibling(form.elements.email, small);
   form.addEventListener('submit', (event) => validateFormElements(event));
   form.elements.email.addEventListener('input', (event) => {
     if (validateEmail(event.target)) {
@@ -36,4 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
       event.target.classList.add('input-fail');
     }
   });
+  if (localStorage.getItem('contactFormData') !== null) {
+    // console.log(JSON.parse(localStorage.getItem('contactFormData')).user_name);
+    // localStorage.removeItem('contactFormData');
+
+  }
+  else {
+    try {
+      localStorage.setItem('contactFormData', JSON.stringify({ user_name: '', email: '', message: '' }));
+    } catch (ex) {
+      const error = small.cloneNode();
+      error.innerHTML = `Error saving form data to your device`
+      form.appendChild(error);
+    }
+  }
 });
