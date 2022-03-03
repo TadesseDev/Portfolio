@@ -62,8 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   */
   let storage = {};
   if (localStorage.getItem('contactFormData') !== null) {
-
-
+    storage = JSON.parse(localStorage.getItem('contactFormData')); updateFormElement(storage, formElements);
   } else {
     try {
       formElements.forEach((element) => {
