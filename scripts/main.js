@@ -138,6 +138,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const featureImageType = window.innerWidth < 922 ? '-mobile.svg' : '.svg';
   const Projects = [
     {
+      name: 'Learn to code',
+      title: 'Learn to code',
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
+      turpis id metus vehicula, a faucibus neque vehicula. Etiam
+      tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
+      eget lacinia sed, molestie at nisi. Nulla iaculis mi finibus augue
+      pharetra, quis pellentesque metus hendrerit. Vestibulum tristique
+      sapien eu velit porttitor semper. Aliquam sed elementum enim.
+      Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
+      et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
+      featuredImage: `https://user-images.githubusercontent.com/69077061/157525702-966cc141-e7a1-4a41-99e1-d31efcfcaf57.png`,
+      featuredImageAlt: 'Learn to code project image',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      liveVersion: 'https://tadesse-alemayehu.github.io/LEARN-TO-CODE/',
+      source: 'https://github.com/Tadesse-Alemayehu/LEARN-TO-CODE',
+    },
+    {
       name: 'Rock-Paper-Scissors',
       title: 'project one',
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
