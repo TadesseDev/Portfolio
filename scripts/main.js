@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuBarHeight = mobileMenuBar.scrollHeight;
   const windowHeight = window.innerHeight;
 
-
   // dispose mobile menu
   function disposeMobileMenu() {
     listOfMenus.classList.toggle('hide');
@@ -63,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const description = document.createElement('p');
     const links = document.createElement('div');
     const disposeDesktop = recentWorkModal.querySelector('#close-modal-desktop');
-    console.log(project.liveVersion);
     links.innerHTML = `
 <a href="${project.liveVersion || '#'}" target="blank">
   <span>See Live </span
@@ -113,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tags = document.createElement('nav');
     tags.classList.add('tags');
     const ul = document.createElement('ul');
-    project.technologies.forEach(tech => {
+    project.technologies.forEach((tech) => {
       const li = document.createElement('li');
       const anchor = document.createElement('a');
       anchor.href = '#';
@@ -128,13 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
     button.classList.add('action');
     button.type = 'submit';
     button.textContent = 'See Project';
-    button.addEventListener('click', () => showModal(project))
+    button.addEventListener('click', () => showModal(project));
     text.appendChild(button);
 
     card.appendChild(text);
 
     return card;
-  }
+  };
 
   // create Array having list of projects
   const featureImageType = window.innerWidth < 922 ? '-mobile.svg' : '.svg';
@@ -243,8 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   ];
 
-  for (let project of Projects) {
+  Projects.forEach((project) => {
     cardContainer.appendChild(createRecentWorkCard(project));
-  }
-
+  });
 });
