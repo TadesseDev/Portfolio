@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const humBurger = mobileMenuBar.querySelectorAll('.menu-icon')[0];
   const returnHome = document.querySelector('#closeMenu');
   const recentWorkModal = document.querySelector('#recent-work-modal');
+  const cardContainer = recentWorkSection.querySelector('.card-flow');
   const mobileMenuBarHeight = mobileMenuBar.scrollHeight;
   const windowHeight = window.innerHeight;
+
 
   // dispose mobile menu
   function disposeMobileMenu() {
@@ -61,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const description = document.createElement('p');
     const links = document.createElement('div');
     const disposeDesktop = recentWorkModal.querySelector('#close-modal-desktop');
+    console.log(project.liveVersion);
     links.innerHTML = `
 <a href="${project.liveVersion || '#'}" target="blank">
   <span>See Live </span
@@ -98,7 +101,39 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const createRecentWorkCard = (project) => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    const text = document.createElement('div');
+    text.classList.add('text');
+    const projectName = document.createElement('h2');
+    projectName.classList.add('project-title');
+    projectName.textContent = project.name;
+    text.appendChild(projectName);
 
+    const tags = document.createElement('nav');
+    tags.classList.add('tags');
+    const ul = document.createElement('ul');
+    project.technologies.forEach(tech => {
+      const li = document.createElement('li');
+      const anchor = document.createElement('a');
+      anchor.href = '#';
+      anchor.textContent = tech;
+      li.appendChild(anchor);
+      ul.appendChild(li);
+    });
+    tags.appendChild(ul);
+    text.appendChild(tags);
+
+    const button = document.createElement('button');
+    button.classList.add('action');
+    button.type = 'submit';
+    button.textContent = 'See Project';
+    button.addEventListener('click', () => showModal(project))
+    text.appendChild(button);
+
+    card.appendChild(text);
+
+    return card;
   }
 
   // create Array having list of projects
@@ -208,6 +243,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   ];
 
-  const ActionButtons = recentWorkSection.querySelectorAll('.action');
-  ActionButtons.forEach((actionButton, index) => actionButton.addEventListener('click', () => showModal(Projects[index])));
+  for (let project of Projects) {
+    cardContainer.appendChild(createRecentWorkCard(project));
+  }
+
 });
