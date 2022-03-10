@@ -4,39 +4,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuBar = document.querySelector('#app-bar-mobile');
   const menu = mobileMenuBar.querySelector('.menu');
   const logo = document.querySelector('.logo');
-  const ListOfMenus = document.querySelector('#app-bar-menus');
-  const toolBar = ListOfMenus.querySelector('#tool-bar');
+  const listOfMenus = document.querySelector('#app-bar-menus');
+  const toolBar = listOfMenus.querySelector('#tool-bar');
   const humBurger = mobileMenuBar.querySelectorAll('.menu-icon')[0];
   const returnHome = document.querySelector('#closeMenu');
   const recentWorkModal = document.querySelector('#recent-work-modal');
+  const cardContainer = recentWorkSection.querySelector('.card-flow');
   const mobileMenuBarHeight = mobileMenuBar.scrollHeight;
   const windowHeight = window.innerHeight;
 
   // dispose mobile menu
   function disposeMobileMenu() {
-    ListOfMenus.classList.toggle('display-none');
-    ListOfMenus.classList.toggle('show');
+    listOfMenus.classList.toggle('hide');
+    listOfMenus.classList.toggle('show');
     logo.text = 'Welcome';
-    humBurger.classList.remove('display-none');
+    humBurger.classList.remove('hide');
     menu.lastChild.remove();
   }
 
   humBurger.addEventListener('click', () => {
-    ListOfMenus.classList.toggle('display-none');
-    ListOfMenus.classList.toggle('show');
+    listOfMenus.classList.toggle('hide');
+    listOfMenus.classList.toggle('show');
     logo.text = '';
-    ListOfMenus.style = `position: absolute; top:${mobileMenuBarHeight}px`;
-    toolBar.style = `min-height: ${windowHeight - mobileMenuBarHeight - 40}px`;
+    listOfMenus.setAttribute('style', `position: absolute; top:${mobileMenuBarHeight}px`);
+    toolBar.setAttribute('style', `min-height: ${windowHeight - mobileMenuBarHeight - 40}px`);
     const cancel = document.createElement('li');
     cancel.classList.add('menu-icon');
     const img = document.createElement('img');
     img.setAttribute('src', './images/icons/Cancel.svg');
     img.setAttribute('alt', 'close');
     cancel.appendChild(img);
-    humBurger.classList.add('display-none');
+    humBurger.classList.add('hide');
     menu.appendChild(cancel);
     cancel.addEventListener('click', disposeMobileMenu);
-    ListOfMenus.querySelectorAll('li').forEach((element) => {
+    listOfMenus.querySelectorAll('li').forEach((element) => {
       element.addEventListener('click', disposeMobileMenu);
     });
   });
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Portfolio: details popup window */
 
   const hideModal = () => {
-    recentWorkModal.classList.add('display-none');
+    recentWorkModal.classList.add('hide');
     recentWorkModal.innerHTML = `<div class="container"> 
     <span id="close-modal-desktop"></span> 
     <div id="feature">  </div> </div>`;
@@ -92,9 +93,45 @@ document.addEventListener('DOMContentLoaded', () => {
     recentWorkModal.querySelector('.container').appendChild(technology);
     recentWorkModal.querySelector('.container').appendChild(description);
     recentWorkModal.querySelector('.container').appendChild(links);
-    recentWorkModal.classList.remove('display-none');
+    recentWorkModal.classList.remove('hide');
     fullPage.setAttribute('style', `height: ${recentWorkModal.scrollHeight}px`);
     disposeDesktop.addEventListener('click', () => hideModal());
+  };
+
+  const createRecentWorkCard = (project) => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    const text = document.createElement('div');
+    text.classList.add('text');
+    const projectName = document.createElement('h2');
+    projectName.classList.add('project-title');
+    projectName.textContent = project.name;
+    text.appendChild(projectName);
+
+    const tags = document.createElement('nav');
+    tags.classList.add('tags');
+    const ul = document.createElement('ul');
+    project.technologies.forEach((tech) => {
+      const li = document.createElement('li');
+      const anchor = document.createElement('a');
+      anchor.href = '#';
+      anchor.textContent = tech;
+      li.appendChild(anchor);
+      ul.appendChild(li);
+    });
+    tags.appendChild(ul);
+    text.appendChild(tags);
+
+    const button = document.createElement('button');
+    button.classList.add('action');
+    button.type = 'submit';
+    button.textContent = 'See Project';
+    button.addEventListener('click', () => showModal(project));
+    text.appendChild(button);
+
+    card.appendChild(text);
+
+    return card;
   };
 
   // create Array having list of projects
@@ -204,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   ];
 
-  const ActionButtons = recentWorkSection.querySelectorAll('.action');
-  ActionButtons.forEach((actionButton, index) => actionButton.addEventListener('click', () => showModal(Projects[index])));
+  Projects.forEach((project) => {
+    cardContainer.appendChild(createRecentWorkCard(project));
+  });
 });
