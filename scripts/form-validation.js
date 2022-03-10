@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
       formElements.forEach((element) => {
         if (element.hasAttribute('id')) {
           storage[element.getAttribute('id')] = '';
-          element.addEventListener('input', ()  storeFormData('contactFormData', element.getAttribute('id'), element.value));
+          element.addEventListener('input', () => storeFormData('contactFormData', element.getAttribute('id'), element.value));
         }
       });
       localStorage.setItem('contactFormData', JSON.stringify(storage));
@@ -83,6 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const error = small.cloneNode();
       error.innerHTML = 'Error saving form data to your device';
       form.appendChild(error);
-
+    }
     }
   });
