@@ -84,5 +84,5 @@ document.addEventListener('DOMContentLoaded', () => {
       error.innerHTML = 'Error saving form data to your device';
       form.appendChild(error);
     }
-    }
-  });
+  }
+});
