@@ -97,6 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
     disposeDesktop.addEventListener('click', () => hideModal());
   };
 
+  const createRecentWorkCard = (project) => {
+
+  }
+
   // create Array having list of projects
   const featureImageType = window.innerWidth < 922 ? '-mobile.svg' : '.svg';
   const Projects = [
