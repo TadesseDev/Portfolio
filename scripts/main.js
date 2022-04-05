@@ -135,13 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // create Array having list of projects
-  const featureImageType = window.innerWidth < 922 ? '-mobile.svg' : '.svg';
   const Projects = [
     {
       name: 'To do lists',
       title: 'To do list organizer',
-      description: `This is a single-page application (SPA) that you can use to organize your daily schedule. You can create a task ✍🏼, mark a task as completed ✔, update its details ⚒, or delete it 🚩. All this without needing to reload a page. ✔`,
-      featuredImage: `./images/pictures/project-snapshots/PNG/To-Do-list.PNG`,
+      description: 'This is a single-page application (SPA) that you can use to organize your daily schedule. You can create a task ✍🏼, mark a task as completed ✔, update its details ⚒, or delete it 🚩. All this without needing to reload a page. ✔',
+      featuredImage: './images/pictures/project-snapshots/PNG/To-Do-list.PNG',
       featuredImageAlt: 'To-Do-list.PNG Image',
       technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
       liveVersion: 'https://tadesse-alemayehu.github.io/To-Do-list/',
@@ -150,8 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Awesome book project with ES6 syntax.',
       title: 'Awesome book project with ES6 syntax.',
-      description: `Hello there  ✋🏼 . You like reading. here is an awesome single page  App to help you organize your books`,
-      featuredImage: `./images/pictures/project-snapshots/PNG/Awesome-Books-ES6.PNG`,
+      description: 'Hello there  ✋🏼 . You like reading. here is an awesome single page  App to help you organize your books',
+      featuredImage: './images/pictures/project-snapshots/PNG/Awesome-Books-ES6.PNG',
       featuredImageAlt: 'Awesome-Books-ES6.PNG Image',
       technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
       liveVersion: 'https://tadesse-alemayehu.github.io/Awesome-Books-ES6/',
@@ -168,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
       sapien eu velit porttitor semper. Aliquam sed elementum enim.
       Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
       et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: `./images/pictures/project-snapshots/PNG/LEARN-TO-CODE.PNG`,
+      featuredImage: './images/pictures/project-snapshots/PNG/LEARN-TO-CODE.PNG',
       featuredImageAlt: 'Learn to code project image',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       liveVersion: 'https://tadesse-alemayehu.github.io/LEARN-TO-CODE/',
@@ -185,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
       sapien eu velit porttitor semper. Aliquam sed elementum enim.
       Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
       et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: `./images/pictures/project-snapshots/PNG/Rock-Paper-Scissors-Advance.PNG`,
+      featuredImage: './images/pictures/project-snapshots/PNG/Rock-Paper-Scissors-Advance.PNG',
       featuredImageAlt: 'Rock-Paper-Scissors-Advance.PNG Image',
       technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
       liveVersion: 'https://tadesse-alemayehu.github.io/Rock-Paper-Scissors-Advance/',
@@ -194,8 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Etch-A-Sketch',
       title: 'Project two(drawing board)',
-      description: `So you love to draw? Good! This is an Etch-a-sketch project and you can create an awesome drawing board with your pre-defined pixel range and draw your picture.`,
-      featuredImage: `./images/pictures/project-snapshots/PNG/Etch-A-Sketch.PNG`,
+      description: 'So you love to draw? Good! This is an Etch-a-sketch project and you can create an awesome drawing board with your pre-defined pixel range and draw your picture.',
+      featuredImage: './images/pictures/project-snapshots/PNG/Etch-A-Sketch.PNG',
       featuredImageAlt: 'Etch-A-Sketch.PNG Image',
       technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
       liveVersion: 'https://tadesse-alemayehu.github.io/Etch-A-Sketch/',
@@ -212,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
       sapien eu velit porttitor semper.Aliquam sed elementum enim.
       Suspendisse ultrices quis enim at gravida.Ut lectus urna, cursus
       et tellus in, faucibus lacinia urna.Morbi nibh purus, vehicula at`,
-      featuredImage: `./images/pictures/project-snapshots/PNG/YouTube-Clone.PNG`,
+      featuredImage: './images/pictures/project-snapshots/PNG/YouTube-Clone.PNG',
       featuredImageAlt: 'YouTube-Clone Image',
       technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
       liveVersion: 'https://tadesse-alemayehu.github.io/YouTube-Clone/',
