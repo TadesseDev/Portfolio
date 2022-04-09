@@ -1,4 +1,4 @@
-import sectionObserver from './observer.js';
+import sectionObserver from './modules/observer.js';
 document.addEventListener('DOMContentLoaded', () => {
   const fullPage = document.querySelector('#main-mobile');
   const appBarSection = document.querySelector('#app-bar-mobile');
@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const cardContainer = recentWorkSection.querySelector('.card-flow');
   const mobileMenuBarHeight = mobileMenuBar.scrollHeight;
   const windowHeight = window.innerHeight;
-
+  const goUp = document.getElementById('go-up');
+  const godown = document.getElementById('go-down');
+  const sections = [appBarSection, listOfMenus, headingSection, recentWorkSection, aboutMeSection, contactSection, footerSection];
   // dispose mobile menu
   function disposeMobileMenu() {
     listOfMenus.classList.toggle('hide');
@@ -228,17 +230,21 @@ document.addEventListener('DOMContentLoaded', () => {
   Projects.forEach((project) => {
     cardContainer.appendChild(createRecentWorkCard(project));
   });
-  const sections = [appBarSection, headingSection, recentWorkSection, aboutMeSection, contactSection, footerSection];
+
   sectionObserver(sections, element => {
-    const goUp = document.getElementById('go-up');
-    const godown = document.getElementById('go-down');
-    if (sections.indexOf(element) === 0)
-      goUp.classList.toggle('hide', true)
-    else if (sections.indexOf(element) === sections.length - 1)
-      godown.classList.toggle('hide', true)
-    else {
-      goUp.classList.toggle('hide', false)
-      godown.classList.toggle('hide', false)
+    if (sections.indexOf(element.target) <= 1) {
+      if (element.isIntersecting) {
+        goUp.classList.toggle('hide', true);
+      }
+      else {
+        goUp.classList.toggle('hide', false);
+      }
+    }
+    else if (sections.indexOf(element.target) === sections.length - 1) {
+      if (element.isIntersecting)
+        godown.classList.toggle("hide", true);
+      else
+        godown.classList.toggle("hide", false);
     }
   });
 });

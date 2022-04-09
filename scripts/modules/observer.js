@@ -1,9 +1,7 @@
 const sectionsObserver = (sections, callback) => {
   const observer = new IntersectionObserver(entry => {
     entry.forEach(element => {
-      if (element.isIntersecting) {
-        callback(element.target);
-      }
+      callback(element);
     });
   });
   sections.forEach(section => {
