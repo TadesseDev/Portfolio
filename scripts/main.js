@@ -1,6 +1,12 @@
+import sectionObserver from './observer.js';
 document.addEventListener('DOMContentLoaded', () => {
   const fullPage = document.querySelector('#main-mobile');
+  const appBarSection = document.querySelector('#app-bar-mobile');
+  const headingSection = document.querySelector('.heading');
   const recentWorkSection = document.querySelector('#recent-work');
+  const aboutMeSection = document.querySelector('#about-me');
+  const contactSection = document.querySelector('#contact-form');
+  const footerSection = document.querySelector('#footer');
   const mobileMenuBar = document.querySelector('#app-bar-mobile');
   const menu = mobileMenuBar.querySelector('.menu');
   const logo = document.querySelector('.logo');
@@ -221,5 +227,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   Projects.forEach((project) => {
     cardContainer.appendChild(createRecentWorkCard(project));
+  });
+  const sections = [appBarSection, headingSection, recentWorkSection, aboutMeSection, contactSection, footerSection];
+  sectionObserver(sections, element => {
+    const goUp = document.getElementById('go-up');
+    const godown = document.getElementById('go-down');
+    if (sections.indexOf(element) === 0)
+      goUp.classList.toggle('hide', true)
+    else if (sections.indexOf(element) === sections.length - 1)
+      godown.classList.toggle('hide', true)
+    else {
+      goUp.classList.toggle('hide', false)
+      godown.classList.toggle('hide', false)
+    }
   });
 });
