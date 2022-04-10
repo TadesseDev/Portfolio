@@ -1,4 +1,3 @@
-import sectionObserver from './modules/observer.js';
 document.addEventListener('DOMContentLoaded', () => {
   const fullPage = document.querySelector('#main-mobile');
   const headingSection = document.querySelector('#heading');
@@ -19,7 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const windowHeight = window.innerHeight;
   const goUp = document.getElementById('go-up');
   const godown = document.getElementById('go-down');
-  const sections = [mobileMenuBar, headingSection, recentWorkSection, aboutMeSection, contactSection, footerSection];
+  const sections = [mobileMenuBar,
+    headingSection, recentWorkSection,
+    aboutMeSection, contactSection,
+    footerSection];
   // dispose mobile menu
   function disposeMobileMenu() {
     listOfMenus.classList.toggle('hide');
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     logo.text = 'Welcome';
     humBurger.classList.remove('hide');
     menu.lastChild.remove();
-    document.body.setAttribute('style', '    max-height: unset;overflow: visible;')
+    document.body.setAttribute('style', '    max-height: unset;overflow: visible;');
   }
 
   humBurger.addEventListener('click', () => {
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     logo.text = '';
     listOfMenus.setAttribute('style', `position: absolute; top:${mobileMenuBarHeight}px;z-index: 1`);
     toolBar.setAttribute('style', `min-height: ${windowHeight - mobileMenuBarHeight - 40}px`);
-    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;')
+    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;');
     const cancel = document.createElement('li');
     cancel.classList.add('menu-icon');
     const img = document.createElement('img');
@@ -105,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     recentWorkModal.classList.remove('hide');
     fullPage.setAttribute('style', `height: ${recentWorkModal.scrollHeight}px`);
     disposeDesktop.addEventListener('click', () => hideModal());
-    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;')
+    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;');
   };
 
   const createRecentWorkCard = (project) => {
@@ -235,22 +237,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let goUpIndex = 0;
   let goDownIndex = 1;
-  goUp.href = '#' + sections[goUpIndex].getAttribute('id');
-  godown.href = '#' + sections[goDownIndex].getAttribute('id');
+  goUp.href = `#${sections[goUpIndex].getAttribute('id')}`;
+  godown.href = `#${sections[goDownIndex].getAttribute('id')}`;
   goUp.addEventListener('mouseup', () => {
-    if (goUpIndex <= 0)
-      goUpIndex = 1;
-    godown.href = '#' + sections[goUpIndex].getAttribute('id');
+    if (goUpIndex <= 0) goUpIndex = 1;
+    godown.href = `#${sections[goUpIndex].getAttribute('id')}`;
     goDownIndex = goUpIndex;
-    goUpIndex--;
-    goUp.href = '#' + sections[goUpIndex].getAttribute('id');
+    goUpIndex -= 1;
+    goUp.href = `#${sections[goUpIndex].getAttribute('id')}`;
   });
   godown.addEventListener('mouseup', () => {
-    if (goDownIndex >= sections.length - 1)
-      goDownIndex = sections.length - 2;
-    goUp.href = '#' + sections[goDownIndex].getAttribute('id');
-    goDownIndex++;
-    godown.href = '#' + sections[goDownIndex].getAttribute('id');
+    if (goDownIndex >= sections.length - 1) goDownIndex = sections.length - 2;
+    goUp.href = `#${sections[goDownIndex].getAttribute('id')}`;
+    goDownIndex += 1;
+    godown.href = `#${sections[goDownIndex].getAttribute('id')}`;
   });
-
 });

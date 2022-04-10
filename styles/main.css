@@ -99,6 +99,17 @@ a {
   margin-bottom: 10px;
 }
 
+#toggle-section li {
+  height: 7vw;
+  min-height: 35px;
+  max-height: 80px;
+  margin-left: 10px;
+}
+
+#toggle-section img {
+  height: 100%;
+}
+
 #about-me ul li {
   padding: 0;
   margin-left: 4px;
@@ -842,22 +853,11 @@ hr {
   }
 }
 
-#toggle-section{
+#toggle-section {
   display: inline-flex;
   position: fixed;
   bottom: 1vh;
   right: 1vw;
-
-}
-#toggle-section li{
-  height: 7vw;min-height: 35px;
-  min-height: 35px;
-  max-height: 80px;
-  margin-left: 10px;
-}
-
-#toggle-section img{
-  height: 100%;
 }
 
 #toggle-section #go-up img {
