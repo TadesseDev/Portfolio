@@ -27,14 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
     logo.text = 'Welcome';
     humBurger.classList.remove('hide');
     menu.lastChild.remove();
+    document.body.setAttribute('style', '    max-height: unset;overflow: visible;')
   }
 
   humBurger.addEventListener('click', () => {
     listOfMenus.classList.toggle('hide');
     listOfMenus.classList.toggle('show');
     logo.text = '';
-    listOfMenus.setAttribute('style', `position: absolute; top:${mobileMenuBarHeight}px`);
+    listOfMenus.setAttribute('style', `position: absolute; top:${mobileMenuBarHeight}px;z-index: 1`);
     toolBar.setAttribute('style', `min-height: ${windowHeight - mobileMenuBarHeight - 40}px`);
+    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;')
     const cancel = document.createElement('li');
     cancel.classList.add('menu-icon');
     const img = document.createElement('img');
@@ -103,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     recentWorkModal.classList.remove('hide');
     fullPage.setAttribute('style', `height: ${recentWorkModal.scrollHeight}px`);
     disposeDesktop.addEventListener('click', () => hideModal());
+    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;')
   };
 
   const createRecentWorkCard = (project) => {
