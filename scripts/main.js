@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const fullPage = document.querySelector('#main-mobile');
+  const headingSection = document.querySelector('#heading');
   const recentWorkSection = document.querySelector('#recent-work');
+  const aboutMeSection = document.querySelector('#about-me');
+  const contactSection = document.querySelector('#contact-form');
+  const footerSection = document.querySelector('#footer');
   const mobileMenuBar = document.querySelector('#app-bar-mobile');
   const menu = mobileMenuBar.querySelector('.menu');
   const logo = document.querySelector('.logo');
@@ -12,7 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const cardContainer = recentWorkSection.querySelector('.card-flow');
   const mobileMenuBarHeight = mobileMenuBar.scrollHeight;
   const windowHeight = window.innerHeight;
-
+  const goUp = document.getElementById('go-up');
+  const godown = document.getElementById('go-down');
+  const sections = [mobileMenuBar,
+    headingSection, recentWorkSection,
+    aboutMeSection, contactSection,
+    footerSection];
   // dispose mobile menu
   function disposeMobileMenu() {
     listOfMenus.classList.toggle('hide');
@@ -20,14 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
     logo.text = 'Welcome';
     humBurger.classList.remove('hide');
     menu.lastChild.remove();
+    document.body.setAttribute('style', '    max-height: unset;overflow: visible;');
   }
 
   humBurger.addEventListener('click', () => {
     listOfMenus.classList.toggle('hide');
     listOfMenus.classList.toggle('show');
     logo.text = '';
-    listOfMenus.setAttribute('style', `position: absolute; top:${mobileMenuBarHeight}px`);
+    listOfMenus.setAttribute('style', `position: absolute; top:${mobileMenuBarHeight}px;z-index: 1`);
     toolBar.setAttribute('style', `min-height: ${windowHeight - mobileMenuBarHeight - 40}px`);
+    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;');
     const cancel = document.createElement('li');
     cancel.classList.add('menu-icon');
     const img = document.createElement('img');
@@ -96,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     recentWorkModal.classList.remove('hide');
     fullPage.setAttribute('style', `height: ${recentWorkModal.scrollHeight}px`);
     disposeDesktop.addEventListener('click', () => hideModal());
+    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;');
   };
 
   const createRecentWorkCard = (project) => {
@@ -221,5 +233,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   Projects.forEach((project) => {
     cardContainer.appendChild(createRecentWorkCard(project));
+  });
+
+  let goUpIndex = 0;
+  let goDownIndex = 1;
+  goUp.href = `#${sections[goUpIndex].getAttribute('id')}`;
+  godown.href = `#${sections[goDownIndex].getAttribute('id')}`;
+  goUp.addEventListener('mouseup', () => {
+    if (goUpIndex <= 0) goUpIndex = 1;
+    godown.href = `#${sections[goUpIndex].getAttribute('id')}`;
+    goDownIndex = goUpIndex;
+    goUpIndex -= 1;
+    goUp.href = `#${sections[goUpIndex].getAttribute('id')}`;
+  });
+  godown.addEventListener('mouseup', () => {
+    if (goDownIndex >= sections.length - 1) goDownIndex = sections.length - 2;
+    goUp.href = `#${sections[goDownIndex].getAttribute('id')}`;
+    goDownIndex += 1;
+    godown.href = `#${sections[goDownIndex].getAttribute('id')}`;
   });
 });

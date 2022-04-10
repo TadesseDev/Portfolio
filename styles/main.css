@@ -99,6 +99,17 @@ a {
   margin-bottom: 10px;
 }
 
+#toggle-section li {
+  height: 7vw;
+  min-height: 35px;
+  max-height: 80px;
+  margin-left: 10px;
+}
+
+#toggle-section img {
+  height: 100%;
+}
+
 #about-me ul li {
   padding: 0;
   margin-left: 4px;
@@ -175,7 +186,7 @@ a {
   justify-content: space-evenly;
 }
 
-.heading {
+#heading {
   background-image: url("../images/pictures/header-illsutration-mobile.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -270,11 +281,11 @@ h2.primary {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: transform 1s ease;
+  transition: transform 0.5s ease;
 }
 
 .icon:hover {
-  transform: scale(1.5);
+  transform: scale(1.3);
 }
 
 .social-media-icons .icon {
@@ -692,13 +703,13 @@ hr {
     grid-gap: 0 30px;
   }
 
-  .heading {
+  #heading {
     background-image: url("../images/pictures/Desktop-heading-Background.svg");
     background-size: auto 100%;
     padding: 10px;
   }
 
-  .heading > * {
+  #heading > * {
     flex: 0;
     margin-bottom: 3%;
   }
@@ -840,4 +851,16 @@ hr {
   #app-bar-menus {
     display: block;
   }
+}
+
+#toggle-section {
+  display: inline-flex;
+  position: fixed;
+  bottom: 1vh;
+  right: 1vw;
+}
+
+#toggle-section #go-up img {
+  height: 100%;
+  transform: rotate(180deg);
 }
