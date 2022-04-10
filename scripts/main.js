@@ -1,7 +1,6 @@
 import sectionObserver from './modules/observer.js';
 document.addEventListener('DOMContentLoaded', () => {
   const fullPage = document.querySelector('#main-mobile');
-  const appBarSection = document.querySelector('#app-bar-mobile');
   const headingSection = document.querySelector('#heading');
   const recentWorkSection = document.querySelector('#recent-work');
   const aboutMeSection = document.querySelector('#about-me');
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const windowHeight = window.innerHeight;
   const goUp = document.getElementById('go-up');
   const godown = document.getElementById('go-down');
-  const sections = [appBarSection, listOfMenus, headingSection, recentWorkSection, aboutMeSection, contactSection, footerSection];
+  const sections = [mobileMenuBar, headingSection, recentWorkSection, aboutMeSection, contactSection, footerSection];
   // dispose mobile menu
   function disposeMobileMenu() {
     listOfMenus.classList.toggle('hide');
@@ -231,20 +230,24 @@ document.addEventListener('DOMContentLoaded', () => {
     cardContainer.appendChild(createRecentWorkCard(project));
   });
 
-  sectionObserver(sections, element => {
-    if (sections.indexOf(element.target) <= 1) {
-      if (element.isIntersecting) {
-        goUp.classList.toggle('hide', true);
-      }
-      else {
-        goUp.classList.toggle('hide', false);
-      }
-    }
-    else if (sections.indexOf(element.target) === sections.length - 1) {
-      if (element.isIntersecting)
-        godown.classList.toggle("hide", true);
-      else
-        godown.classList.toggle("hide", false);
-    }
+  let goUpIndex = 0;
+  let goDownIndex = 1;
+  goUp.href = '#' + sections[goUpIndex].getAttribute('id');
+  godown.href = '#' + sections[goDownIndex].getAttribute('id');
+  goUp.addEventListener('mouseup', () => {
+    if (goUpIndex <= 0)
+      goUpIndex = 1;
+    godown.href = '#' + sections[goUpIndex].getAttribute('id');
+    goDownIndex = goUpIndex;
+    goUpIndex--;
+    goUp.href = '#' + sections[goUpIndex].getAttribute('id');
   });
+  godown.addEventListener('mouseup', () => {
+    if (goDownIndex >= sections.length - 1)
+      goDownIndex = sections.length - 2;
+    goUp.href = '#' + sections[goDownIndex].getAttribute('id');
+    goDownIndex++;
+    godown.href = '#' + sections[goDownIndex].getAttribute('id');
+  });
+
 });
