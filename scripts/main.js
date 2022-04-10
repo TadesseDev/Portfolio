@@ -2,7 +2,7 @@ import sectionObserver from './modules/observer.js';
 document.addEventListener('DOMContentLoaded', () => {
   const fullPage = document.querySelector('#main-mobile');
   const appBarSection = document.querySelector('#app-bar-mobile');
-  const headingSection = document.querySelector('.heading');
+  const headingSection = document.querySelector('#heading');
   const recentWorkSection = document.querySelector('#recent-work');
   const aboutMeSection = document.querySelector('#about-me');
   const contactSection = document.querySelector('#contact-form');

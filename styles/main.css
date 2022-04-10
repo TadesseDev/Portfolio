@@ -175,7 +175,7 @@ a {
   justify-content: space-evenly;
 }
 
-.heading {
+#heading {
   background-image: url("../images/pictures/header-illsutration-mobile.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -692,13 +692,13 @@ hr {
     grid-gap: 0 30px;
   }
 
-  .heading {
+  #heading {
     background-image: url("../images/pictures/Desktop-heading-Background.svg");
     background-size: auto 100%;
     padding: 10px;
   }
 
-  .heading > * {
+  #heading > * {
     flex: 0;
     margin-bottom: 3%;
   }
