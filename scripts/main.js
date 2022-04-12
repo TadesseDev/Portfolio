@@ -239,25 +239,37 @@ document.addEventListener('DOMContentLoaded', () => {
   let linkSection = 0;
   goUp.href = `#${sections[linkSection].getAttribute('id')}`;
   godown.href = `#${sections[linkSection + 1].getAttribute('id')}`;
-  console.log(sections.length);
+  goUp.classList.toggle('hide', true);
   const navigationIcon = element => {
-    console.log(linkSection);
-    if (element === goUp)
-      linkSection -= 1;
-    else
-      linkSection += 1;
-    if (linkSection < 0)
-      linkSection = 0;
-    else if (linkSection >= sections.length)
-      linkSection -= 1;
-    goUp.href = `#${sections[linkSection].getAttribute('id')}`;
-    godown.href = `#${sections[linkSection + 1].getAttribute('id')}`;
-    console.log(linkSection);
+    setTimeout(() => {
+      console.log('inpromise');
+      if (element === goUp)
+        linkSection -= 1;
+      else
+        linkSection += 1;
+      if (linkSection < 0) {
+        linkSection = 0;
+        goUp.classList.toggle('hide', true);
+      }
+      else if (linkSection >= sections.length - 1) {
+        linkSection -= 1;
+        godown.classList.toggle('hide', true);
+      }
+      else {
+        goUp.classList.toggle('hide', false);
+        godown.classList.toggle('hide', false);
+      }
+      goUp.href = `#${sections[linkSection].getAttribute('id')}`;
+      godown.href = `#${sections[linkSection + 1].getAttribute('id')}`;
+    }, 100);
+
   }
   goUp.addEventListener('click', (e) => {
     navigationIcon(e.currentTarget)
   });
   godown.addEventListener('click', (e) => {
     navigationIcon(e.currentTarget)
+    // body
+
   });
 });
