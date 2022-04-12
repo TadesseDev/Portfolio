@@ -236,14 +236,28 @@ document.addEventListener('DOMContentLoaded', () => {
     cardContainer.appendChild(createRecentWorkCard(project));
   });
 
-  let goUpIndex = 0;
-  let goDownIndex = 1;
-  goUp.href = `#${sections[goUpIndex].getAttribute('id')}`;
-  godown.href = `#${sections[goDownIndex].getAttribute('id')}`;
+  let linkSection = 0;
+  goUp.href = `#${sections[linkSection].getAttribute('id')}`;
+  godown.href = `#${sections[linkSection + 1].getAttribute('id')}`;
+  console.log(sections.length);
+  const navigationIcon = element => {
+    console.log(linkSection);
+    if (element === goUp)
+      linkSection -= 1;
+    else
+      linkSection += 1;
+    if (linkSection < 0)
+      linkSection = 0;
+    else if (linkSection >= sections.length)
+      linkSection -= 1;
+    goUp.href = `#${sections[linkSection].getAttribute('id')}`;
+    godown.href = `#${sections[linkSection + 1].getAttribute('id')}`;
+    console.log(linkSection);
+  }
   goUp.addEventListener('click', (e) => {
-    console.log(e.target.href);
+    navigationIcon(e.currentTarget)
   });
   godown.addEventListener('click', (e) => {
-    console.log(e.target);
+    navigationIcon(e.currentTarget)
   });
 });
