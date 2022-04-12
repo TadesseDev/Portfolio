@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const fullPage = document.querySelector('#main-mobile');
-  const headingSection = document.querySelector('#heading');
+  const navigationSection = document.querySelector('#navigation');
+  const heading = document.querySelector('#heading');
   const recentWorkSection = document.querySelector('#recent-work');
   const aboutMeSection = document.querySelector('#about-me');
   const contactSection = document.querySelector('#contact-form');
@@ -18,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const windowHeight = window.innerHeight;
   const goUp = document.getElementById('go-up');
   const godown = document.getElementById('go-down');
-  const sections = [mobileMenuBar,
-    headingSection, recentWorkSection,
+  const sections = [
+    navigationSection, heading, recentWorkSection,
     aboutMeSection, contactSection,
     footerSection];
   // dispose mobile menu
@@ -239,17 +240,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let goDownIndex = 1;
   goUp.href = `#${sections[goUpIndex].getAttribute('id')}`;
   godown.href = `#${sections[goDownIndex].getAttribute('id')}`;
-  goUp.addEventListener('mouseup', () => {
-    if (goUpIndex <= 0) goUpIndex = 1;
-    godown.href = `#${sections[goUpIndex].getAttribute('id')}`;
-    goDownIndex = goUpIndex;
-    goUpIndex -= 1;
-    goUp.href = `#${sections[goUpIndex].getAttribute('id')}`;
+  goUp.addEventListener('click', (e) => {
+    console.log(e.target.href);
   });
-  godown.addEventListener('mouseup', () => {
-    if (goDownIndex >= sections.length - 1) goDownIndex = sections.length - 2;
-    goUp.href = `#${sections[goDownIndex].getAttribute('id')}`;
-    goDownIndex += 1;
-    godown.href = `#${sections[goDownIndex].getAttribute('id')}`;
+  godown.addEventListener('click', (e) => {
+    console.log(e.target);
   });
 });

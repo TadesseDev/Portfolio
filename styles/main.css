@@ -849,7 +849,8 @@ hr {
   }
 
   #app-bar-menus {
-    display: block;
+    display: flex;
+    justify-content: center;
   }
 }
 
