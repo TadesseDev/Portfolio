@@ -194,7 +194,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  min-height: 726px;
+  min-height: 100vh;
 }
 
 .logo {
@@ -683,8 +683,9 @@ hr {
 
   #heading {
     background-image: url("../images/pictures/Desktop-heading-Background.svg");
-    background-size: auto 100%;
+   background-size: 100% auto;
     padding: 10px;
+
   }
 
   #heading > * {
