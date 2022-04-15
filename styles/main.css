@@ -691,6 +691,18 @@ hr {
     flex: 0;
     margin-bottom: 3%;
   }
+  
+  #contact-form .form {
+    display: grid;
+    margin: 10% 0 0 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: center;
+  }
+  
+  #contact-form .form legend {
+    display: contents;
+  }
 }
 
 @media all and (min-width: 992px) {
@@ -824,10 +836,6 @@ hr {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
     align-items: center;
-  }
-
-  #contact-form .form legend {
-    display: contents;
   }
 
   #contact-form .form ul li:last-child {
