@@ -620,13 +620,15 @@ hr {
 }
 
 #recent-work-modal #close-modal-desktop {
-  display: block;
-  margin-left: calc(100% - 30px);
-  width: 25px;
-  height: 25px;
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  max-width: 50px;
+  max-height: 50px;
   background-image: url("../images/icons/close-modal.svg");
-  background-repeat: no-repeat;
   background-size: contain;
+  top: 2vw;
+  right: 0;
 }
 
 #recent-work-modal #feature {

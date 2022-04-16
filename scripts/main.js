@@ -36,8 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hideModal = () => {
     global.recentWorkModal.classList.add('hide');
     global.recentWorkModal.innerHTML = `<div class="container"> 
-    <span id="close-modal-desktop"></span> 
-    <div id="feature">  </div> </div>`;
+    <div id="feature"> <span id="close-modal-desktop"></span></div> </div>`;
     global.fullPage.setAttribute('style', 'height: auto');
   };
 
