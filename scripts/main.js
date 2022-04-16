@@ -3,8 +3,8 @@ import global from './modules/GLOBALS.js';
 document.addEventListener('DOMContentLoaded', () => {
   // dispose mobile menu
   function disposeMobileMenu() {
-    global.listOfMenus.classList.toggle('hide');
-    global.listOfMenus.classList.toggle('show');
+    global.listOfMenus.classList.toggle('hide', true);
+    global.listOfMenus.classList.toggle('show', false);
     global.logo.text = 'Welcome';
     global.humBurger.classList.remove('hide');
     global.menu.lastChild.remove();
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     global.listOfMenus.classList.toggle('hide');
     global.listOfMenus.classList.toggle('show');
     global.logo.text = '';
-    global.listOfMenus.setAttribute('style', `position: absolute; top:${global.mobileMenuBarHeight}px`);
+    global.listOfMenus.setAttribute('style', `top:${global.mobileMenuBarHeight}px`);
     global.toolBar.setAttribute('style', `min-height: ${global.windowHeight - global.mobileMenuBarHeight}px`);
     const cancel = document.createElement('li');
     cancel.classList.add('menu-icon');
