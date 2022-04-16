@@ -5,26 +5,24 @@ document.addEventListener('DOMContentLoaded', () => {
   function disposeMobileMenu() {
     global.listOfMenus.classList.toggle('hide');
     global.listOfMenus.classList.toggle('show');
-    global.logo.text = 'Welcome';
+    logo.text = 'Welcome';
     global.humBurger.classList.remove('hide');
-    global.menu.lastChild.remove();
-    document.body.setAttribute('style', '    max-height: unset;overflow: visible;');
+    menu.lastChild.remove();
   }
 
   global.humBurger.addEventListener('click', () => {
     global.listOfMenus.classList.toggle('hide');
     global.listOfMenus.classList.toggle('show');
-    global.logo.text = '';
-    global.listOfMenus.setAttribute('style', `position: absolute; top:${mobileMenuBarHeight}px;z-index: 1`);
+    logo.text = '';
+    global.listOfMenus.setAttribute('style', `position: absolute; top:${mobileMenuBarHeight}px`);
     global.toolBar.setAttribute('style', `min-height: ${windowHeight - mobileMenuBarHeight - 40}px`);
-    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;');
     const cancel = document.createElement('li');
     cancel.classList.add('menu-icon');
     const img = document.createElement('img');
     img.setAttribute('src', './images/icons/Cancel.svg');
     img.setAttribute('alt', 'close');
     cancel.appendChild(img);
-    humBurger.classList.add('hide');
+    global.humBurger.classList.add('hide');
     menu.appendChild(cancel);
     cancel.addEventListener('click', disposeMobileMenu);
     global.listOfMenus.querySelectorAll('li').forEach((element) => {
@@ -88,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
     global.recentWorkModal.classList.remove('hide');
     global.fullPage.setAttribute('style', `height: ${global.recentWorkModal.scrollHeight}px`);
     disposeDesktop.addEventListener('click', () => hideModal());
-    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;');
   };
 
   const createRecentWorkCard = (project) => {
@@ -128,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // create Array having list of projects
-console.log( global.Projects);
+  console.log(global.Projects);
   global.Projects.forEach((project) => {
     global.cardContainer.appendChild(createRecentWorkCard(project));
   });
