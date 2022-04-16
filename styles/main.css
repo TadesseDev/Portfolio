@@ -660,12 +660,12 @@ hr {
   transform: rotate(180deg);
 }
 
-
 @media all and (min-width: 700px) {
   .card-flow {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
   #app-bar-mobile {
     display: none;
   }
@@ -674,7 +674,7 @@ hr {
     display: flex;
     justify-content: center;
   }
-  
+
   #app-bar-menus ul {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -683,16 +683,15 @@ hr {
 
   #heading {
     background-image: url("../images/pictures/Desktop-heading-Background.svg");
-   background-size: 100% auto;
+    background-size: 100% auto;
     padding: 10px;
-
   }
 
   #heading > * {
     flex: 0;
     margin-bottom: 3%;
   }
-  
+
   #contact-form .form {
     display: grid;
     margin: 10% 0 0 0;
@@ -700,7 +699,7 @@ hr {
     gap: 25px;
     align-items: center;
   }
-  
+
   #contact-form .form legend {
     display: contents;
   }
@@ -754,7 +753,6 @@ hr {
     margin: 0 auto;
     padding-bottom: 0;
   }
-
 
   .primary {
     margin-top: 5vw;
@@ -881,6 +879,4 @@ hr {
   #footer {
     border-top: 1px solid rgba(104, 129, 143, 0.699);
   }
-
 }
-

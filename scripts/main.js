@@ -1,21 +1,21 @@
-import global from './modules/GLOBALS.js'
-document.addEventListener('DOMContentLoaded', () => {
+import global from './modules/GLOBALS.js';
 
+document.addEventListener('DOMContentLoaded', () => {
   // dispose mobile menu
   function disposeMobileMenu() {
     global.listOfMenus.classList.toggle('hide');
     global.listOfMenus.classList.toggle('show');
-    logo.text = 'Welcome';
+    global.logo.text = 'Welcome';
     global.humBurger.classList.remove('hide');
-    menu.lastChild.remove();
+    global.menu.lastChild.remove();
   }
 
   global.humBurger.addEventListener('click', () => {
     global.listOfMenus.classList.toggle('hide');
     global.listOfMenus.classList.toggle('show');
-    logo.text = '';
-    global.listOfMenus.setAttribute('style', `position: absolute; top:${mobileMenuBarHeight}px`);
-    global.toolBar.setAttribute('style', `min-height: ${windowHeight - mobileMenuBarHeight - 40}px`);
+    global.logo.text = '';
+    global.listOfMenus.setAttribute('style', `position: absolute; top:${global.mobileMenuBarHeight}px`);
+    global.toolBar.setAttribute('style', `min-height: ${global.windowHeight - global.mobileMenuBarHeight - 40}px`);
     const cancel = document.createElement('li');
     cancel.classList.add('menu-icon');
     const img = document.createElement('img');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     img.setAttribute('alt', 'close');
     cancel.appendChild(img);
     global.humBurger.classList.add('hide');
-    menu.appendChild(cancel);
+    global.menu.appendChild(cancel);
     cancel.addEventListener('click', disposeMobileMenu);
     global.listOfMenus.querySelectorAll('li').forEach((element) => {
       element.addEventListener('click', disposeMobileMenu);
@@ -34,12 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Portfolio: details popup window */
 
   const hideModal = () => {
-    console.log();
     global.recentWorkModal.classList.add('hide');
     global.recentWorkModal.innerHTML = `<div class="container"> 
     <span id="close-modal-desktop"></span> 
     <div id="feature">  </div> </div>`;
-    console.log(global.fullPage);
     global.fullPage.setAttribute('style', 'height: auto');
   };
 
@@ -125,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // create Array having list of projects
-  console.log(global.Projects);
   global.Projects.forEach((project) => {
     global.cardContainer.appendChild(createRecentWorkCard(project));
   });
@@ -134,36 +131,28 @@ document.addEventListener('DOMContentLoaded', () => {
   global.goUp.href = `#${global.sections[linkSection].getAttribute('id')}`;
   global.godown.href = `#${global.sections[linkSection + 1].getAttribute('id')}`;
   global.goUp.classList.toggle('hide', true);
-  const navigationIcon = element => {
+  const navigationIcon = (element) => {
     setTimeout(() => {
-      console.log('inpromise');
-      if (element === global.goUp)
-        linkSection -= 1;
-      else
-        linkSection += 1;
+      if (element === global.goUp) { linkSection -= 1; } else { linkSection += 1; }
       if (linkSection < 0) {
         linkSection = 0;
         global.goUp.classList.toggle('hide', true);
-      }
-      else if (linkSection >= global.sections.length - 1) {
+      } else if (linkSection >= global.sections.length - 1) {
         linkSection -= 1;
         global.godown.classList.toggle('hide', true);
-      }
-      else {
+      } else {
         global.goUp.classList.toggle('hide', false);
         global.godown.classList.toggle('hide', false);
       }
       global.goUp.href = `#${global.sections[linkSection].getAttribute('id')}`;
       global.godown.href = `#${global.sections[linkSection + 1].getAttribute('id')}`;
     }, 100);
-
-  }
+  };
   global.goUp.addEventListener('click', (e) => {
-    navigationIcon(e.currentTarget)
+    navigationIcon(e.currentTarget);
   });
   global.godown.addEventListener('click', (e) => {
-    navigationIcon(e.currentTarget)
+    navigationIcon(e.currentTarget);
     // body
-
   });
 });
