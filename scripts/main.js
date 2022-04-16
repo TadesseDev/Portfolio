@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     global.listOfMenus.classList.toggle('show');
     global.logo.text = '';
     global.listOfMenus.setAttribute('style', `position: absolute; top:${global.mobileMenuBarHeight}px`);
-    global.toolBar.setAttribute('style', `min-height: ${global.windowHeight - global.mobileMenuBarHeight - 40}px`);
+    global.toolBar.setAttribute('style', `min-height: ${global.windowHeight - global.mobileMenuBarHeight}px`);
     const cancel = document.createElement('li');
     cancel.classList.add('menu-icon');
     const img = document.createElement('img');

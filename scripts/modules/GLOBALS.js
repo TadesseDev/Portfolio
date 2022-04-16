@@ -93,7 +93,7 @@ export default {
   menu: document.querySelector('#app-bar-mobile').querySelector('.menu'),
   logo: document.querySelector('.logo'),
   listOfMenus: document.querySelector('#app-bar-menus'),
-  toolBar: document.querySelector('#app-bar-mobile').querySelector('#tool-bar'),
+  toolBar: document.querySelector('#app-bar-menus'),
   humBurger: document.querySelector('#app-bar-mobile').querySelectorAll('.menu-icon')[0],
   returnHome: document.querySelector('#closeMenu'),
   recentWorkModal: document.querySelector('#recent-work-modal'),
