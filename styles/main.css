@@ -49,8 +49,12 @@ a {
 
 #app-bar-menus.show {
   min-width: 100%;
-  position: relative;
+  position: absolute;
   background-color: #e1e4fcba;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
 }
 
 #app-bar-menus.show #tool-bar {
@@ -58,6 +62,7 @@ a {
   margin-right: 0;
   background-color: #fff;
   flex-direction: column;
+  flex-grow: 1;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
 }
@@ -615,13 +620,15 @@ hr {
 }
 
 #recent-work-modal #close-modal-desktop {
-  display: block;
-  margin-left: calc(100% - 30px);
-  width: 25px;
-  height: 25px;
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  max-width: 50px;
+  max-height: 50px;
   background-image: url("../images/icons/close-modal.svg");
-  background-repeat: no-repeat;
   background-size: contain;
+  top: 2vw;
+  right: 0;
 }
 
 #recent-work-modal #feature {
