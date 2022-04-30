@@ -49,8 +49,12 @@ a {
 
 #app-bar-menus.show {
   min-width: 100%;
-  position: relative;
+  position: absolute;
   background-color: #e1e4fcba;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
 }
 
 #app-bar-menus.show #tool-bar {
@@ -58,6 +62,7 @@ a {
   margin-right: 0;
   background-color: #fff;
   flex-direction: column;
+  flex-grow: 1;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
 }
@@ -194,7 +199,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  min-height: 726px;
+  min-height: 100vh;
 }
 
 .logo {
@@ -615,13 +620,15 @@ hr {
 }
 
 #recent-work-modal #close-modal-desktop {
-  display: block;
-  margin-left: calc(100% - 30px);
-  width: 25px;
-  height: 25px;
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  max-width: 50px;
+  max-height: 50px;
   background-image: url("../images/icons/close-modal.svg");
-  background-repeat: no-repeat;
   background-size: contain;
+  top: 2vw;
+  right: 0;
 }
 
 #recent-work-modal #feature {
@@ -646,6 +653,63 @@ hr {
 
 #recent-work-modal button span {
   margin-right: 3%;
+}
+
+#toggle-section {
+  display: inline-flex;
+  position: fixed;
+  bottom: 1vh;
+  right: 1vw;
+}
+
+#toggle-section #go-up img {
+  height: 100%;
+  transform: rotate(180deg);
+}
+
+@media all and (min-width: 700px) {
+  .card-flow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #app-bar-mobile {
+    display: none;
+  }
+
+  #app-bar-menus {
+    display: flex;
+    justify-content: center;
+  }
+
+  #app-bar-menus ul {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 0 30px;
+  }
+
+  #heading {
+    background-image: url("../images/pictures/Desktop-heading-Background.svg");
+    background-size: 100% auto;
+    padding: 10px;
+  }
+
+  #heading > * {
+    flex: 0;
+    margin-bottom: 3%;
+  }
+
+  #contact-form .form {
+    display: grid;
+    margin: 10% 0 0 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: center;
+  }
+
+  #contact-form .form legend {
+    display: contents;
+  }
 }
 
 @media all and (min-width: 992px) {
@@ -695,23 +759,6 @@ hr {
     max-width: 100%;
     margin: 0 auto;
     padding-bottom: 0;
-  }
-
-  #app-bar-menus ul {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 0 30px;
-  }
-
-  #heading {
-    background-image: url("../images/pictures/Desktop-heading-Background.svg");
-    background-size: auto 100%;
-    padding: 10px;
-  }
-
-  #heading > * {
-    flex: 0;
-    margin-bottom: 3%;
   }
 
   .primary {
@@ -797,10 +844,6 @@ hr {
     align-items: center;
   }
 
-  #contact-form .form legend {
-    display: contents;
-  }
-
   #contact-form .form ul li:last-child {
     align-self: flex-start;
   }
@@ -843,24 +886,4 @@ hr {
   #footer {
     border-top: 1px solid rgba(104, 129, 143, 0.699);
   }
-
-  #app-bar-mobile {
-    display: none;
-  }
-
-  #app-bar-menus {
-    display: block;
-  }
-}
-
-#toggle-section {
-  display: inline-flex;
-  position: fixed;
-  bottom: 1vh;
-  right: 1vw;
-}
-
-#toggle-section #go-up img {
-  height: 100%;
-  transform: rotate(180deg);
 }

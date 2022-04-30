@@ -1,67 +1,43 @@
+import global from './modules/GLOBALS.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-  const fullPage = document.querySelector('#main-mobile');
-  const headingSection = document.querySelector('#heading');
-  const recentWorkSection = document.querySelector('#recent-work');
-  const aboutMeSection = document.querySelector('#about-me');
-  const contactSection = document.querySelector('#contact-form');
-  const footerSection = document.querySelector('#footer');
-  const mobileMenuBar = document.querySelector('#app-bar-mobile');
-  const menu = mobileMenuBar.querySelector('.menu');
-  const logo = document.querySelector('.logo');
-  const listOfMenus = document.querySelector('#app-bar-menus');
-  const toolBar = listOfMenus.querySelector('#tool-bar');
-  const humBurger = mobileMenuBar.querySelectorAll('.menu-icon')[0];
-  const returnHome = document.querySelector('#closeMenu');
-  const recentWorkModal = document.querySelector('#recent-work-modal');
-  const cardContainer = recentWorkSection.querySelector('.card-flow');
-  const mobileMenuBarHeight = mobileMenuBar.scrollHeight;
-  const windowHeight = window.innerHeight;
-  const goUp = document.getElementById('go-up');
-  const godown = document.getElementById('go-down');
-  const sections = [mobileMenuBar,
-    headingSection, recentWorkSection,
-    aboutMeSection, contactSection,
-    footerSection];
   // dispose mobile menu
   function disposeMobileMenu() {
-    listOfMenus.classList.toggle('hide');
-    listOfMenus.classList.toggle('show');
-    logo.text = 'Welcome';
-    humBurger.classList.remove('hide');
-    menu.lastChild.remove();
-    document.body.setAttribute('style', '    max-height: unset;overflow: visible;');
+    global.listOfMenus.classList.toggle('hide', true);
+    global.listOfMenus.classList.toggle('show', false);
+    global.logo.text = 'Welcome';
+    global.humBurger.classList.remove('hide');
+    global.menu.lastChild.remove();
   }
 
-  humBurger.addEventListener('click', () => {
-    listOfMenus.classList.toggle('hide');
-    listOfMenus.classList.toggle('show');
-    logo.text = '';
-    listOfMenus.setAttribute('style', `position: absolute; top:${mobileMenuBarHeight}px;z-index: 1`);
-    toolBar.setAttribute('style', `min-height: ${windowHeight - mobileMenuBarHeight - 40}px`);
-    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;');
+  global.humBurger.addEventListener('click', () => {
+    global.listOfMenus.classList.toggle('hide');
+    global.listOfMenus.classList.toggle('show');
+    global.logo.text = '';
+    global.listOfMenus.setAttribute('style', `top:${global.mobileMenuBarHeight}px`);
+    global.toolBar.setAttribute('style', `min-height: ${global.windowHeight - global.mobileMenuBarHeight}px`);
     const cancel = document.createElement('li');
     cancel.classList.add('menu-icon');
     const img = document.createElement('img');
     img.setAttribute('src', './images/icons/Cancel.svg');
     img.setAttribute('alt', 'close');
     cancel.appendChild(img);
-    humBurger.classList.add('hide');
-    menu.appendChild(cancel);
+    global.humBurger.classList.add('hide');
+    global.menu.appendChild(cancel);
     cancel.addEventListener('click', disposeMobileMenu);
-    listOfMenus.querySelectorAll('li').forEach((element) => {
+    global.listOfMenus.querySelectorAll('li').forEach((element) => {
       element.addEventListener('click', disposeMobileMenu);
     });
   });
-  returnHome.addEventListener('click', disposeMobileMenu);
+  global.returnHome.addEventListener('click', disposeMobileMenu);
 
   /* Portfolio: details popup window */
 
   const hideModal = () => {
-    recentWorkModal.classList.add('hide');
-    recentWorkModal.innerHTML = `<div class="container"> 
-    <span id="close-modal-desktop"></span> 
-    <div id="feature">  </div> </div>`;
-    fullPage.setAttribute('style', 'height: auto');
+    global.recentWorkModal.classList.add('hide');
+    global.recentWorkModal.innerHTML = `<div class="container"> 
+    <div id="feature"> <span id="close-modal-desktop"></span></div> </div>`;
+    global.fullPage.setAttribute('style', 'height: auto');
   };
 
   // this method will create and display modal from previously defined objects(project)
@@ -72,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const technoList = document.createElement('ul');
     const description = document.createElement('p');
     const links = document.createElement('div');
-    const disposeDesktop = recentWorkModal.querySelector('#close-modal-desktop');
+    const disposeDesktop = global.recentWorkModal.querySelector('#close-modal-desktop');
     links.innerHTML = `
 <a href="${project.liveVersion || '#'}" target="blank">
   <span>See Live </span
@@ -99,15 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
     description.classList.add('description');
     links.classList.add('links');
     description.textContent = project.description;
-    recentWorkModal.querySelector('#feature').appendChild(featureImage);
-    recentWorkModal.querySelector('.container').appendChild(title);
-    recentWorkModal.querySelector('.container').appendChild(technology);
-    recentWorkModal.querySelector('.container').appendChild(description);
-    recentWorkModal.querySelector('.container').appendChild(links);
-    recentWorkModal.classList.remove('hide');
-    fullPage.setAttribute('style', `height: ${recentWorkModal.scrollHeight}px`);
+    global.recentWorkModal.querySelector('#feature').appendChild(featureImage);
+    global.recentWorkModal.querySelector('.container').appendChild(title);
+    global.recentWorkModal.querySelector('.container').appendChild(technology);
+    global.recentWorkModal.querySelector('.container').appendChild(description);
+    global.recentWorkModal.querySelector('.container').appendChild(links);
+    global.recentWorkModal.classList.remove('hide');
+    global.fullPage.setAttribute('style', `height: ${global.recentWorkModal.scrollHeight}px`);
     disposeDesktop.addEventListener('click', () => hideModal());
-    document.body.setAttribute('style', '    max-height: 100vh;overflow: hidden;');
   };
 
   const createRecentWorkCard = (project) => {
@@ -147,109 +122,36 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // create Array having list of projects
-  const Projects = [
-    {
-      name: 'To do lists',
-      title: 'To do list organizer',
-      description: 'This is a single-page application (SPA) that you can use to organize your daily schedule. You can create a task ✍🏼, mark a task as completed ✔, update its details ⚒, or delete it 🚩. All this without needing to reload a page. ✔',
-      featuredImage: './images/pictures/project-snapshots/PNG/To-Do-list.PNG',
-      featuredImageAlt: 'To-Do-list.PNG Image',
-      technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-      liveVersion: 'https://tadesse-alemayehu.github.io/To-Do-list/',
-      source: 'https://github.com/Tadesse-Alemayehu/To-Do-list',
-    },
-    {
-      name: 'Awesome book project with ES6 syntax.',
-      title: 'Awesome book project with ES6 syntax.',
-      description: 'Hello there  ✋🏼 . You like reading. here is an awesome single page  App to help you organize your books',
-      featuredImage: './images/pictures/project-snapshots/PNG/Awesome-Books-ES6.PNG',
-      featuredImageAlt: 'Awesome-Books-ES6.PNG Image',
-      technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-      liveVersion: 'https://tadesse-alemayehu.github.io/Awesome-Books-ES6/',
-      source: 'https://github.com/Tadesse-Alemayehu/Awesome-Books-ES6',
-    },
-    {
-      name: 'Learn to code',
-      title: 'Learn to code',
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
-      turpis id metus vehicula, a faucibus neque vehicula. Etiam
-      tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
-      eget lacinia sed, molestie at nisi. Nulla iaculis mi finibus augue
-      pharetra, quis pellentesque metus hendrerit. Vestibulum tristique
-      sapien eu velit porttitor semper. Aliquam sed elementum enim.
-      Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
-      et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: './images/pictures/project-snapshots/PNG/LEARN-TO-CODE.PNG',
-      featuredImageAlt: 'Learn to code project image',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      liveVersion: 'https://tadesse-alemayehu.github.io/LEARN-TO-CODE/',
-      source: 'https://github.com/Tadesse-Alemayehu/LEARN-TO-CODE',
-    },
-    {
-      name: 'Rock-Paper-Scissors',
-      title: 'project one',
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius
-      turpis id metus vehicula, a faucibus neque vehicula. Etiam
-      tincidunt ante et dui efficitur ultricies. Nulla ex felis, mattis
-      eget lacinia sed, molestie at nisi. Nulla iaculis mi finibus augue
-      pharetra, quis pellentesque metus hendrerit. Vestibulum tristique
-      sapien eu velit porttitor semper. Aliquam sed elementum enim.
-      Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
-      et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
-      featuredImage: './images/pictures/project-snapshots/PNG/Rock-Paper-Scissors-Advance.PNG',
-      featuredImageAlt: 'Rock-Paper-Scissors-Advance.PNG Image',
-      technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-      liveVersion: 'https://tadesse-alemayehu.github.io/Rock-Paper-Scissors-Advance/',
-      source: 'https://github.com/Tadesse-Alemayehu/Rock-Paper-Scissors-Advance',
-    },
-    {
-      name: 'Etch-A-Sketch',
-      title: 'Project two(drawing board)',
-      description: 'So you love to draw? Good! This is an Etch-a-sketch project and you can create an awesome drawing board with your pre-defined pixel range and draw your picture.',
-      featuredImage: './images/pictures/project-snapshots/PNG/Etch-A-Sketch.PNG',
-      featuredImageAlt: 'Etch-A-Sketch.PNG Image',
-      technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-      liveVersion: 'https://tadesse-alemayehu.github.io/Etch-A-Sketch/',
-      source: 'https://github.com/Tadesse-Alemayehu/Etch-A-Sketch',
-    },
-    {
-      name: 'YouTube-Clone',
-      title: 'Project five. Microverse Bootcamp',
-      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.In varius
-      turpis id metus vehicula, a faucibus neque vehicula.Etiam
-      tincidunt ante et dui efficitur ultricies.Nulla ex felis, mattis
-      eget lacinia sed, molestie at nisi.Nulla iaculis mi finibus augue
-      pharetra, quis pellentesque metus hendrerit.Vestibulum tristique
-      sapien eu velit porttitor semper.Aliquam sed elementum enim.
-      Suspendisse ultrices quis enim at gravida.Ut lectus urna, cursus
-      et tellus in, faucibus lacinia urna.Morbi nibh purus, vehicula at`,
-      featuredImage: './images/pictures/project-snapshots/PNG/YouTube-Clone.PNG',
-      featuredImageAlt: 'YouTube-Clone Image',
-      technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-      liveVersion: 'https://tadesse-alemayehu.github.io/YouTube-Clone/',
-      source: 'https://github.com/Tadesse-Alemayehu/YouTube-Clone',
-    },
-  ];
-
-  Projects.forEach((project) => {
-    cardContainer.appendChild(createRecentWorkCard(project));
+  global.Projects.forEach((project) => {
+    global.cardContainer.appendChild(createRecentWorkCard(project));
   });
 
-  let goUpIndex = 0;
-  let goDownIndex = 1;
-  goUp.href = `#${sections[goUpIndex].getAttribute('id')}`;
-  godown.href = `#${sections[goDownIndex].getAttribute('id')}`;
-  goUp.addEventListener('mouseup', () => {
-    if (goUpIndex <= 0) goUpIndex = 1;
-    godown.href = `#${sections[goUpIndex].getAttribute('id')}`;
-    goDownIndex = goUpIndex;
-    goUpIndex -= 1;
-    goUp.href = `#${sections[goUpIndex].getAttribute('id')}`;
+  let linkSection = 0;
+  global.goUp.href = `#${global.sections[linkSection].getAttribute('id')}`;
+  global.godown.href = `#${global.sections[linkSection + 1].getAttribute('id')}`;
+  global.goUp.classList.toggle('hide', true);
+  const navigationIcon = (element) => {
+    setTimeout(() => {
+      if (element === global.goUp) { linkSection -= 1; } else { linkSection += 1; }
+      if (linkSection < 0) {
+        linkSection = 0;
+        global.goUp.classList.toggle('hide', true);
+      } else if (linkSection >= global.sections.length - 1) {
+        linkSection -= 1;
+        global.godown.classList.toggle('hide', true);
+      } else {
+        global.goUp.classList.toggle('hide', false);
+        global.godown.classList.toggle('hide', false);
+      }
+      global.goUp.href = `#${global.sections[linkSection].getAttribute('id')}`;
+      global.godown.href = `#${global.sections[linkSection + 1].getAttribute('id')}`;
+    }, 100);
+  };
+  global.goUp.addEventListener('click', (e) => {
+    navigationIcon(e.currentTarget);
   });
-  godown.addEventListener('mouseup', () => {
-    if (goDownIndex >= sections.length - 1) goDownIndex = sections.length - 2;
-    goUp.href = `#${sections[goDownIndex].getAttribute('id')}`;
-    goDownIndex += 1;
-    godown.href = `#${sections[goDownIndex].getAttribute('id')}`;
+  global.godown.addEventListener('click', (e) => {
+    navigationIcon(e.currentTarget);
+    // body
   });
 });

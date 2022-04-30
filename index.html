@@ -24,17 +24,17 @@
   </head>
   <body>
     <div id="main-mobile">
-      <header id="app-bar-mobile">
-        <nav id="tool-bar-m">
-          <a href="#" class="logo">Welcome</a>
-          <ul class="menu">
-            <li class="menu-icon">
-              <img src="./images/icons/Icon-Menu.svg" alt="menu" />
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <section id="heading">
+      <section id="navigation">
+        <header id="app-bar-mobile">
+          <nav id="tool-bar-m">
+            <a href="#" class="logo">Welcome</a>
+            <ul class="menu">
+              <li class="menu-icon">
+                <img src="./images/icons/Icon-Menu.svg" alt="menu" />
+              </li>
+            </ul>
+          </nav>
+        </header>
         <header id="app-bar-menus" class="hide">
           <nav id="tool-bar">
             <ul class="menu">
@@ -51,6 +51,8 @@
           </nav>
           <div id="closeMenu"></div>
         </header>
+      </section>
+      <section id="heading">
         <h1 class="primary">
           Hey there. I’m Tadesse
           <span class="i-am">I’m a software developer</span>
@@ -101,7 +103,7 @@
           </li>
         </ul>
         <div id="action">
-          <span class="icon"></span>
+          <a href="#recent-work" class="icon"></a>
         </div>
       </section>
       <section id="recent-work">
@@ -295,8 +297,9 @@
     </div>
     <div id="recent-work-modal" class="hide">
       <div class="container">
-        <span id="close-modal-desktop"></span>
-        <div id="feature"></div>
+        <div id="feature">
+          <span id="close-modal-desktop"></span>
+        </div>
       </div>
     </div>
     <script type="module" src="scripts/main.js"></script>
