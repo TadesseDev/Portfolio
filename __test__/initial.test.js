@@ -5,6 +5,7 @@ describe('Test initial dom content', () => {
   test('assert all section are present inside the dom', () => {
     expect(section.length).toBe(5);
   });
+
   test('Assert menu element to toggle menu presents', () => {
     const menuElement = document.querySelector('#app-bar-mobile').querySelector('.menu');
     const visibleMenu = menuElement.querySelectorAll('.hide');
