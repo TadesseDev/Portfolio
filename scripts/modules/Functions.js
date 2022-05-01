@@ -101,18 +101,23 @@ export const manageNavigation = () => {
   global.goUp.classList.toggle('hide', true);
   return (element) => {
     setTimeout(() => {
-      if (element === global.goUp) { linkSection -= 1; } else { linkSection += 1; }
-      if (linkSection < 0) {
-        linkSection = 0;
+      if (element === global.goUp) {
+        linkSection -= 1;
+      } else {
+        linkSection += 1;
+      }
+      if (linkSection <= 0) {
+        linkSection = 1;
         global.goUp.classList.toggle('hide', true);
       } else if (linkSection >= global.sections.length - 1) {
-        linkSection -= 1;
+        linkSection -= 2;
         global.godown.classList.toggle('hide', true);
       } else {
         global.goUp.classList.toggle('hide', false);
         global.godown.classList.toggle('hide', false);
       }
-      global.goUp.href = `#${global.sections[linkSection].getAttribute('id')}`;
+      console.log('happening')
+      global.goUp.href = `#${global.sections[linkSection - 1].getAttribute('id')}`;
       global.godown.href = `#${global.sections[linkSection + 1].getAttribute('id')}`;
     }, 10);
   };
