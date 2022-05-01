@@ -43,4 +43,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-Coming soon.
+LICENCED UNDER [MIT License](LICENSE)
