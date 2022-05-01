@@ -13,18 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
     global.humBurger.classList.add('hide');
   });
 
-  // add dis
+  // Add events to DOM elements capable of disposing mobile menu.
   global.returnHome.addEventListener('click', disposeMobileMenu);
   global.closeMobileMenu.addEventListener('click', disposeMobileMenu);
   global.listOfMenus.querySelectorAll('li').forEach((element) => {
     element.addEventListener('click', disposeMobileMenu);
   });
 
-  // create project card and add it to the dom card container
+  // create project card and add it to the dom car/project container.
   global.Projects.forEach((project) => {
     global.cardContainer.appendChild(createRecentWorkCard(project));
   });
 
+  // add go Up and Down buttons functionality using function closure.
   const navigationIcon = manageNavigation();
   global.goUp.addEventListener('click', (e) => {
     navigationIcon(e.currentTarget);

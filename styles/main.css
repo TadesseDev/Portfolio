@@ -20,7 +20,7 @@ a {
   text-decoration: none;
 }
 
-#main-mobile {
+#main-container {
   background: #fff;
   position: relative;
   width: 100%;
@@ -755,7 +755,7 @@ hr {
     max-height: 80vh;
   }
 
-  #main-mobile {
+  #main-container {
     max-width: 100%;
     margin: 0 auto;
     padding-bottom: 0;

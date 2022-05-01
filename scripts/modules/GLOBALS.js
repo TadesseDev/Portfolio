@@ -82,7 +82,7 @@ const myProjects = [
   },
 ];
 export default {
-  fullPage: document.querySelector('#main-mobile'),
+  fullPage: document.querySelector('#main-container'),
   navigationSection: document.querySelector('#navigation'),
   heading: document.querySelector('#heading'),
   recentWorkSection: document.querySelector('#recent-work'),
