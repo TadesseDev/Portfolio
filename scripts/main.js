@@ -1,5 +1,5 @@
 import global from './modules/GLOBALS.js';
-import { disposeMobileMenu, createRecentWorkCard, manageNavigation } from './modules/Functions.js';
+import { disposeMobileMenu, renderProjectToTheDom, manageNavigation } from './modules/Functions.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // add event for then hamburger button to be able to show the menu
@@ -21,10 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // create project card and add it to the dom car/project container.
-  global.Projects.forEach((project) => {
-    global.cardContainer.appendChild(createRecentWorkCard(project));
-  });
-
+  renderProjectToTheDom();
   // add go Up and Down buttons functionality using function closure.
   const navigationIcon = manageNavigation();
   global.goUp.addEventListener('click', (e) => {

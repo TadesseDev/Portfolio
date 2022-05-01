@@ -122,4 +122,9 @@ export const manageNavigation = () => {
     }, 10);
   };
 };
+export const renderProjectToTheDom = () => {
+  global.Projects.forEach((project) => {
+    global.cardContainer.appendChild(createRecentWorkCard(project));
+  });
+}
 // export { disposeMobileMenu, hideModal, showModal, createRecentWorkCard, manageNavigation };
