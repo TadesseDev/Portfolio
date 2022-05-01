@@ -1,6 +1,6 @@
 # Portfolio
 
-> This project is the second project for the full stack web development class by microverse.
+> My portfolio ✋🏼 where you will get glimpses of what I'm capable of. Including some of the projects I have been working on 🎞 , technologies I am familiar with, contact details, and more. The main technologies here are JavaScript, CSS3 and HTML5 🙌 See me live: https://tadesse-alemayehu.github.io/Portfolio/).
 
 # Screenshot's
 
@@ -11,6 +11,7 @@
 - HTML
 - CSS
 - JavaScript
+- jest(test/development-dependency)
 
 ## Live Demo
 
@@ -18,12 +19,13 @@
 
 ## Getting Started
 
-1. Open [main branch](https://github.com/Tadesse-Alemayehu/To-Do-list)
+1. Open [main branch](https://github.com/Tadesse-Alemayehu/porfolio)
 2. Open VSCode or terminal and navigate to the folder where you would like to clone the project.
 3. Type "pwd" to see your working directory.
-4. [clone repository](git@github.com:Tadesse-Alemayehu/To-Do-list)(git clone "branch-link")
-5. Run "index.html" with a live server or any web browser
-6. Enjoy 😎
+4. [clone repository](git@github.com:Tadesse-Alemayehu/porfolio)(git clone "branch-link")
+5. Run "npm install" to install required packages
+6. Run "index.html" with a live server or any web browser
+7. Enjoy 😎
 
 ## Authors
 
@@ -37,9 +39,15 @@
 
 Give a ⭐️ if you like this project!
 
+## Submit an issue
+
+[Issue page](https://github.com/Tadesse-Alemayehu/portfolio/issues)
+
 ## Acknowledgments
 
-- Microverse for amusing support and guidance.
+- Microverse for amusing learning resources.
+- Microverse code reviewers.
+- You! 🙏🏼 yes you... for visiting.
 
 ## 📝 License
 
