@@ -1,28 +1,26 @@
 import global from './modules/GLOBALS.js';
-import { disposeMobileMenu, hideModal, showModal, createRecentWorkCard, manageNavigation } from './modules/Functions.js'
+import { disposeMobileMenu, createRecentWorkCard, manageNavigation } from './modules/Functions.js'
 document.addEventListener('DOMContentLoaded', () => {
 
+  // add event for then hamburger button to be able to show the menu
   global.humBurger.addEventListener('click', () => {
     global.listOfMenus.classList.toggle('hide');
     global.listOfMenus.classList.toggle('show');
     global.logo.text = '';
     global.listOfMenus.setAttribute('style', `top:${global.mobileMenuBarHeight}px`);
     global.toolBar.setAttribute('style', `min-height: ${global.windowHeight - global.mobileMenuBarHeight}px`);
-    const cancel = document.createElement('li');
-    cancel.classList.add('menu-icon');
-    const img = document.createElement('img');
-    img.setAttribute('src', './images/icons/Cancel.svg');
-    img.setAttribute('alt', 'close');
-    cancel.appendChild(img);
+    global.closeMobileMenu.classList.toggle('hide', false)
     global.humBurger.classList.add('hide');
-    global.menu.appendChild(cancel);
-    cancel.addEventListener('click', disposeMobileMenu);
-    global.listOfMenus.querySelectorAll('li').forEach((element) => {
-      element.addEventListener('click', disposeMobileMenu);
-    });
   });
-  global.returnHome.addEventListener('click', disposeMobileMenu);
 
+  // add dis
+  global.returnHome.addEventListener('click', disposeMobileMenu);
+  global.closeMobileMenu.addEventListener('click', disposeMobileMenu);
+  global.listOfMenus.querySelectorAll('li').forEach((element) => {
+    element.addEventListener('click', disposeMobileMenu);
+  });
+
+  // create project card and add it to the dom card container
   global.Projects.forEach((project) => {
     global.cardContainer.appendChild(createRecentWorkCard(project));
   });

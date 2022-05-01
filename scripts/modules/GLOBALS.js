@@ -96,6 +96,7 @@ export default {
   toolBar: document.querySelector('#app-bar-menus'),
   humBurger: document.querySelector('#app-bar-mobile').querySelectorAll('.menu-icon')[0],
   returnHome: document.querySelector('#closeMenu'),
+  closeMobileMenu: document.querySelector('#app-bar-mobile').querySelectorAll('.menu-icon')[1],
   recentWorkModal: document.querySelector('#recent-work-modal'),
   cardContainer: document.querySelector('#recent-work').querySelector('.card-flow'),
   mobileMenuBarHeight: document.querySelector('#app-bar-mobile').scrollHeight,

@@ -2,9 +2,9 @@ import global from './GLOBALS.js';
 export function disposeMobileMenu() {
   global.listOfMenus.classList.toggle('hide', true);
   global.listOfMenus.classList.toggle('show', false);
+  global.closeMobileMenu.classList.toggle('hide', true)
+  global.humBurger.classList.toggle('hide', false);
   global.logo.text = 'Welcome';
-  global.humBurger.classList.remove('hide');
-  global.menu.lastChild.remove();
 }
 
 export const hideModal = () => {
