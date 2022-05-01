@@ -7,6 +7,5 @@ describe('Assert dom content after initial script executes', () => {
     renderProjectToTheDom();
     const projectContainerNod = document.querySelector('#recent-work').querySelector('.card-flow');
     expect(projectContainerNod.childElementCount).toBe(data.Projects.length)
-    // console.log(projectContainerNod.childElementCount, data.Projects.length);
   });
 });
