@@ -117,7 +117,6 @@ export const manageNavigation = () => {
         global.goUp.classList.toggle('hide', false);
         global.godown.classList.toggle('hide', false);
       }
-      console.log('happening');
       global.goUp.href = `#${global.sections[linkSection - 1].getAttribute('id')}`;
       global.godown.href = `#${global.sections[linkSection + 1].getAttribute('id')}`;
     }, 10);
