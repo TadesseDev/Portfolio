@@ -1,3 +1,4 @@
+
 const myProjects = [
   {
     name: 'To do lists',
@@ -81,6 +82,7 @@ const myProjects = [
     source: 'https://github.com/Tadesse-Alemayehu/YouTube-Clone',
   },
 ];
+console.log(document.querySelector('#app-bar-mobile'));
 export default {
   fullPage: document.querySelector('#main-container'),
   navigationSection: document.querySelector('#navigation'),
