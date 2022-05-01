@@ -54,7 +54,6 @@ a {
   display: flex;
   flex-direction: column;
   z-index: 1;
-
 }
 
 #app-bar-menus.show #tool-bar {

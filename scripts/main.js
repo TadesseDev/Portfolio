@@ -1,4 +1,4 @@
-import { DOMReadyActions, renderProjectToTheDom, manageNavigation } from './modules/Functions.js';
+import { DOMReadyActions, renderProjectToTheDom } from './modules/Functions.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   DOMReadyActions();

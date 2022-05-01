@@ -1,5 +1,5 @@
+import '../mock/initialDOM.js';
 
-import '../mock/initialDOM'
 describe('Test initial dom content', () => {
   const section = document.querySelectorAll('section');
   test('Assert all section are present inside the DOM', () => {

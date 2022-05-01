@@ -1,4 +1,3 @@
-
 const myProjects = [
   {
     name: 'To do lists',

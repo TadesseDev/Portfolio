@@ -126,7 +126,7 @@ export const renderProjectToTheDom = () => {
   global.Projects.forEach((project) => {
     global.cardContainer.appendChild(createRecentWorkCard(project));
   });
-}
+};
 
 export const DOMReadyActions = () => {
   // add event for then hamburger button to be able to show the menu
@@ -147,9 +147,8 @@ export const DOMReadyActions = () => {
   });
 
   // for better user experience reload page on changing window size
-
   window.addEventListener('resize', () => {
-    location.reload(); s
+    window.location.reload();
   });
 
   // add go Up and Down buttons functionality using function closure.
@@ -160,5 +159,5 @@ export const DOMReadyActions = () => {
   global.godown.addEventListener('click', (e) => {
     navigationIcon(e.currentTarget);
   });
-}
+};
 // export { disposeMobileMenu, hideModal, showModal, createRecentWorkCard, manageNavigation };

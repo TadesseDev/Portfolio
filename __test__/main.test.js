@@ -1,6 +1,7 @@
-import '../mock/initialDOM'
-import data from '../scripts/modules/GLOBALS'
-import { DOMReadyActions } from '../scripts/modules/Functions'
+import '../mock/initialDOM.js';
+import data from '../scripts/modules/GLOBALS.js';
+import { DOMReadyActions } from '../scripts/modules/Functions.js';
+
 DOMReadyActions();
 describe('Assert toggling menu options', () => {
   test('assert hamburger show the menubar', () => {
