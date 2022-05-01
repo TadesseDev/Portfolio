@@ -1,7 +1,7 @@
 import global from './modules/GLOBALS.js';
-import { disposeMobileMenu, createRecentWorkCard, manageNavigation } from './modules/Functions.js'
-document.addEventListener('DOMContentLoaded', () => {
+import { disposeMobileMenu, createRecentWorkCard, manageNavigation } from './modules/Functions.js';
 
+document.addEventListener('DOMContentLoaded', () => {
   // add event for then hamburger button to be able to show the menu
   global.humBurger.addEventListener('click', () => {
     global.listOfMenus.classList.toggle('hide');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     global.logo.text = '';
     global.listOfMenus.setAttribute('style', `top:${global.mobileMenuBarHeight}px`);
     global.toolBar.setAttribute('style', `min-height: ${global.windowHeight - global.mobileMenuBarHeight}px`);
-    global.closeMobileMenu.classList.toggle('hide', false)
+    global.closeMobileMenu.classList.toggle('hide', false);
     global.humBurger.classList.add('hide');
   });
 

@@ -1,8 +1,9 @@
 import global from './GLOBALS.js';
+
 export function disposeMobileMenu() {
   global.listOfMenus.classList.toggle('hide', true);
   global.listOfMenus.classList.toggle('show', false);
-  global.closeMobileMenu.classList.toggle('hide', true)
+  global.closeMobileMenu.classList.toggle('hide', true);
   global.humBurger.classList.toggle('hide', false);
   global.logo.text = 'Welcome';
 }
@@ -116,10 +117,10 @@ export const manageNavigation = () => {
         global.goUp.classList.toggle('hide', false);
         global.godown.classList.toggle('hide', false);
       }
-      console.log('happening')
+      console.log('happening');
       global.goUp.href = `#${global.sections[linkSection - 1].getAttribute('id')}`;
       global.godown.href = `#${global.sections[linkSection + 1].getAttribute('id')}`;
     }, 10);
   };
-}
+};
 // export { disposeMobileMenu, hideModal, showModal, createRecentWorkCard, manageNavigation };

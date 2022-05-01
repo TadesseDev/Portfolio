@@ -106,5 +106,5 @@ export default {
   sections: [
     document.querySelector('#navigation'), document.querySelector('#heading'), document.querySelector('#recent-work'),
     document.querySelector('#about-me'), document.querySelector('#contact-form'), document.querySelector('#footer')],
-  Projects: myProjects
+  Projects: myProjects,
 };
