@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch",
     "fix-style": "npx stylelint \"**/*.{css,scss}\" --fix",
     "fix-script": "npx npx eslint . --fix",
     "fix-html": "npx hint .",
@@ -22,7 +22,10 @@
   },
   "homepage": "https://github.com/Tadesse-Alemayehu/Portfolio#readme",
   "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^28.0.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.4",
@@ -31,7 +34,7 @@
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0"
   },
-  "jest":{
+  "jest": {
     "testEnvironment": "jsdom"
   },
   "dependencies": {
