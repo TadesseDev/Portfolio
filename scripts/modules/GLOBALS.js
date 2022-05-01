@@ -103,7 +103,7 @@ export default {
   goUp: document.getElementById('go-up'),
   godown: document.getElementById('go-down'),
   sections: [
-    document.querySelector('#heading'), document.querySelector('#recent-work'),
-    document.querySelector('#about-me'), document.querySelector('#contact-form')],
+    document.querySelector('#navigation'), document.querySelector('#heading'), document.querySelector('#recent-work'),
+    document.querySelector('#about-me'), document.querySelector('#contact-form'), document.querySelector('#footer')],
   Projects: myProjects
 };
