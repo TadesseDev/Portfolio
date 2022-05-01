@@ -1,11 +1,11 @@
 import global from './modules/GLOBALS.js';
 import { disposeMobileMenu, renderProjectToTheDom, manageNavigation } from './modules/Functions.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+export const DOMReadyActions = () => {
   // add event for then hamburger button to be able to show the menu
   global.humBurger.addEventListener('click', () => {
-    global.listOfMenus.classList.toggle('hide');
-    global.listOfMenus.classList.toggle('show');
+    global.listOfMenus.classList.toggle('hide', false);
+    global.listOfMenus.classList.toggle('show', true);
     global.logo.text = '';
     global.listOfMenus.setAttribute('style', `top:${global.mobileMenuBarHeight}px`);
     global.toolBar.setAttribute('style', `min-height: ${global.windowHeight - global.mobileMenuBarHeight}px`);
@@ -19,9 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   global.listOfMenus.querySelectorAll('li').forEach((element) => {
     element.addEventListener('click', disposeMobileMenu);
   });
-
   // create project card and add it to the dom car/project container.
-  renderProjectToTheDom();
+
   // add go Up and Down buttons functionality using function closure.
   const navigationIcon = manageNavigation();
   global.goUp.addEventListener('click', (e) => {
@@ -30,4 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
   global.godown.addEventListener('click', (e) => {
     navigationIcon(e.currentTarget);
   });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  DOMReadyActions();
+  renderProjectToTheDom();
 });
