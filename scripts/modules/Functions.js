@@ -145,7 +145,12 @@ export const DOMReadyActions = () => {
   global.listOfMenus.querySelectorAll('li').forEach((element) => {
     element.addEventListener('click', disposeMobileMenu);
   });
-  // create project card and add it to the dom car/project container.
+
+  // for better user experience reload page on changing window size
+
+  window.addEventListener('resize', () => {
+    location.reload(); s
+  });
 
   // add go Up and Down buttons functionality using function closure.
   const navigationIcon = manageNavigation();

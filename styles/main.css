@@ -194,7 +194,7 @@ a {
 #heading {
   background-image: url("../images/pictures/header-illsutration-mobile.svg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
   display: flex;
   flex-direction: column;
   align-items: center;
