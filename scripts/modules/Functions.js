@@ -62,36 +62,18 @@ export const showModal = (project) => {
 export const createRecentWorkCard = (project) => {
   const card = document.createElement('div');
   card.classList.add('card');
-  const text = document.createElement('div');
-  text.classList.add('text');
-  const projectName = document.createElement('h2');
-  projectName.classList.add('project-title');
-  projectName.textContent = project.name;
-  text.appendChild(projectName);
-
-  const tags = document.createElement('nav');
-  tags.classList.add('tags');
-  const ul = document.createElement('ul');
+  let text = `<div class="text">
+  <h2 class="project-title">${project.name}</h2>
+ <nav class="tags"><ul>`;
   project.technologies.forEach((tech) => {
-    const li = document.createElement('li');
-    const anchor = document.createElement('a');
-    anchor.href = '#';
-    anchor.textContent = tech;
-    li.appendChild(anchor);
-    ul.appendChild(li);
+    text = text + `<li><a href='#'/>${tech}</li>`;
   });
-  tags.appendChild(ul);
-  text.appendChild(tags);
+  text = text + `</ul></nav><button type='submit' class='action'>
+  See Project</button></div>`;
 
-  const button = document.createElement('button');
-  button.classList.add('action');
-  button.type = 'submit';
-  button.textContent = 'See Project';
-  button.addEventListener('click', () => showModal(project));
-  text.appendChild(button);
-
-  card.appendChild(text);
-
+  card.insertAdjacentHTML("afterbegin", text);
+  card.querySelector('.action')
+    .addEventListener('click', () => showModal(project));
   return card;
 };
 

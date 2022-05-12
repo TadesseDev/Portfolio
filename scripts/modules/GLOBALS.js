@@ -4,6 +4,7 @@ const myProjects = [
     title: 'To do list organizer',
     description: 'This is a single-page application (SPA) that you can use to organize your daily schedule. You can create a task ✍🏼, mark a task as completed ✔, update its details ⚒, or delete it 🚩. All this without needing to reload a page. ✔',
     featuredImage: './images/pictures/project-snapshots/PNG/To-Do-list.PNG',
+    cardImage: "./images/pictures/project-snapshots/PNG/To-Do-list.PNG",
     featuredImageAlt: 'To-Do-list.PNG Image',
     technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
     liveVersion: 'https://tadesse-alemayehu.github.io/To-Do-list/',
