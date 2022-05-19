@@ -1,5 +1,16 @@
 const myProjects = [
   {
+    name: 'My weather',
+    title: 'Check any city for a weather info',
+    description: 'This app enables users to get instant Information regarding weather conditions. If you share your location, it will fetch the top 10 cities near you and all the weather detail for each. You can also search for any city in the world and get the detail. It makes use of 3 different APIs. To fetch data, map coordinates, and locate your area and cities near you.',
+    featuredImage: './images/pictures/project-snapshots/PNG/My-weather.PNG',
+    cardImage: "./images/pictures/project-snapshots/PNG/My-weather.PNG",
+    featuredImageAlt: 'My-weather.PNG Image',
+    technologies: ['React/Redux', 'JavaSCript', 'REST-API'],
+    liveVersion: 'https://my-city-weather-app.netlify.app/',
+    source: 'https://github.com/Tadesse-Alemayehu/My-weather',
+  },
+  {
     name: 'To do lists',
     title: 'To do list organizer',
     description: 'This is a single-page application (SPA) that you can use to organize your daily schedule. You can create a task ✍🏼, mark a task as completed ✔, update its details ⚒, or delete it 🚩. All this without needing to reload a page. ✔',
