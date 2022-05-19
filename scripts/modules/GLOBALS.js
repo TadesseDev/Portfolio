@@ -22,6 +22,16 @@ const myProjects = [
     source: 'https://github.com/Tadesse-Alemayehu/Bookstore',
   },
   {
+    name: 'Space Travelers’ Hub',
+    title: 'work with the real live data from the SpaceX API.',
+    description: 'In this task, we will be working with the real live data from the SpaceX API. Our task is to build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.',
+    featuredImage: './images/pictures/project-snapshots/PNG/space-travel.PNG',
+    featuredImageAlt: ' space-travel.PNG Image',
+    technologies: ['React/Redux', 'JavaScript', 'API', 'Jest'],
+    liveVersion: 'https://tadesse-jorge-space-travelers.netlify.app/',
+    source: 'https://github.com/Tadesse-Alemayehu/Space-Travelers',
+  },
+  {
     name: 'To do lists',
     title: 'To do list organizer',
     description: 'This is a single-page application (SPA) that you can use to organize your daily schedule. You can create a task ✍🏼, mark a task as completed ✔, update its details ⚒, or delete it 🚩. All this without needing to reload a page. ✔',
@@ -31,16 +41,6 @@ const myProjects = [
     technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
     liveVersion: 'https://tadesse-alemayehu.github.io/To-Do-list/',
     source: 'https://github.com/Tadesse-Alemayehu/To-Do-list',
-  },
-  {
-    name: 'Awesome book project with ES6 syntax.',
-    title: 'Awesome book project with ES6 syntax.',
-    description: 'Hello there  ✋🏼 . You like reading. here is an awesome single page  App to help you organize your books',
-    featuredImage: './images/pictures/project-snapshots/PNG/Awesome-Books-ES6.PNG',
-    featuredImageAlt: 'Awesome-Books-ES6.PNG Image',
-    technologies: ['Ruby on rails', 'CSS', 'JavaScript', 'HTML'],
-    liveVersion: 'https://tadesse-alemayehu.github.io/Awesome-Books-ES6/',
-    source: 'https://github.com/Tadesse-Alemayehu/Awesome-Books-ES6',
   },
   {
     name: 'Learn to code',
