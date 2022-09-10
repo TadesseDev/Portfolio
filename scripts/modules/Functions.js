@@ -10,7 +10,7 @@ export function disposeMobileMenu() {
 
 export const hideModal = () => {
   global.recentWorkModal.classList.add('hide');
-  global.recentWorkModal.innerHTML = `<div class="container"> 
+  global.recentWorkModal.innerHTML = `<div class="container">
     <div id="feature"> <span id="close-modal-desktop"></span></div> </div>`;
   global.fullPage.setAttribute('style', 'height: auto');
 };
@@ -22,7 +22,9 @@ export const showModal = (project) => {
   const technoList = document.createElement('ul');
   const description = document.createElement('p');
   const links = document.createElement('div');
-  const disposeDesktop = global.recentWorkModal.querySelector('#close-modal-desktop');
+  const disposeDesktop = global.recentWorkModal.querySelector(
+    '#close-modal-desktop',
+  );
   links.innerHTML = `
 <a href="${project.liveVersion || '#'}" target="blank">
   <span>See Live </span
@@ -55,7 +57,10 @@ export const showModal = (project) => {
   global.recentWorkModal.querySelector('.container').appendChild(description);
   global.recentWorkModal.querySelector('.container').appendChild(links);
   global.recentWorkModal.classList.remove('hide');
-  global.fullPage.setAttribute('style', `height: ${global.recentWorkModal.scrollHeight}px`);
+  global.fullPage.setAttribute(
+    'style',
+    `height: ${global.recentWorkModal.scrollHeight}px`,
+  );
   disposeDesktop.addEventListener('click', () => hideModal());
 };
 
@@ -66,13 +71,15 @@ export const createRecentWorkCard = (project) => {
   <h2 class="project-title">${project.name}</h2>
  <nav class="tags"><ul>`;
   project.technologies.forEach((tech) => {
-    text = text + `<li><a href='#'/>${tech}</li>`;
+    text += `<li><a href='#'/>${tech}</li>`;
   });
-  text = text + `</ul></nav><button type='submit' class='action'>
+  text
+    += `</ul></nav><button type='submit' class='action'>
   See Project</button></div>`;
 
-  card.insertAdjacentHTML("afterbegin", text);
-  card.querySelector('.action')
+  card.insertAdjacentHTML('afterbegin', text);
+  card
+    .querySelector('.action')
     .addEventListener('click', () => showModal(project));
   return card;
 };
@@ -80,7 +87,9 @@ export const createRecentWorkCard = (project) => {
 export const manageNavigation = () => {
   let linkSection = 0;
   global.goUp.href = `#${global.sections[linkSection].getAttribute('id')}`;
-  global.godown.href = `#${global.sections[linkSection + 1].getAttribute('id')}`;
+  global.godown.href = `#${global.sections[linkSection + 1].getAttribute(
+    'id',
+  )}`;
   global.goUp.classList.toggle('hide', true);
   return (element) => {
     setTimeout(() => {
@@ -99,8 +108,12 @@ export const manageNavigation = () => {
         global.goUp.classList.toggle('hide', false);
         global.godown.classList.toggle('hide', false);
       }
-      global.goUp.href = `#${global.sections[linkSection - 1].getAttribute('id')}`;
-      global.godown.href = `#${global.sections[linkSection + 1].getAttribute('id')}`;
+      global.goUp.href = `#${global.sections[linkSection - 1].getAttribute(
+        'id',
+      )}`;
+      global.godown.href = `#${global.sections[linkSection + 1].getAttribute(
+        'id',
+      )}`;
     }, 10);
   };
 };
@@ -116,8 +129,14 @@ export const DOMReadyActions = () => {
     global.listOfMenus.classList.toggle('hide', false);
     global.listOfMenus.classList.toggle('show', true);
     global.logo.text = '';
-    global.listOfMenus.setAttribute('style', `top:${global.mobileMenuBarHeight}px`);
-    global.toolBar.setAttribute('style', `min-height: ${global.windowHeight - global.mobileMenuBarHeight}px`);
+    global.listOfMenus.setAttribute(
+      'style',
+      `top:${global.mobileMenuBarHeight}px`,
+    );
+    global.toolBar.setAttribute(
+      'style',
+      `min-height: ${global.windowHeight - global.mobileMenuBarHeight}px`,
+    );
     global.closeMobileMenu.classList.toggle('hide', false);
     global.humBurger.classList.add('hide');
   });
