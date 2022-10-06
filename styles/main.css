@@ -613,6 +613,7 @@ hr {
   background-color: #a3b6d3c4;
   color: #3a4a42;
   padding: 2%;
+  z-index: 1;
 }
 
 #recent-work-modal .container {
