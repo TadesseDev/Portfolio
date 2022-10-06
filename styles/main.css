@@ -94,6 +94,10 @@ a {
   flex-wrap: wrap;
 }
 
+#recent-work .card {
+  align-content: space-between;
+}
+
 #app-bar-menus.show ul {
   min-width: 100%;
   min-height: 100%;
