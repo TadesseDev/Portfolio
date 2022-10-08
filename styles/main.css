@@ -119,6 +119,7 @@ a {
   box-shadow: 0 0 61px #0000004d;
   animation-duration: 2s;
   animation-iteration-count: 1;
+  max-height: 0px;
 }
 
 @keyframes come-out-from-right {
@@ -126,6 +127,7 @@ a {
     margin-left: 100%;
   }
   100% {
+    max-height: auto;
     margin-left: 0;
   }
 }

@@ -18,6 +18,7 @@ export default function observerActions() {
           card.style.backgroundImage = `url('${project.cardImage}')`;
         }
         card.style.animation = "come-out-from-right 1s 1";
+        card.style.maxHeight = "max-content";
       }
     });
   }, options);
