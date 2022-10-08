@@ -1,5 +1,17 @@
 const myProjects = [
   {
+    name: "I Spend",
+    title: "a mobile web application where you can manage your budget",
+    description:
+      "a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.",
+    featuredImage: "./images/pictures/project-snapshots/PNG/I-Spend.png",
+    cardImage: "./images/pictures/project-snapshots/PNG/card/I-Spend.png",
+    featuredImageAlt: "I-Spend.png Image",
+    technologies: ["Ruby on Rails", "PostgreSQL"],
+    liveVersion: "https://quiet-beach-52239.herokuapp.com/",
+    source: "https://github.com/Tadesse-Alemayehu/I-spend",
+  },
+  {
     name: "My weather",
     title: "Check any city for a weather info",
     description:
