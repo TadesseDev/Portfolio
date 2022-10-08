@@ -1,5 +1,23 @@
 const myProjects = [
   {
+    name: "Yellow Room",
+    title: "an online hotel room reservation app",
+    description:
+      "This is an online hotel room reservation app. We give it a fancy name of 'yellow room' It's a fully functioning app with a backend setup in Rails and provides token base authentication.",
+    featuredImage: "./images/pictures/project-snapshots/PNG/Yellow-Room.png",
+    cardImage: "./images/pictures/project-snapshots/PNG/card/Yellow-Room.png",
+    featuredImageAlt: "I-Spend.png Image",
+    technologies: [
+      "React/Redux",
+      "Ruby on Rails",
+      "RSpec",
+      "Capybara",
+      "PostgreSQL",
+    ],
+    liveVersion: "https://yellow-rooms.netlify.app/",
+    source: "https://github.com/Tadesse-Alemayehu/YellowRooms-Front",
+  },
+  {
     name: "I Spend",
     title: "a mobile web application where you can manage your budget",
     description:
