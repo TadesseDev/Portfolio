@@ -102,6 +102,7 @@ a {
   align-content: space-between;
   background-size: 100%;
   background-repeat: no-repeat;
+  box-shadow: 0 0 61px #0000004d;
 }
 
 #app-bar-menus.show ul {
