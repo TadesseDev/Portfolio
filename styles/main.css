@@ -29,6 +29,20 @@ a {
   position: relative;
   width: 100%;
   overflow: hidden;
+  animation-name: background-play;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes background-play {
+  0% {
+    background-position-y: 40vh;
+    background-size: 10% auto;
+  }
+  10% {
+    background-position-y: 0;
+    background-size: 100% auto;
+  }
 }
 
 #navigation {
@@ -123,7 +137,7 @@ a {
 #toggle-section li {
   height: 7vw;
   min-height: 35px;
-  max-height: 80px;
+  max-height: 50px;
   margin-left: 10px;
 }
 
@@ -373,8 +387,9 @@ hr {
 .card-flow .card .text {
   grid-area: text;
   background-color: #fff;
-  margin: 2px;
+  margin: 0px;
   border-radius: 10px;
+  border-top: 3px solid #126442;
 }
 
 #about-me .text {
