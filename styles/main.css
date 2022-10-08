@@ -117,8 +117,18 @@ a {
   background-size: 100%;
   background-repeat: no-repeat;
   box-shadow: 0 0 61px #0000004d;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
 }
 
+@keyframes come-out-from-right {
+  0% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
 #app-bar-menus.show ul {
   min-width: 100%;
   min-height: 100%;

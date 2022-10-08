@@ -14,10 +14,10 @@ export default function observerActions() {
         // set background image only once
         const card = entry.target;
         if (!card.style.backgroundImage) {
-          console.log("seting background for ");
           const project = resources.Projects[card.getAttribute("id")];
           card.style.backgroundImage = `url('${project.cardImage}')`;
         }
+        card.style.animation = "come-out-from-right 1s 1";
       }
     });
   }, options);
