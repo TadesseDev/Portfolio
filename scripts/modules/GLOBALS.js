@@ -1,7 +1,7 @@
 const myProjects = [
   {
     name: "Yellow Room",
-    title: "an online hotel room reservation app",
+    title: "An online hotel room reservation app",
     description:
       "This is an online hotel room reservation app. We give it a fancy name of 'yellow room' It's a fully functioning app with a backend setup in Rails and provides token base authentication.",
     featuredImage: "./images/pictures/project-snapshots/PNG/Yellow-Room.png",
