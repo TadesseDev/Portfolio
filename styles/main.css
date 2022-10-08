@@ -21,7 +21,11 @@ a {
 }
 
 #main-container {
-  background: #fff;
+  background-image: url("../images/pictures/header-illsutration-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: #fff;
+  background-size: 100% auto;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -204,9 +208,6 @@ a {
 }
 
 #heading {
-  background-image: url("../images/pictures/header-illsutration-mobile.svg");
-  background-repeat: no-repeat;
-  background-position: top;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -703,8 +704,6 @@ hr {
   }
 
   #heading {
-    background-image: url("../images/pictures/Desktop-heading-Background.svg");
-    background-size: 100% auto;
     padding: 10px;
     margin-top: 0px;
     min-height: 100vh;
@@ -772,9 +771,13 @@ hr {
   }
 
   #main-container {
+    background-image: url("../images/pictures/Desktop-heading-Background.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
     max-width: 100%;
     margin: 0 auto;
     padding-bottom: 0;
+    background-color: white;
   }
 
   .primary {
