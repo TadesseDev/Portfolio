@@ -147,10 +147,21 @@ export const DOMReadyActions = () => {
   global.listOfMenus.querySelectorAll("li").forEach((element) => {
     element.addEventListener("click", disposeMobileMenu);
   });
-
+  const width = window.innerWidth;
   // for better user experience reload page on changing window size
-  window.addEventListener("resize", () => {
-    window.location.reload();
+  window.addEventListener("resize", (event) => {
+    const newWidth = event.target.innerWidth;
+    if (
+      (width < 700 && newWidth >= 700) ||
+      (width > 700 && newWidth <= 700) ||
+      (width < 900 && newWidth >= 900) ||
+      (width > 900 && newWidth <= 900)
+    )
+      window.location.reload();
+
+    console.log(width);
+    console.log(event.target.innerWidth);
+    // window.location.reload();
   });
 
   // add go Up and Down buttons functionality using function closure.
