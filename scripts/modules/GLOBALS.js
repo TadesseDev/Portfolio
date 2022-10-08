@@ -5,7 +5,7 @@ const myProjects = [
     description:
       "This app enables users to get instant Information regarding weather conditions. If you share your location, it will fetch the top 10 cities near you and all the weather detail for each. You can also search for any city in the world and get the detail. It makes use of 3 different APIs. To fetch data, map coordinates, and locate your area and cities near you.",
     featuredImage: "./images/pictures/project-snapshots/PNG/My-weather.png",
-    cardImage: "./images/pictures/project-snapshots/PNG/My-weather.png",
+    cardImage: "./images/pictures/project-snapshots/PNG/card/My-weather.png",
     featuredImageAlt: "My-weather.png Image",
     technologies: ["React/Redux", "JavaSCript", "REST-API", "Jest"],
     liveVersion: "https://my-city-weather-app.netlify.app/",
@@ -17,7 +17,7 @@ const myProjects = [
     description:
       'The Bookstore is a website similar to the "Awesome Books" website. Here we will create an MVP version of it that allows you to:  Display a list of books, Add a book and Remove a selected book.',
     featuredImage: "./images/pictures/project-snapshots/PNG/book-store.png",
-    cardImage: "./images/pictures/project-snapshots/PNG/book-store.png",
+    cardImage: "./images/pictures/project-snapshots/PNG/card/book-store.png",
     featuredImageAlt: "book-store.png Image",
     technologies: ["React/Redux", "JavaSCript", "REST-API", "Jest"],
     liveVersion: "https://tadesse-bookstore.netlify.app/",
@@ -29,6 +29,7 @@ const myProjects = [
     description:
       "In this task, we will be working with the real live data from the SpaceX API. Our task is to build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.",
     featuredImage: "./images/pictures/project-snapshots/PNG/space-travel.png",
+    cardImage: "./images/pictures/project-snapshots/PNG/card/space-travel.png",
     featuredImageAlt: " space-travel.png Image",
     technologies: ["React/Redux", "JavaScript", "API", "Jest"],
     liveVersion: "https://tadesse-jorge-space-travelers.netlify.app/",
@@ -40,7 +41,7 @@ const myProjects = [
     description:
       "This is a single-page application (SPA) that you can use to organize your daily schedule. You can create a task ✍🏼, mark a task as completed ✔, update its details ⚒, or delete it 🚩. All this without needing to reload a page. ✔",
     featuredImage: "./images/pictures/project-snapshots/PNG/To-Do-list.png",
-    cardImage: "./images/pictures/project-snapshots/PNG/To-Do-list.png",
+    cardImage: "./images/pictures/project-snapshots/PNG/card/To-Do-list.png",
     featuredImageAlt: "To-Do-list.png Image",
     technologies: ["Ruby on rails", "CSS", "JavaScript", "HTML"],
     liveVersion: "https://tadesse-alemayehu.github.io/To-Do-list/",
@@ -58,6 +59,7 @@ const myProjects = [
           Suspendisse ultrices quis enim at gravida. Ut lectus urna, cursus
           et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
     featuredImage: "./images/pictures/project-snapshots/PNG/LEARN-TO-CODE.png",
+    cardImage: "./images/pictures/project-snapshots/PNG/card/LEARN-TO-CODE.png",
     featuredImageAlt: "Learn to code project image",
     technologies: ["HTML", "CSS", "JavaScript"],
     liveVersion: "https://tadesse-alemayehu.github.io/LEARN-TO-CODE/",
@@ -76,6 +78,8 @@ const myProjects = [
           et tellus in, faucibus lacinia urna. Morbi nibh purus, vehicula at`,
     featuredImage:
       "./images/pictures/project-snapshots/PNG/Rock-Paper-Scissors-Advance.png",
+    cardImage:
+      "./images/pictures/project-snapshots/PNG/card/Rock-Paper-Scissors-Advance.png",
     featuredImageAlt: "Rock-Paper-Scissors-Advance.png Image",
     technologies: ["Ruby on rails", "CSS", "JavaScript", "HTML"],
     liveVersion:
@@ -88,6 +92,7 @@ const myProjects = [
     description:
       "So you love to draw? Good! This is an Etch-a-sketch project and you can create an awesome drawing board with your pre-defined pixel range and draw your picture.",
     featuredImage: "./images/pictures/project-snapshots/PNG/Etch-A-Sketch.png",
+    cardImage: "./images/pictures/project-snapshots/PNG/card/Etch-A-Sketch.png",
     featuredImageAlt: "Etch-A-Sketch.png Image",
     technologies: ["Ruby on rails", "CSS", "JavaScript", "HTML"],
     liveVersion: "https://tadesse-alemayehu.github.io/Etch-A-Sketch/",
@@ -105,6 +110,7 @@ const myProjects = [
           Suspendisse ultrices quis enim at gravida.Ut lectus urna, cursus
           et tellus in, faucibus lacinia urna.Morbi nibh purus, vehicula at`,
     featuredImage: "./images/pictures/project-snapshots/PNG/YouTube-Clone.png",
+    cardImage: "./images/pictures/project-snapshots/PNG/card/YouTube-Clone.png",
     featuredImageAlt: "YouTube-Clone Image",
     technologies: ["Ruby on rails", "CSS", "JavaScript", "HTML"],
     liveVersion: "https://tadesse-alemayehu.github.io/YouTube-Clone/",

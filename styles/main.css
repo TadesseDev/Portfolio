@@ -100,6 +100,8 @@ a {
 
 #recent-work .card {
   align-content: space-between;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 #app-bar-menus.show ul {
