@@ -131,6 +131,7 @@ a {
     margin-left: 0;
   }
 }
+
 #app-bar-menus.show ul {
   min-width: 100%;
   min-height: 100%;
@@ -394,6 +395,8 @@ hr {
 #about-me .card-flow .card {
   position: relative;
   grid-template-rows: minmax(180px, max-content) minmax(180px, max-content);
+  max-height: 0;
+  overflow: hidden;
 }
 
 .card-flow .card .text {
@@ -409,6 +412,18 @@ hr {
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  max-height: 0;
+}
+
+@keyframes come-out-from-left {
+  0% {
+    max-height: 0;
+    margin-right: 100%;
+  }
+  100% {
+    max-height: auto;
+    margin-left: 0;
+  }
 }
 
 .project-title,
@@ -540,6 +555,7 @@ hr {
   background-image: url("../images/pictures/contact-form-image.svg");
   background-repeat: no-repeat;
   background-position: bottom right;
+  max-height: 0;
 }
 
 #contact-form .form {

@@ -8,7 +8,7 @@ export default function observerActions() {
     threshold: 0.05,
   };
 
-  let observer = new IntersectionObserver((entries) => {
+  let workCardObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         // set background image only once
@@ -27,6 +27,27 @@ export default function observerActions() {
     resources.recentWorkSection.getElementsByClassName("card")
   );
   cards.forEach((card) => {
-    observer.observe(card);
+    workCardObserver.observe(card);
   });
+
+  let popFromRightObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.maxHeight = "100%";
+        entry.target.style.animation = "come-out-from-left 1s 1";
+        console.log(entry);
+      }
+    });
+  }, options);
+  const aboutMeCards = Array.from(
+    resources.aboutMeSection.getElementsByClassName("card")
+  );
+  aboutMeCards.forEach((card) => {
+    popFromRightObserver.observe(card);
+  });
+  popFromRightObserver.observe(
+    resources.aboutMeSection.getElementsByClassName("text")[0]
+  );
+
+  popFromRightObserver.observe(resources.contactSection);
 }
