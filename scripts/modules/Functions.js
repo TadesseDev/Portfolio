@@ -66,7 +66,7 @@ export const showModal = (project) => {
 
 export const createRecentWorkCard = (project) => {
   const card = document.createElement("div");
-  card.style.backgroundImage = `url('${project.cardImage}')`;
+  card.setAttribute("id", global.Projects.indexOf(project));
   card.classList.add("card");
   let text = `<div class="text">
   <h2 class="project-title">${project.name}</h2>
