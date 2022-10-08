@@ -158,10 +158,6 @@ export const DOMReadyActions = () => {
       (width > 900 && newWidth <= 900)
     )
       window.location.reload();
-
-    console.log(width);
-    console.log(event.target.innerWidth);
-    // window.location.reload();
   });
 
   // add go Up and Down buttons functionality using function closure.
