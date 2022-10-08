@@ -1,14 +1,14 @@
 import resources from "./GLOBALS.js";
 
-// using observer for lazy loading
+// using observer for lazy loading and better user experience
 export default function observerActions() {
-  let options = {
+  const options = {
     root: null, // set to default (browser view port)
     rootMargin: "0px",
     threshold: 0.05,
   };
 
-  let workCardObserver = new IntersectionObserver((entries) => {
+  const workCardObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         // set background image only once
@@ -30,12 +30,11 @@ export default function observerActions() {
     workCardObserver.observe(card);
   });
 
-  let popFromRightObserver = new IntersectionObserver((entries) => {
+  const popFromRightObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.style.maxHeight = "100%";
         entry.target.style.animation = "come-out-from-left 1s 1";
-        console.log(entry);
       }
     });
   }, options);

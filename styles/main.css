@@ -39,6 +39,7 @@ a {
     background-position-y: 40vh;
     background-size: 10% auto;
   }
+
   10% {
     background-position-y: 0;
     background-size: 100% auto;
@@ -51,6 +52,7 @@ a {
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.521);
 }
+
 #tool-bar-m {
   display: flex;
   justify-content: space-between;
@@ -112,6 +114,18 @@ a {
   flex-wrap: wrap;
 }
 
+.card-flow .card {
+  position: relative;
+  top: 20px;
+  background-color: #ebf0ee;
+  display: grid;
+  gap: 0;
+  grid-template-rows: 250px minmax(250px, max-content);
+  grid-template-areas: "." "text";
+  border-radius: 10px;
+  margin: 5%;
+}
+
 #recent-work .card {
   align-content: space-between;
   background-size: 100%;
@@ -119,15 +133,16 @@ a {
   box-shadow: 0 0 61px #0000004d;
   animation-duration: 2s;
   animation-iteration-count: 1;
-  max-height: 0px;
+  max-height: 10px;
 }
 
 @keyframes come-out-from-right {
   0% {
     margin-left: 100%;
   }
+
   100% {
-    max-height: auto;
+    max-height: max-content;
     margin-left: 0;
   }
 }
@@ -380,29 +395,17 @@ hr {
   flex-direction: column;
 }
 
-.card-flow .card {
-  position: relative;
-  top: 20px;
-  background-color: #ebf0ee;
-  display: grid;
-  gap: 0;
-  grid-template-rows: 250px minmax(250px, max-content);
-  grid-template-areas: "." "text";
-  border-radius: 10px;
-  margin: 5%;
-}
-
 #about-me .card-flow .card {
   position: relative;
   grid-template-rows: minmax(180px, max-content) minmax(180px, max-content);
-  max-height: 0;
+  max-height: 10px;
   overflow: hidden;
 }
 
 .card-flow .card .text {
   grid-area: text;
   background-color: #fff;
-  margin: 0px;
+  margin: 0;
   border-radius: 10px;
   border-top: 3px solid #126442;
 }
@@ -412,17 +415,17 @@ hr {
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
-  max-height: 0;
+  max-height: 10px;
 }
 
 @keyframes come-out-from-left {
   0% {
-    max-height: 0;
     margin-right: 100%;
   }
+
   100% {
-    max-height: auto;
-    margin-left: 0;
+    max-height: max-content;
+    margin-right: 0;
   }
 }
 
@@ -751,7 +754,7 @@ hr {
 
   #heading {
     padding: 10px;
-    margin-top: 0px;
+    margin-top: 0;
     min-height: 100vh;
   }
 
@@ -958,7 +961,7 @@ hr {
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff00;
+  background: #fff0;
 }
 
 ::-webkit-scrollbar-thumb {
