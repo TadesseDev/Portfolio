@@ -4,13 +4,13 @@ html,
 body {
   margin: 0;
   padding: 0;
-  --main-color-3: #c7eedd;
-  --main-color-2: #a0e2c6;
-  --main-color-1: #79d6af;
-  --main-color: #36b37e;
-  --main-color1: #2a8c62;
-  --main-color2: #1e6547;
-  --main-color3: #133d2b;
+  --main-green-3: #c7eedd;
+  --main-green-2: #a0e2c6;
+  --main-green-1: #79d6af;
+  --main-green: #36b37e;
+  --main-green1: #2a8c62;
+  --main-green2: #1e6547;
+  --main-green3: #133d2b;
 }
 
 body {
@@ -57,7 +57,6 @@ a {
   position: fixed;
   width: 100%;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.521);
 }
 
 #tool-bar-m {
@@ -81,7 +80,6 @@ a {
 }
 
 #app-bar-mobile {
-  /* From https://css.glass */
   background: rgba(65, 113, 29, 0.18);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.3px);
@@ -95,7 +93,6 @@ a {
   display: flex;
   flex-direction: column;
   z-index: 1;
-  /* From https://css.glass */
 }
 
 #app-bar-menus.show #tool-bar {
@@ -207,6 +204,7 @@ a {
 #app-bar-menus.show li {
   display: block;
   margin: 3vh 2vw;
+  border-bottom: 2px solid var(--main-green3);
 }
 
 .tags ul a {
@@ -237,7 +235,7 @@ a {
 }
 
 #recent-work-modal .links a {
-  background-color: var(--main-color);
+  background-color: var(--main-green);
   color: #fff;
   outline: none;
   border: none;
@@ -253,8 +251,8 @@ a {
 
 #app-bar-menus.show li a {
   font-weight: 600;
-  font-size: 2rem;
-  color: var(--main-color3);
+  font-size: 1.3rem;
+  color: var(--main-green3);
 }
 
 #app-bar-menus.show #closeMenu {
@@ -329,7 +327,7 @@ h2.primary {
 }
 
 .i-am {
-  color: var(--main-color);
+  color: var(--main-green);
   display: block;
 }
 
@@ -402,7 +400,7 @@ h2.primary {
 hr {
   margin-top: 15px;
   width: 10%;
-  background-color: var(--main-color);
+  background-color: var(--main-green);
   height: 5px;
   border: none;
   border-radius: 5px;
@@ -983,7 +981,7 @@ hr {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--main-color);
+  background: var(--main-green);
   border-radius: 20px;
 }
 

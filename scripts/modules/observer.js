@@ -8,7 +8,7 @@ export default function observerActions() {
     threshold: 0.05,
   };
 
-  const workCardObserver = new IntersectionObserver((entries) => {
+  const workCardsObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         // set background image only once
@@ -23,13 +23,6 @@ export default function observerActions() {
     });
   }, options);
 
-  const cards = Array.from(
-    resources.recentWorkSection.getElementsByClassName("card")
-  );
-  cards.forEach((card) => {
-    workCardObserver.observe(card);
-  });
-
   const popFromRightObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -38,6 +31,32 @@ export default function observerActions() {
       }
     });
   }, options);
+
+  const desktopAppBarObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          resources.toolBar.setAttribute(
+            "style",
+            `
+        background: rgba(65, 113, 29, 0.18);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(5.3px);`
+          );
+        } else {
+          resources.toolBar.setAttribute("style", ``);
+        }
+      });
+    },
+    { ...options, threshold: 1 }
+  );
+  const cards = Array.from(
+    resources.recentWorkSection.getElementsByClassName("card")
+  );
+  cards.forEach((card) => {
+    workCardsObserver.observe(card);
+  });
+
   const aboutMeCards = Array.from(
     resources.aboutMeSection.getElementsByClassName("card")
   );
@@ -49,4 +68,8 @@ export default function observerActions() {
   );
 
   popFromRightObserver.observe(resources.contactSection);
+
+  if (window.innerWidth > 700) {
+    desktopAppBarObserver.observe(resources.primary);
+  }
 }
