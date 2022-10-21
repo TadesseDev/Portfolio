@@ -1,4 +1,3 @@
-const myProjects = [];
 export default {
   fullPage: document.querySelector("#main-container"),
   navigationSection: document.querySelector("#navigation"),
@@ -38,5 +37,5 @@ export default {
     document.querySelector("#contact-form"),
     document.querySelector("#footer"),
   ],
-  Projects: myProjects,
+  Projects: [],
 };
