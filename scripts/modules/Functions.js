@@ -1,5 +1,6 @@
 import global from "./GLOBALS.js";
 import { get } from "../api/index.js";
+import { observeCard } from "./observer.js";
 export function disposeMobileMenu() {
   global.listOfMenus.classList.toggle("hide", true);
   global.listOfMenus.classList.toggle("show", false);
@@ -66,14 +67,20 @@ export const showModal = (project) => {
 
 export const createRecentWorkCard = (project) => {
   const card = document.createElement("div");
-  card.setAttribute("id", global.Projects.indexOf(project));
+  card.setAttribute("id", project.id);
   card.classList.add("card");
   let text = `<div class="text">
   <h2 class="project-title">${project.name}</h2>
  <nav class="tags"><ul>`;
-  project.technologies.forEach((tech) => {
-    text += `<li><a href='#'/>${tech}</li>`;
-  });
+  get(`projects/${project.id}/technologies`)
+    .then((technologies) => {
+      technologies.forEach((tech) => {
+        text += `<li><a href='#'/>${tech}</li>`;
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   text += `</ul></nav><button type='submit' class='action'>
   See Project</button></div>`;
 
@@ -119,15 +126,18 @@ export const manageNavigation = () => {
 };
 export const renderProjectToTheDom = () => {
   get("projects")
-    .then((data) => {
-      console.log(data);
+    .then((projects) => {
+      console.log(projects);
+      global.Projects = projects.data;
+      projects.data.forEach((project) => {
+        const card = createRecentWorkCard(project);
+        global.cardContainer.appendChild(card);
+        observeCard(card);
+      });
     })
     .catch((error) => {
       console.log(error);
     });
-  global.Projects.forEach((project) => {
-    global.cardContainer.appendChild(createRecentWorkCard(project));
-  });
 };
 
 export const DOMReadyActions = () => {

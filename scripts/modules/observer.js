@@ -1,28 +1,31 @@
 import resources from "./GLOBALS.js";
-
+const options = {
+  root: null, // set to default (browser view port)
+  rootMargin: "0px",
+  threshold: 0.05,
+};
 // using observer for lazy loading and better user experience
-export default function observerActions() {
-  const options = {
-    root: null, // set to default (browser view port)
-    rootMargin: "0px",
-    threshold: 0.05,
-  };
-
+export const observeCard = (card) => {
   const workCardsObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         // set background image only once
         const card = entry.target;
         if (!card.style.backgroundImage) {
-          const project = resources.Projects[card.getAttribute("id")];
-          card.style.backgroundImage = `url('${project.cardImage}')`;
+          const project = resources.Projects.filter(
+            (project) => project.id == card.getAttribute("id")
+          )[0];
+          console.log(project);
+          card.style.backgroundImage = `url('${project.mobile_pic}')`;
         }
         card.style.animation = "come-out-from-right 1s 1";
         card.style.maxHeight = "max-content";
       }
     });
   }, options);
-
+  workCardsObserver.observe(card);
+};
+export default function observerActions() {
   const popFromRightObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -50,12 +53,6 @@ export default function observerActions() {
     },
     { ...options, threshold: 1 }
   );
-  const cards = Array.from(
-    resources.recentWorkSection.getElementsByClassName("card")
-  );
-  cards.forEach((card) => {
-    workCardsObserver.observe(card);
-  });
 
   const aboutMeCards = Array.from(
     resources.aboutMeSection.getElementsByClassName("card")
