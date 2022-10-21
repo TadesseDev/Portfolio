@@ -72,15 +72,6 @@ export const createRecentWorkCard = (project) => {
   let text = `<div class="text">
   <h2 class="project-title">${project.name}</h2>
  <nav class="tags"><ul>`;
-  get(`projects/${project.id}/technologies`)
-    .then((technologies) => {
-      technologies.forEach((tech) => {
-        text += `<li><a href='#'/>${tech}</li>`;
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
   text += `</ul></nav><button type='submit' class='action'>
   See Project</button></div>`;
 

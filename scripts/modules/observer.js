@@ -1,4 +1,5 @@
 import resources from "./GLOBALS.js";
+import { get } from "../api/index.js";
 const options = {
   root: null, // set to default (browser view port)
   rootMargin: "0px",
@@ -15,7 +16,20 @@ export const observeCard = (card) => {
           const project = resources.Projects.filter(
             (project) => project.id == card.getAttribute("id")
           )[0];
-          console.log(project);
+          get(`projects/${project.id}/technologies`)
+            .then((technologies) => {
+              technologies.data.forEach((tech) => {
+                card
+                  .getElementsByTagName("ul")[0]
+                  .insertAdjacentHTML(
+                    "afterbegin",
+                    `<li><a href='#'/>${tech}</li>`
+                  );
+              });
+            })
+            .catch((error) => {
+              console.log("error is", error);
+            });
           card.style.backgroundImage = `url('${project.mobile_pic}')`;
         }
         card.style.animation = "come-out-from-right 1s 1";
