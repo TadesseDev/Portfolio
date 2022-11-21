@@ -1005,11 +1005,17 @@ body {
 /* Add some content at the bottom of the video/page */
 .content {
   position: fixed;
-  bottom: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.5);
   color: #f1f1f1;
-  width: 100%;
+  width: max-content;
   padding: 20px;
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  box-shadow: 0 0 30px green;
+  text-align: center;
 }
 .content a {
   color: green;
