@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-[Go live](https://tadesse-alemayehu.github.io/Portfolio/) 🙂
+[Go live](https://techie-tadesse.onrender.com/) 🙂
 
 ## Getting Started
 
