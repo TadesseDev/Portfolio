@@ -1,9 +1,10 @@
 # Portfolio
 
-> My portfolio ✋🏼 where you will get glimpses of what I'm capable of. Including some of the projects I have been working on 🎞 , technologies I am familiar with, contact details, and more. The main technologies here are JavaScript, CSS3 and HTML5 🙌 See me live: https://tadesse-alemayehu.github.io/Portfolio/).
+> My portfolio ✋🏼 where you will get glimpses of what I'm capable of. Including some of the projects I have been working on 🎞 , technologies I am familiar with, contact details, and more. The main technologies here are JavaScript, CSS3 and HTML5 🙌 See me live: <https://tadesse-alemayehu.github.io/Portfolio/>).
 
 # Screenshot's
-Mobile 
+
+Mobile
 
 ![portfolio  mobile](https://user-images.githubusercontent.com/69077061/156462564-c8e97efd-eff7-4e1e-8f34-97965c4da8c6.PNG)
 
@@ -24,7 +25,7 @@ Desktop
 
 ## Getting Started
 
-1. Open [main branch](https://github.com/Tadesse-Alemayehu/porfolio)
+1. Open [main branch](https://techie-tadesse.onrender.com/)
 2. Open VSCode or terminal and navigate to the folder where you would like to clone the project.
 3. Type "pwd" to see your working directory.
 4. [clone repository](git@github.com:Tadesse-Alemayehu/porfolio)(git clone "branch-link")
