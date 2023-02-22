@@ -1,6 +1,6 @@
 # Portfolio
 
-> Moved to [www.tadesse.dev](https://www.tadesse.dev)
+> Moved permanently to [www.tadesse.dev](https://www.tadesse.dev)
 
 ## Built With
 
