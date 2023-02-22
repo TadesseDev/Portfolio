@@ -998,6 +998,8 @@ body {
   position: fixed;
   right: 0;
   bottom: 0;
+  top:0;
+  z-index: 1;
   min-width: 100%;
   min-height: 100%;
 }
@@ -1011,12 +1013,18 @@ body {
   background: rgba(0, 0, 0, 0.5);
   color: #f1f1f1;
   width: max-content;
+  max-width: 80vw;
   padding: 20px;
   backdrop-filter: blur(12px);
   border-radius: 10px;
   box-shadow: 0 0 30px green;
   text-align: center;
+  z-index: 2;
 }
+
+  .content h2 {
+    display: inline-block;
+  }
 .content a {
   color: green;
 }
