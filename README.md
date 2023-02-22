@@ -1,6 +1,6 @@
 # Portfolio
 
-> My portfolio ✋🏼 where you will get glimpses of what I'm capable of. Including some of the projects I have been working on 🎞 , technologies I am familiar with, contact details, and more. The main technologies here are JavaScript, CSS3 and HTML5 🙌 See me live: <https://tadesse-alemayehu.github.io/Portfolio/>).
+> Moved to [www.tadesse.dev](https://www.tadesse.dev)
 
 ## Built With
 
@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-[Go live](https://techie-tadesse.onrender.com/) 🙂
+[Go live](https://www.tadesse.dev) 🙂
 
 ## Getting Started
 
